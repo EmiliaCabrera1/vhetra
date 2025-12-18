@@ -1,0 +1,40 @@
+<svg width="402" height="874" viewBox="0 0 402 874" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_336_1002)">
+<rect width="402" height="874" fill="url(#paint0_linear_336_1002)"/>
+<g filter="url(#filter0_d_336_1002)">
+<rect x="-137" y="-38" width="190" height="104" fill="#132E4B" fill-opacity="0.5" shape-rendering="crispEdges"/>
+</g>
+<g filter="url(#filter1_d_336_1002)">
+<rect x="-155" y="465" width="190" height="418" fill="#132E4B" fill-opacity="0.5" shape-rendering="crispEdges"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_d_336_1002" x="-137" y="-38" width="198" height="112" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dx="4" dy="4"/>
+<feGaussianBlur stdDeviation="2"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_336_1002"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_336_1002" result="shape"/>
+</filter>
+<filter id="filter1_d_336_1002" x="-155" y="465" width="198" height="426" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dx="4" dy="4"/>
+<feGaussianBlur stdDeviation="2"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_336_1002"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_336_1002" result="shape"/>
+</filter>
+<linearGradient id="paint0_linear_336_1002" x1="201" y1="0" x2="201" y2="874" gradientUnits="userSpaceOnUse">
+<stop stop-color="#142D4B"/>
+<stop offset="1" stop-color="#051626"/>
+</linearGradient>
+<clipPath id="clip0_336_1002">
+<rect width="402" height="874" fill="white"/>
+</clipPath>
+</defs>
+</svg>
