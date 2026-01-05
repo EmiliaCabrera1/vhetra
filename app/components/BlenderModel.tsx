@@ -16,17 +16,59 @@ export function RotatingModel({ path, scale = 1 }: { path: string, scale?: numbe
     const ref = useRef<Group>(null!)
 
     const [dragging, setDragging] = useState(false)
+    const [lastPos, setLastPos] = useState<{ x: number; y: number } | null>(null)
 
-    const onPointerDown = () => setDragging(true)
-    const onPointerUp = () => setDragging(false)
-    const onPointerMove = (e: React.PointerEvent) => {
-        if (dragging && ref.current) {
-            ref.current.rotation.y += e.movementX * 0.005
-            ref.current.rotation.x += e.movementY * 0.005
+    // Desktop (mouse)
+    useEffect(() => {
+        const handlePointerMove = (e: PointerEvent) => {
+            if (dragging && ref.current) {
+                ref.current.rotation.y += e.movementX * 0.01
+                ref.current.rotation.x += e.movementY * 0.01
+            }
         }
-    }
+        const handlePointerUp = () => {
+            setDragging(false)
+            setLastPos(null)
+        }
 
-    // Optional continuous rotation
+        if (dragging) {
+            window.addEventListener('pointermove', handlePointerMove)
+            window.addEventListener('pointerup', handlePointerUp)
+        }
+        return () => {
+            window.removeEventListener('pointermove', handlePointerMove)
+            window.removeEventListener('pointerup', handlePointerUp)
+        }
+    }, [dragging])
+
+    // Mobile (touch)
+    useEffect(() => {
+        const handleTouchMove = (e: TouchEvent) => {
+            if (dragging && ref.current && lastPos) {
+                const touch = e.touches[0]
+                const dx = touch.clientX - lastPos.x
+                const dy = touch.clientY - lastPos.y
+                ref.current.rotation.y += dx * 0.01
+                ref.current.rotation.x += dy * 0.01
+                setLastPos({ x: touch.clientX, y: touch.clientY })
+            }
+        }
+        const handleTouchEnd = () => {
+            setDragging(false)
+            setLastPos(null)
+        }
+
+        if (dragging) {
+            window.addEventListener('touchmove', handleTouchMove)
+            window.addEventListener('touchend', handleTouchEnd)
+        }
+        return () => {
+            window.removeEventListener('touchmove', handleTouchMove)
+            window.removeEventListener('touchend', handleTouchEnd)
+        }
+    }, [dragging, lastPos])
+
+    // Auto‑rotation when not dragging
     useFrame((_, delta) => {
         if (ref.current && !dragging) {
             ref.current.rotation.y += delta * 0.5
@@ -37,15 +79,14 @@ export function RotatingModel({ path, scale = 1 }: { path: string, scale?: numbe
         <group
             ref={ref}
             scale={scale}
-            onPointerDown={onPointerDown}
-            onPointerUp={onPointerUp}
-            onPointerMove={onPointerMove}
-            receiveShadow
+            onPointerDown={() => setDragging(true)}
         >
-            <primitive object={scene} receiveShadow />
+            <primitive object={scene} />
         </group>
     )
 }
+
+
 
 
 function AnimatedSquares({ path, scale = 1 }: { path: string, scale?: number }) {
