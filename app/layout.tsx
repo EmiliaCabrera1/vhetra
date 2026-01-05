@@ -1,15 +1,11 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Khand } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const khand = Khand({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-khand",
 });
 
 export const metadata: Metadata = {
@@ -23,18 +19,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <div className="flex min-h-screen items-center justify-center ">
-          <main className="flex bg-[url(/bg.svg)] bg-no-repeat w-100.5 h-216">
-            <div className='flex flex-col w-full mt-30'>
-              {children}
-            </div>
-          </main >
-        </div >
-      </body >
-    </html >
+    <html lang="es" className={khand.variable}>
+      <body className="antialiased">{children}</body>
+    </html>
   );
 }
