@@ -1,11 +1,15 @@
 import type { Metadata } from "next";
-import { Khand } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const khand = Khand({
+const geistSans = Geist({
+  variable: "--font-geist-sans",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-khand",
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
@@ -19,8 +23,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={khand.variable}>
-      <body className="antialiased">{children}</body>
-    </html>
+    <html lang="en">
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        <div className="flex min-h-screen items-center justify-center ">
+          <main className="flex bg-[url(/bg.svg)] bg-no-repeat w-100.5 h-216">
+            <div className='flex flex-col w-full mt-30'>
+              {children}
+            </div>
+          </main >
+        </div >
+      </body >
+    </html >
   );
 }

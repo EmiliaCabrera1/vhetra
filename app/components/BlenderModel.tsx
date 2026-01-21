@@ -1,8 +1,9 @@
 'use client';
 import { Suspense, useEffect, useRef, useState } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
+import { Canvas } from '@react-three/fiber';
 import { useAnimations, useGLTF } from '@react-three/drei';
 import { Group } from 'three';
+import { Bloom, EffectComposer } from '@react-three/postprocessing';
 
 function Model({ path, scale = 1 }: { path: string, scale?: number }) {
     const { scene } = useGLTF(path); // path relative to /public
@@ -12,7 +13,7 @@ function Model({ path, scale = 1 }: { path: string, scale?: number }) {
 }
 
 export function RotatingModel({ path, scale = 1 }: { path: string, scale?: number }) {
-    const { scene } = useGLTF(path)
+    const { scene, animations } = useGLTF(path)
     const ref = useRef<Group>(null!)
 
     const [dragging, setDragging] = useState(false)
@@ -30,6 +31,8 @@ export function RotatingModel({ path, scale = 1 }: { path: string, scale?: numbe
             setDragging(false)
             setLastPos(null)
         }
+
+
 
         if (dragging) {
             window.addEventListener('pointermove', handlePointerMove)
@@ -68,20 +71,23 @@ export function RotatingModel({ path, scale = 1 }: { path: string, scale?: numbe
         }
     }, [dragging, lastPos])
 
-    // Auto‑rotation when not dragging
-    useFrame((_, delta) => {
-        if (ref.current && !dragging) {
-            ref.current.rotation.y += delta * 0.5
-        }
-    })
+    const { actions } = useAnimations(animations, scene)
+
+    useEffect(() => {
+        Object.values(actions).forEach(action => action?.play())
+    }, [actions])
+
 
     return (
         <group
             ref={ref}
             scale={scale}
             onPointerDown={() => setDragging(true)}
+            receiveShadow
+            castShadow
         >
-            <primitive object={scene} />
+            <primitive object={scene} receiveShadow
+                castShadow />
         </group>
     )
 }
@@ -89,18 +95,6 @@ export function RotatingModel({ path, scale = 1 }: { path: string, scale?: numbe
 
 
 
-function AnimatedSquares({ path, scale = 1 }: { path: string, scale?: number }) {
-    const { scene, animations } = useGLTF(path);
-    const { actions } = useAnimations(animations, scene);
-
-    useEffect(() => {
-        if (actions && actions[Object.keys(actions)[0]]) {
-            actions[Object.keys(actions)[0]]?.play();
-        }
-    }, [actions]);
-
-    return <primitive object={scene} scale={scale} receiveShadow />;
-}
 
 
 export default function BlenderModel({ path, type = 'simple', scale }: { path: string, type: 'autoRotate' | 'simple' | 'animated', scale?: number }) {
@@ -110,10 +104,8 @@ export default function BlenderModel({ path, type = 'simple', scale }: { path: s
         switch (type) {
             case 'simple':
                 return <Model path={path} scale={scale} />;
-            case 'autoRotate':
-                return <RotatingModel path={path} scale={scale} />;
             case 'animated':
-                return <AnimatedSquares path={path} scale={scale} />;
+                return <RotatingModel path={path} scale={scale} />;
             default:
                 break;
         }
@@ -121,11 +113,26 @@ export default function BlenderModel({ path, type = 'simple', scale }: { path: s
 
     return (
         <div style={{ width: '100%', height: '100%' }}>
-            <Canvas camera={{ position: [0, 0, 5], fov: 50 }}>
-                <spotLight position={[0, 0, 5]} intensity={40} castShadow />
+            <Canvas shadows={false} camera={{ position: [0, 0, 5], fov: 50 }} dpr={[1, 1.15]}
+                gl={{ alpha: true, premultipliedAlpha: false }}
+                style={{ background: 'transparent' }}
+                onCreated={({ gl }) => {
+                    gl.setClearColor(0x000000, 0)
+                }}>
+                <ambientLight intensity={0.3} />
+                <directionalLight position={[3, 5, 2]} intensity={1.2} castShadow />
+                <directionalLight position={[-2, -3, -1]} intensity={0.4} castShadow />
                 <Suspense fallback={null}>
                     {renderModel()}
                 </Suspense>
+                <EffectComposer enableNormalPass={false}>
+                    <Bloom
+                        intensity={0.4}
+                        luminanceThreshold={0.85}
+                        luminanceSmoothing={0.2}
+                        mipmapBlur
+                    />
+                </EffectComposer>
             </Canvas>
         </div>
     );
