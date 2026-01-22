@@ -122,6 +122,7 @@ export default function BlenderModel({ path, type = 'simple', scale }: { path: s
                 <ambientLight intensity={0.3} />
                 <directionalLight position={[3, 5, 2]} intensity={1.2} castShadow />
                 <directionalLight position={[-2, -3, -1]} intensity={0.4} castShadow />
+                <directionalLight position={[2, 1, 2]} intensity={3} castShadow />
                 <Suspense fallback={null}>
                     {renderModel()}
                 </Suspense>
