@@ -28,13 +28,54 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <div className="flex min-h-screen items-center justify-center ">
-          <main className="flex bg-[url(/bg.svg)] bg-no-repeat w-100.5 h-216">
-            <div className='flex flex-col w-full mt-30'>
-              {children}
-            </div>
-          </main >
-        </div >
-      </body >
-    </html >
+          <main className="flex flex-col bg-[url(/bg.svg)] bg-no-repeat w-100.5 h-216 ">
+            <nav className="w-full py-8 text-blanco">
+              {/* Logo */}
+              <a
+                href="#inicio"
+                className="block w-full text-center mb-6"
+                aria-label="Ir al inicio"
+              >
+                <img
+                  src="/img/vhetra.svg"
+                  alt="VHETRA"
+                  className="mx-auto h-10 w-auto"
+                />
+              </a>
+
+              <ul className="flex justify-center gap-6 items-center">
+                {[
+                  "Inicio",
+                  "Servicios",
+                  "Proyectos",
+                  "Filosofía",
+                  "Contacto",
+                ].map((item) => (
+                  <li key={item} className="flex items-center">
+                    <a
+                      href={`#${item.toLowerCase()}`}
+                      className="
+          text-lg
+          font-ligtht
+          opacity-80
+          transition-all
+          duration-300
+          ease-out
+          hover:scale-150
+          hover:font-medium
+          hover:opacity-100
+        "
+                    >
+                      {item}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+            <div className="flex flex-col w-full mt-30">{children}</div>
+          </main>
+        </div>
+      </body>
+    </html>
   );
 }

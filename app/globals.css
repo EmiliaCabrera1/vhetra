@@ -12,4 +12,23 @@ body {
   font-family: khand, Helvetica, sans-serif;
 }
 
-canvas { touch-action: none; background: transparent !important; }
+canvas {
+  touch-action: none;
+  background: transparent !important;
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  40%,
+  60% {
+    transform: scale(1.04);
+  }
+}
+.svg-breathe {
+  animation: breathe 4.5s ease-in-out infinite;
+  transform-origin: center;
+}
