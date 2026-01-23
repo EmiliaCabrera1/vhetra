@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Image from "next/image";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,20 +28,23 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="flex min-h-screen items-center justify-center ">
-          <main className="flex flex-col bg-[url(/bg.svg)] bg-no-repeat w-100.5 h-216 ">
-            <nav className="w-full py-8 text-blanco">
+        <div className="flex h-screen items-center justify-center ">
+          <main className="flex flex-col bg-[url(/bg.svg)] bg-no-repeat w-100.5 h-dvh ">
+            <nav className="w-full h-50 py-8 text-blanco">
               {/* Logo */}
               <a
                 href="#inicio"
-                className="block w-full text-center mb-6"
+                className="block text-center my-6 h-16"
                 aria-label="Ir al inicio"
               >
-                <img
-                  src="/img/vhetra.svg"
-                  alt="VHETRA"
-                  className="mx-auto h-10 w-auto"
-                />
+                <div className="w-full mx-10">
+                  <Image
+                    src="/img/vhetra.png"
+                    alt="VHETRA"
+                    width={300}
+                    height={50}
+                  />
+                </div>
               </a>
 
               <ul className="flex justify-center gap-6 items-center">
@@ -55,16 +59,16 @@ export default function RootLayout({
                     <a
                       href={`#${item.toLowerCase()}`}
                       className="
-          text-lg
-          font-ligtht
-          opacity-80
-          transition-all
-          duration-300
-          ease-out
-          hover:scale-150
-          hover:font-medium
-          hover:opacity-100
-        "
+                                  text-lg
+                                  font-ligtht
+                                  opacity-80
+                                  transition-all
+                                  duration-300
+                                  ease-out
+                                  hover:scale-150
+                                  hover:font-medium
+                                  hover:opacity-100
+                                "
                     >
                       {item}
                     </a>
@@ -72,7 +76,18 @@ export default function RootLayout({
                 ))}
               </ul>
             </nav>
-            <div className="flex flex-col w-full mt-30">{children}</div>
+            <div className="flex flex-col h-[calc(100vh-200px)] w-full relative">
+              {children}
+              <div className="absolute bottom-10 right-0">
+                <Image
+                  src="/img/half-logo.png"
+                  alt="VHETRA"
+                  width={150}
+                  height={150}
+                  className="right-6"
+                />
+              </div></div>
+
           </main>
         </div>
       </body>
