@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Image from "next/image";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,65 +28,8 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <div className="flex h-screen items-center justify-center ">
-          <main className="flex flex-col bg-[url(/bg.svg)] bg-no-repeat w-100.5 h-dvh ">
-            <nav className="w-full h-50 py-8 text-blanco">
-              {/* Logo */}
-              <a
-                href="#inicio"
-                className="block text-center my-6 h-16"
-                aria-label="Ir al inicio"
-              >
-                <div className="w-full mx-10">
-                  <Image
-                    src="/img/vhetra.png"
-                    alt="VHETRA"
-                    width={300}
-                    height={50}
-                  />
-                </div>
-              </a>
-
-              <ul className="flex justify-center gap-6 items-center">
-                {[
-                  "Inicio",
-                  "Servicios",
-                  "Proyectos",
-                  "Filosofía",
-                  "Contacto",
-                ].map((item) => (
-                  <li key={item} className="flex items-center">
-                    <a
-                      href={`#${item.toLowerCase()}`}
-                      className="
-                                  text-lg
-                                  font-ligtht
-                                  opacity-80
-                                  transition-all
-                                  duration-300
-                                  ease-out
-                                  hover:scale-150
-                                  hover:font-medium
-                                  hover:opacity-100
-                                "
-                    >
-                      {item}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-            <div className="flex flex-col h-[calc(100vh-200px)] w-full relative">
-              {children}
-              <div className="absolute bottom-10 right-0">
-                <Image
-                  src="/img/half-logo.png"
-                  alt="VHETRA"
-                  width={150}
-                  height={150}
-                  className="right-6"
-                />
-              </div></div>
-
+          <main className="flex flex-col bg-[url(/bg.svg)] bg-no-repeat w-100.5 h-dvh px-6">
+            {children}
           </main>
         </div>
       </body>
