@@ -18,12 +18,29 @@ const PLACEHOLDER = (
   <div className="w-full h-full min-w-[120px] min-h-[120px] bg-azulo/5 rounded-lg animate-pulse" aria-hidden />
 );
 
+/** Safari / older WebKit: no requestIdleCallback — use setTimeout so the app does not throw. */
+function scheduleIdle(cb: () => void, options?: IdleRequestOptions): number {
+  if (typeof requestIdleCallback !== "undefined") {
+    return requestIdleCallback(cb, options);
+  }
+  const ms = Math.min(options?.timeout ?? 500, 500);
+  return window.setTimeout(cb, ms);
+}
+
+function cancelScheduledIdle(id: number): void {
+  if (typeof cancelIdleCallback !== "undefined") {
+    cancelIdleCallback(id);
+  } else {
+    window.clearTimeout(id);
+  }
+}
+
 /** Defers BlenderModel mount until after idle to improve INP - loads 3D only when browser is free */
 function DeferredBlenderModel(props: React.ComponentProps<typeof BlenderModel>) {
   const [mounted, setMounted] = React.useState(false);
   React.useEffect(() => {
-    const id = requestIdleCallback(() => setMounted(true), { timeout: 500 });
-    return () => cancelIdleCallback(id);
+    const id = scheduleIdle(() => setMounted(true), { timeout: 500 });
+    return () => cancelScheduledIdle(id);
   }, []);
   if (!mounted) return PLACEHOLDER;
   return <BlenderModel {...props} />;
