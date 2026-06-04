@@ -12,7 +12,22 @@
     "goHome": "Go to home"
   },
   "home": {
-    "tagline": "Web design and digital visibility"
+    "tagline": "Web design and digital visibility",
+    "heroHeading1": "WE DESIGN DIGITAL",
+    "heroHeading2": "SOLUTIONS WITH",
+    "heroHeadingAccent": "IDENTITY.",
+    "heroDescription": "We design websites, automations and digital solutions built to streamline processes, improve your clients' experience and add more value to your business.",
+    "heroCta": "Schedule a meeting"
+  },
+  "howWeWork": {
+    "title": "HOW WE WORK",
+    "step1Title": "Clarity",
+    "step1Desc": "We design simple, intuitive and easy-to-understand experiences. We believe technology should bring order, not complexity.",
+    "step2Title": "Functionality",
+    "step2Desc": "Every solution is designed to solve real needs, streamline tasks and support daily business operations.",
+    "step3Title": "Intentional Design",
+    "step3Desc": "We take care of every visual detail to create modern, coherent experiences aligned with each project's identity.",
+    "cta": "Write to us and we'll tell you more"
   },
   "philosophy": {
     "title": "Our Philosophy | Web Design, Visual Identity & Digital Presence",
@@ -39,10 +54,10 @@
     "presenciaEnRedes": "YOUR PRESENCE ON SOCIAL MEDIA",
     "presenciaEnRedesMini": "A visual and strategic base",
     "presenciaEnRedesFull": "A visual and strategic base to start communicating your brand on social media professionally. Ideal for ventures or projects that want to launch their presence on Instagram with a clear identity, coherent content and initial planning that facilitates maintaining activity.<br></br>Includes:<br></br><ul><li>30 edited photos (Image optimization for social media, taking care of color, framing and visual style)</li><li>9 initial feed posts (Designed according to the brand's visual identity to create an attractive and coherent profile from the start)</li><li>Content calendar for one month (Planning of ideas and publication topics to maintain ordered and constant communication)</li><li>Adaptation of existing logo (If necessary, so it works correctly on social media)</li></ul>",
-    "landingPage": "LANDING PAGE",
+    "landingPage": "INFORMATIVE WEB",
     "landingPageMini": "A simple single-section web page",
     "landingPageFull": "A simple single-section web page where your business, services or products and contact methods are displayed.",
-    "ecommerce": "ECOMMERCE (ONLINE STORE)",
+    "ecommerce": "COMMERCIAL WEB",
     "ecommerceMini": "Online store to sell your products",
     "ecommerceFull": "Development of an online store where your clients can view products, add them to the cart and make purchases.<br></br>Includes:<br></br><ul><li>Product catalog</li><li>Shopping cart</li><li>Payment method integration (e.g. Mercado Pago)</li><li>Management panel for prices and stock</li></ul>",
     "paginasPersonalizadas": "CUSTOM PAGES",
@@ -54,7 +69,7 @@
     "brandingLogotipo": "BRANDING AND LOGO",
     "brandingLogotipoMini": "Logo design and visual style",
     "brandingLogotipoFull": "Logo design and visual style for your brand to maintain consistency on web, social media or print material.<br></br>Includes:<br></br><ul><li>Logo design</li><li>Typography</li><li>Brand colors</li><li>Visual guidelines</li></ul>",
-    "mantenimientoWeb": "WEB MAINTENANCE",
+    "mantenimientoWeb": "TECHNICAL SUPPORT",
     "mantenimientoWebMini": "Technical updates and site support",
     "mantenimientoWebFull": "Monthly service that includes technical updates, content changes and general site support. (Varies according to website complexity)",
     "hostingDominio": "HOSTING AND DOMAIN",
@@ -70,6 +85,9 @@
     "website": "www.vhetra.com.ar"
   },
   "contact": {
+    "spaHeading1": "TELL US WHAT YOU NEED.",
+    "spaHeading2": "WE'LL HELP YOU",
+    "spaHeadingAccent": "MAKE IT HAPPEN.",
     "title": "Every identity begins with a conversation",
     "letsTalk": "let's talk",
     "instagramTitle": "INSTAGRAM",
@@ -80,6 +98,10 @@
     "whatsappAction": "Let's connect and take the first step."
   },
   "projects": {
+    "spaHeading": "EVERY PROJECT HAS ITS OWN IDENTITY, BUT THEY ALL SHARE THE SAME GOAL:",
+    "spaAccent": "CREATING CLEAR, FUNCTIONAL AND MEMORABLE EXPERIENCES.",
+    "spaCta": "Write to us and let's start yours",
+    "viewAll": "SOME OF OUR PROJECTS",
     "heading1": "Different visions, one purpose,",
     "heading2": "transforming choices into identity.",
     "subtitle": "Here we share some of the projects that reflect that result.",

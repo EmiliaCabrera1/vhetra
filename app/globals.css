@@ -8,7 +8,7 @@
   --font-licorice: "Licorice", cursive;
   --font-manrope: "Manrope", sans-serif;
   --color-blanco: #f7f7f7;
-  --color-tiza: #F5F0EA;
+  --color-tiza: #f5f0ea;
   --color-card: rgba(1, 1, 1, 0.8);
   --color-azulo: #010101;
   --color-card-destacada: rgba(168, 40, 17, 0.7);
@@ -17,10 +17,12 @@
   --color-accent: rgba(168, 40, 17, 1);
 }
 
-html,
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  overflow: hidden;
-  height: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -51,7 +53,8 @@ canvas {
 /* Write-on animation for Licorice font - text reveals as if written by hand */
 .licorice-write-on {
   clip-path: inset(0 100% 0 0);
-  animation: licorice-write-on var(--licorice-duration, 1.5s) ease-out var(--licorice-delay, 0s) forwards;
+  animation: licorice-write-on var(--licorice-duration, 1.5s) ease-out
+    var(--licorice-delay, 0s) forwards;
 }
 
 @keyframes licorice-write-on {
@@ -295,7 +298,6 @@ canvas {
 }
 
 @keyframes respira {
-
   0%,
   100% {
     transform: scale(1);
@@ -314,7 +316,6 @@ canvas {
 }
 
 @keyframes flecha-float {
-
   0%,
   100% {
     transform: rotate(-15deg) translateY(0);
@@ -329,7 +330,9 @@ canvas {
 .scroll-reveal {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  transition:
+    opacity 0.5s ease-out,
+    transform 0.5s ease-out;
 }
 
 .scroll-reveal.visible {
@@ -358,5 +361,15 @@ canvas {
 
   to {
     opacity: 1;
+  }
+}
+
+@keyframes projects-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
   }
 }

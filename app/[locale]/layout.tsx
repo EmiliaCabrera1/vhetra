@@ -23,12 +23,8 @@ export default async function LocaleLayout({ children, params }: Props) {
   const messages = await getMessages();
 
   return (
-    <div className="relative z-20 h-full flex flex-col min-h-0">
-      <NextIntlClientProvider messages={messages}>
-        <div className="flex-1 min-h-0 flex flex-col">
-          {children}
-        </div>
-      </NextIntlClientProvider>
-    </div>
+    <NextIntlClientProvider messages={messages}>
+      {children}
+    </NextIntlClientProvider>
   );
 }

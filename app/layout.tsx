@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { getLocale } from "next-intl/server";
-import Image from "next/image";
 import "./globals.css";
-import { ParallaxBg } from "./components/ParallaxBg";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
@@ -97,19 +95,7 @@ export default async function RootLayout({
         <link rel="preload" href="/img/bg.webp" as="image" />
       </head>
       <body className="antialiased">
-        <main className="relative h-screen-dynamic w-screen-dynamic flex flex-col overflow-hidden">
-          <ParallaxBg />
-
-          {children}
-
-          <Image
-            src="/accent/flechaIzquierda.svg"
-            alt="BackgroundDetail"
-            width={49}
-            height={308}
-            className="absolute bottom-[5%] left-0 w-11.25 z-10"
-          />
-        </main>
+        {children}
         <Analytics />
         <SpeedInsights />
       </body>

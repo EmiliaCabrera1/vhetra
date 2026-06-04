@@ -12,7 +12,22 @@
     "goHome": "Ir al inicio"
   },
   "home": {
-    "tagline": "Diseño web y presencia digital"
+    "tagline": "Diseño web y presencia digital",
+    "heroHeading1": "DISEÑAMOS SOLUCIONES",
+    "heroHeading2": "DIGITALES CON",
+    "heroHeadingAccent": "IDENTIDAD.",
+    "heroDescription": "Diseñamos sitios web, automatizaciones y soluciones digitales pensadas para agilizar procesos, mejorar la experiencia de tus clientes y darle más valor a tu negocio.",
+    "heroCta": "Agendar una reunión"
+  },
+  "howWeWork": {
+    "title": "NUESTRA FORMA DE TRABAJAR",
+    "step1Title": "Claridad",
+    "step1Desc": "Diseñamos experiencias simples, intuitivas y fáciles de entender. Creemos que la tecnología debe ordenar, no complicar.",
+    "step2Title": "Funcionalidad",
+    "step2Desc": "Cada solución está pensada para resolver necesidades reales, agilizar tareas y acompañar el funcionamiento diario de un negocio.",
+    "step3Title": "Diseño con intención",
+    "step3Desc": "Cuidamos cada detalle visual para crear experiencias modernas, coherentes y alineadas con la identidad de cada proyecto.",
+    "cta": "Escríbinos y te contamos más"
   },
   "philosophy": {
     "title": "Filosofía de Vhetra | Diseño web, identidad visual y presencia digital",
@@ -39,10 +54,10 @@
     "presenciaEnRedes": "TU PRESENCIA EN REDES",
     "presenciaEnRedesMini": "Una base visual y estratégica",
     "presenciaEnRedesFull": "Una base visual y estratégica para comenzar a comunicar tu marca en redes sociales de forma profesional. Ideal para emprendimientos o proyectos que quieren lanzar su presencia en Instagram con una identidad clara, contenido coherente y una planificación inicial que facilite mantener la actividad.<br></br>Incluye:<br></br><ul><li>30 fotos editadas (Optimización de imágenes para redes sociales, cuidando color, encuadre y estilo visual)</li><li>9 publicaciones iniciales en feed (Diseñadas acorde a la identidad visual de la marca para crear un perfil atractivo y coherente desde el inicio)</li><li>Calendario de contenido por un mes (Planificación de ideas y temas de publicaciones para mantener una comunicación ordenada y constante)</li><li>Adaptación del logotipo existente (En caso de ser necesario, para que funcione correctamente en redes sociales)</li></ul>",
-    "landingPage": "LANDING PAGE",
+    "landingPage": "WEB INFORMATIVA",
     "landingPageMini": "Una página web simple de una sola sección",
     "landingPageFull": "Una página web simple de una sola sección donde se muestra tu negocio, servicios o productos y formas de contacto.",
-    "ecommerce": "ECOMMERCE (TIENDA ONLINE)",
+    "ecommerce": "WEB COMERCIAL",
     "ecommerceMini": "Tienda online para vender tus productos",
     "ecommerceFull": "Desarrollo de tienda online donde tus clientes pueden visualizar productos, agregarlos al carrito y realizar compras.<br></br>Incluye:<br></br><ul><li>Catálogo de productos</li><li>Carrito de compras</li><li>Integración con medios de pago (ej: Mercado Pago)</li><li>Panel de gestión para administrar precios y stock</li></ul>",
     "paginasPersonalizadas": "PÁGINAS PERSONALIZADAS",
@@ -54,7 +69,7 @@
     "brandingLogotipo": "BRANDING Y LOGOTIPO",
     "brandingLogotipoMini": "Diseño de logotipo y estilo visual",
     "brandingLogotipoFull": "Diseño de logotipo y estilo visual de tu marca para mantener coherencia en web, redes sociales o material impreso.<br></br>Incluye:<br></br><ul><li>Diseño de logotipo</li><li>Tipografías</li><li>Colores de marca</li><li>Lineamientos visuales</li></ul>",
-    "mantenimientoWeb": "MANTENIMIENTO WEB",
+    "mantenimientoWeb": "SOPORTE TÉCNICO",
     "mantenimientoWebMini": "Actualizaciones técnicas y soporte del sitio",
     "mantenimientoWebFull": "Servicio mensual que incluye actualizaciones técnicas, cambios de contenido y soporte general del sitio. (Varía según la complejidad del sitio web)",
     "hostingDominio": "HOSTING Y DOMINIO",
@@ -70,6 +85,9 @@
     "website": "www.vhetra.com.ar"
   },
   "contact": {
+    "spaHeading1": "CONTANOS QUÉ NECESITÁS.",
+    "spaHeading2": "NOSOTROS TE AYUDAMOS A",
+    "spaHeadingAccent": "HACERLO REALIDAD.",
     "title": "Toda identidad comienza con una conversación",
     "letsTalk": "hablemos",
     "instagramTitle": "INSTAGRAM",
@@ -80,6 +98,10 @@
     "whatsappAction": "Conectemos y demos el primer paso."
   },
   "projects": {
+    "spaHeading": "CADA PROYECTO TIENE SU PROPIA IDENTIDAD, PERO TODOS COMPARTEN EL MISMO OBJETIVO:",
+    "spaAccent": "CREAR EXPERIENCIAS CLARAS, FUNCIONALES Y MEMORABLES.",
+    "spaCta": "Escríbinos y empezamos el tuyo",
+    "viewAll": "ALGUNOS DE NUESTROS PROYECTOS",
     "heading1": "Diferentes visiones, un mismo propósito,",
     "heading2": "transformar elecciones en identidad.",
     "subtitle": "Aquí compartimos algunos de los proyectos que reflejan ese resultado.",
