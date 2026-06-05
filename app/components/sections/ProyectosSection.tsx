@@ -1,12 +1,17 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import ProyectoCardChica from "@/app/components/ProyectoCardChica";
-import ProyectoCardGrande from "@/app/components/ProyectoCardGrande";
 import { Proyecto } from "@/app/model/proyecto.type";
 
-const whatsappPhone = process.env.NEXT_PUBLIC_WHATSAPP_PHONE ?? "5492616050615";
+const ProyectoCardGrande = dynamic(
+  () => import("@/app/components/ProyectoCardGrande"),
+  { ssr: false },
+);
+
+const whatsappPhone = process.env.NEXT_PUBLIC_WHATSAPP_PHONE ?? "5493875038714";
 
 const whatsappHref = `https://wa.me/${whatsappPhone}?text=${encodeURIComponent(
   "Hola! Me gustaría empezar mi proyecto con Vhetra.",
@@ -86,7 +91,7 @@ export function ProyectosSection() {
         imagen: "/projects/fili2.svg",
         webUrl: "https://www.instagram.com/filisuites_oax/",
         ctaLabelKey: "visitInstagram",
-        imgClassName: "flex w-30 h-30 -mt-3",
+        imgClassName: "flex w-[7.5rem] h-[7.5rem] -mt-3",
       },
       {
         id: 4,
@@ -131,7 +136,10 @@ export function ProyectosSection() {
     [t],
   );
 
-  const proyectosLoop = [...proyectos, ...proyectos, ...proyectos];
+  const proyectosLoop = useMemo(
+    () => [...proyectos, ...proyectos, ...proyectos],
+    [proyectos],
+  );
 
   useEffect(() => {
     const carousel = carouselRef.current;
@@ -170,42 +178,43 @@ export function ProyectosSection() {
   return (
     <section
       id="proyectos"
-      className="relative overflow-hidden bg-cover bg-center bg-no-repeat px-6 py-24 sm:px-12 lg:px-20 lg:py-32"
+      className="snap-panel section-render-window relative overflow-hidden bg-cover bg-center bg-no-repeat px-6 py-14 sm:px-12 sm:py-16 lg:px-20 lg:py-20"
       style={{ backgroundImage: "url(/img/bg.webp)" }}
     >
       <div className="pointer-events-none absolute inset-0 bg-[#F9F9F9]/20" />
 
-      <div className="relative mb-24 max-w-6xl">
-        <div className="mb-8 h-px w-24 origin-left bg-[#A82811]" />
+      <div className="section-panel-content relative">
+      <div className="relative mb-8 max-w-6xl sm:mb-10 lg:mb-12">
+        <div className="mb-4 h-px w-20 origin-left bg-[#A82811] sm:mb-6 sm:w-24" />
 
-        <p className="mb-5 font-manrope text-xs uppercase tracking-[0.18em] text-black/50">
+        <p className="mb-3 font-manrope text-xs uppercase tracking-[0.18em] text-black/50 sm:mb-4">
           Portfolio seleccionado
         </p>
 
-        <h2 className="font-khanda text-6xl font-light uppercase leading-[0.78] tracking-[-0.085em] text-black sm:text-7xl lg:text-[7.2rem]">
+        <h2 className="font-khanda text-5xl font-light uppercase leading-[0.8] tracking-[-0.075em] text-black sm:text-6xl lg:text-[5.8rem]">
           {t("spaHeading")}
         </h2>
 
-        <h2 className="mt-1 w-fit font-khanda text-6xl font-light uppercase leading-[0.78] tracking-[-0.085em] text-[#A82811] sm:text-7xl lg:text-[7.2rem]">
+        <h2 className="mt-1 w-fit font-khanda text-5xl font-light uppercase leading-[0.8] tracking-[-0.075em] text-[#A82811] sm:text-6xl lg:text-[5.8rem]">
           {t("spaAccent")}
         </h2>
       </div>
 
-      <div className="group/carousel relative -mx-6 overflow-hidden py-14 sm:-mx-12 lg:-mx-20">
-        <div className="pointer-events-none absolute left-0 top-0 z-20 h-full w-28 bg-gradient-to-r from-[#F9F9F9]/95 to-transparent" />
-        <div className="pointer-events-none absolute right-0 top-0 z-20 h-full w-28 bg-gradient-to-l from-[#F9F9F9]/95 to-transparent" />
+      <div className="group/carousel relative -mx-6 overflow-hidden py-4 sm:-mx-12 sm:py-6 lg:-mx-20 lg:py-8">
+        <div className="pointer-events-none absolute left-0 top-0 z-20 h-full w-14 bg-gradient-to-r from-[#F9F9F9]/95 to-transparent sm:w-20" />
+        <div className="pointer-events-none absolute right-0 top-0 z-20 h-full w-14 bg-gradient-to-l from-[#F9F9F9]/95 to-transparent sm:w-20" />
 
         <div
           ref={carouselRef}
           className="scrollbar-hide overflow-x-auto scroll-smooth px-6 sm:px-12 lg:px-20"
         >
-          <div className="flex w-max gap-8 py-10 pr-10 group-hover/carousel:animate-[projects-marquee_35s_linear_infinite]">
+          <div className="flex w-max gap-4 py-5 pr-6 group-hover/carousel:animate-[projects-marquee_35s_linear_infinite] sm:gap-6 sm:py-7 lg:gap-8">
             {proyectosLoop.map((proyecto, index) => (
               <div
                 key={`${proyecto.id}-${index}`}
                 data-project-card
                 className="
-                  w-[280px]
+                  w-[240px]
                   shrink-0
                   transition-all
                   duration-500
@@ -216,8 +225,8 @@ export function ProyectosSection() {
                   hover:!scale-[1.08]
                   hover:!opacity-100
                   hover:drop-shadow-[0_28px_55px_rgba(0,0,0,0.22)]
-                  sm:w-[340px]
-                  lg:w-[380px]
+                  sm:w-[300px]
+                  lg:w-[340px]
                 "
               >
                 <ProyectoCardChica
@@ -232,7 +241,7 @@ export function ProyectosSection() {
         </div>
       </div>
 
-      <div className="relative mt-2 flex justify-end">
+      <div className="relative mt-1 flex justify-end">
         <button
           type="button"
           onClick={scrollProyecto}
@@ -242,33 +251,33 @@ export function ProyectosSection() {
             items-center
             gap-4
             font-khanda
-            text-3xl
+            text-[clamp(1.05rem,5vw,1.5rem)]
             font-light
             uppercase
             tracking-[-0.03em]
             text-black
             transition-all
             duration-300
-            hover:gap-7
+            hover:gap-6
             hover:font-medium
           "
         >
           {t("viewAll")}
-          <span className="text-5xl font-light leading-none transition-all duration-300 group-hover/button:translate-x-2 group-hover/button:scale-110 group-hover/button:font-medium">
+          <span className="text-[clamp(2rem,8vw,2.5rem)] font-light leading-none transition-all duration-300 group-hover/button:translate-x-2 group-hover/button:scale-110 group-hover/button:font-medium">
             ⟶
           </span>
         </button>
       </div>
 
-      <div className="relative mt-14 flex justify-center">
+      <div className="relative mt-6 flex justify-center sm:mt-8">
         <a
           href={whatsappHref}
           target="_blank"
           rel="noopener noreferrer"
           className="
             group
+            vhetra-cta
             inline-flex
-            w-full
             items-center
             justify-between
             overflow-hidden
@@ -276,10 +285,7 @@ export function ProyectosSection() {
             border
             border-black
             bg-black
-            px-8
-            py-4
             font-khanda
-            text-2xl
             font-light
             tracking-[-0.02em]
             text-white
@@ -288,17 +294,15 @@ export function ProyectosSection() {
             hover:w-full
             hover:border-[#A82811]
             hover:bg-[#A82811]
-            hover:px-10
-            sm:w-[460px]
-            sm:hover:w-[500px]
           "
         >
           <span>{t("spaCta")}</span>
 
-          <span className="text-5xl font-light leading-none transition-transform duration-300 group-hover:translate-x-2">
+          <span className="vhetra-cta-arrow font-light transition-transform duration-300 group-hover:translate-x-2">
             ⟶
           </span>
         </a>
+      </div>
       </div>
 
       {selectedProyecto && (

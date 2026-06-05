@@ -1,5 +1,5 @@
 'use client';
-import { Suspense, useEffect, useRef, useState } from 'react';
+import { Suspense, useCallback, useEffect, useRef, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { useAnimations, useGLTF } from '@react-three/drei';
 import { Group } from 'three';
@@ -13,59 +13,54 @@ function Model({ path, scale = 1 }: { path: string, scale?: number }) {
 export function RotatingModel({ path, scale = 1, canInteract }: { path: string, scale?: number, canInteract: boolean }) {
     const { scene, animations } = useGLTF(path)
     const ref = useRef<Group>(null!)
-
-    const [dragging, setDragging] = useState(false)
-    const [lastPos, setLastPos] = useState<{ x: number; y: number } | null>(null)
+    const draggingRef = useRef(false)
+    const lastPosRef = useRef<{ x: number; y: number } | null>(null)
 
     // Desktop (mouse)
     useEffect(() => {
         const handlePointerMove = (e: PointerEvent) => {
-            if (dragging && ref.current) {
+            if (draggingRef.current && ref.current) {
                 ref.current.rotation.y += e.movementX * 0.01
                 ref.current.rotation.x += e.movementY * 0.01
             }
         }
         const handlePointerUp = () => {
-            setDragging(false)
-            setLastPos(null)
+            draggingRef.current = false
+            lastPosRef.current = null
         }
 
-        if (dragging) {
-            window.addEventListener('pointermove', handlePointerMove)
-            window.addEventListener('pointerup', handlePointerUp)
-        }
+        window.addEventListener('pointermove', handlePointerMove)
+        window.addEventListener('pointerup', handlePointerUp)
         return () => {
             window.removeEventListener('pointermove', handlePointerMove)
             window.removeEventListener('pointerup', handlePointerUp)
         }
-    }, [dragging])
+    }, [])
 
     // Mobile (touch)
     useEffect(() => {
         const handleTouchMove = (e: TouchEvent) => {
-            if (dragging && ref.current && lastPos) {
+            if (draggingRef.current && ref.current && lastPosRef.current) {
                 const touch = e.touches[0]
-                const dx = touch.clientX - lastPos.x
-                const dy = touch.clientY - lastPos.y
+                const dx = touch.clientX - lastPosRef.current.x
+                const dy = touch.clientY - lastPosRef.current.y
                 ref.current.rotation.y += dx * 0.01
                 ref.current.rotation.x += dy * 0.01
-                setLastPos({ x: touch.clientX, y: touch.clientY })
+                lastPosRef.current = { x: touch.clientX, y: touch.clientY }
             }
         }
         const handleTouchEnd = () => {
-            setDragging(false)
-            setLastPos(null)
+            draggingRef.current = false
+            lastPosRef.current = null
         }
 
-        if (dragging) {
-            window.addEventListener('touchmove', handleTouchMove)
-            window.addEventListener('touchend', handleTouchEnd)
-        }
+        window.addEventListener('touchmove', handleTouchMove)
+        window.addEventListener('touchend', handleTouchEnd)
         return () => {
             window.removeEventListener('touchmove', handleTouchMove)
             window.removeEventListener('touchend', handleTouchEnd)
         }
-    }, [dragging, lastPos])
+    }, [])
 
     const { actions } = useAnimations(animations, scene)
 
@@ -79,12 +74,18 @@ export function RotatingModel({ path, scale = 1, canInteract }: { path: string, 
         })
     }, [actions])
 
+    const handlePointerDown = useCallback((event: { clientX: number; clientY: number }) => {
+        if (canInteract) {
+            draggingRef.current = true
+            lastPosRef.current = { x: event.clientX, y: event.clientY }
+        }
+    }, [canInteract])
 
     return (
         <group
             ref={ref}
             scale={scale}
-            onPointerDown={() => { if (canInteract) setDragging(true) }}
+            onPointerDown={handlePointerDown}
             receiveShadow
             castShadow
         >
@@ -108,7 +109,6 @@ function useIsMobile() {
 }
 
 export default function BlenderModel({ path, type = 'simple', scale, canInteract = false }: { path: string, type: 'autoRotate' | 'simple' | 'animated', scale?: number, canInteract?: boolean }) {
-    useGLTF.preload(path);
     const isMobile = useIsMobile();
 
     const renderModel = () => {

@@ -44,17 +44,17 @@ export const NavBar = () => {
   };
 
   return (
-    <nav className="fixed mt-8 top-0 left-0 right-0 z-50 bg-black border-b border-zinc-800">
-      <div className="relative flex items-center px-4 sm:px-8 py-4">
+    <nav className="fixed top-0 left-0 right-0 z-50 mt-4 border-b border-zinc-800 bg-black sm:mt-6 lg:mt-8">
+      <div className="relative flex items-center px-4 py-3 sm:px-8 sm:py-4">
         {/* Desktop nav */}
-        <ul className="hidden md:flex absolute left-1/2 -translate-x-1/2 gap-3 sm:gap-5 md:gap-8">
+        <ul className="absolute left-1/2 hidden -translate-x-1/2 gap-4 md:flex lg:gap-8">
           {SECTIONS.map(({ key, id }) => (
             <li key={id}>
               <a
                 href={`#${id}`}
                 onClick={scrollTo(id)}
                 className={twMerge(
-                  "text-white text-xs sm:text-sm md:text-[15px] lg:text-base font-extralight uppercase tracking-[0.2em] transition-opacity duration-300",
+                  "text-white text-[clamp(0.72rem,1.15vw,1rem)] font-extralight uppercase tracking-[0.16em] transition-opacity duration-300 lg:tracking-[0.2em]",
                   activeSection === id
                     ? "opacity-100"
                     : "opacity-50 hover:opacity-80",
@@ -93,7 +93,7 @@ export const NavBar = () => {
         </button>
 
         {/* Idiomas */}
-        <div className="ml-auto flex gap-2 text-xs items-center z-50">
+        <div className="z-50 ml-auto flex items-center gap-2 text-[clamp(0.7rem,3vw,0.8rem)]">
           <Link
             href={pathname}
             locale="es"

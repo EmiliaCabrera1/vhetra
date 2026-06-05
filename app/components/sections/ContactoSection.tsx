@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import CardContacto from "@/app/components/CardContacto";
 
-const whatsappPhone = process.env.NEXT_PUBLIC_WHATSAPP_PHONE ?? "5492616050615";
+const whatsappPhone = process.env.NEXT_PUBLIC_WHATSAPP_PHONE ?? "5493875038714";
 
 const whatsappHref = `https://wa.me/${whatsappPhone}?text=${encodeURIComponent(
   "Hola !\nTe contacto desde la web de VHETRA.",
@@ -45,31 +45,31 @@ export function ContactoSection() {
   return (
     <section
       id="contacto"
-      className="relative overflow-hidden bg-cover bg-center bg-no-repeat px-6 py-24 sm:px-12 lg:px-20 lg:py-32"
+      className="snap-panel section-render-window relative overflow-hidden bg-cover bg-center bg-no-repeat px-6 py-14 sm:px-12 sm:py-16 lg:px-20 lg:py-20"
       style={{ backgroundImage: "url(/img/bg.webp)" }}
     >
       <div className="pointer-events-none absolute inset-0 bg-[#F9F9F9]/20" />
 
-      <div className="relative grid items-end gap-16 lg:grid-cols-[1.1fr_0.9fr]">
-        <div className="flex flex-col gap-12">
+      <div className="section-panel-content relative grid items-end gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
+        <div className="flex flex-col gap-8 sm:gap-10">
           <div>
-            <div className="mb-8 h-px w-24 bg-[#A82811]" />
+            <div className="mb-4 h-px w-20 bg-[#A82811] sm:mb-6 sm:w-24" />
 
-            <p className="mb-5 font-manrope text-xs uppercase tracking-[0.18em] text-black/50">
+            <p className="mb-3 font-manrope text-xs uppercase tracking-[0.18em] text-black/50 sm:mb-4">
               Contacto directo
             </p>
 
-            <h2 className="font-khanda text-6xl font-light uppercase leading-[0.78] tracking-[-0.085em] text-black sm:text-7xl lg:text-[7rem]">
+            <h2 className="font-khanda text-5xl font-light uppercase leading-[0.8] tracking-[-0.075em] text-black sm:text-6xl lg:text-[5.8rem]">
               {t("spaHeading1")}
             </h2>
 
-            <h2 className="mt-1 font-khanda text-6xl font-light uppercase leading-[0.78] tracking-[-0.085em] text-black sm:text-7xl lg:text-[7rem]">
+            <h2 className="mt-1 font-khanda text-5xl font-light uppercase leading-[0.8] tracking-[-0.075em] text-black sm:text-6xl lg:text-[5.8rem]">
               {t("spaHeading2")}{" "}
               <span className="text-[#A82811]">{t("spaHeadingAccent")}</span>
             </h2>
           </div>
 
-          <div className="flex max-w-2xl flex-col gap-5">
+          <div className="flex max-w-2xl flex-col gap-3 sm:gap-4">
             {contactos.map((contacto) => (
               <div
                 key={contacto.titleKey}

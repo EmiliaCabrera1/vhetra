@@ -8,7 +8,7 @@ type Props = {
   params: Promise<{ locale: string }>;
 };
 
-const whatsappPhone = process.env.NEXT_PUBLIC_WHATSAPP_PHONE ?? "5216242661967";
+const whatsappPhone = process.env.NEXT_PUBLIC_WHATSAPP_PHONE ?? "5493875038714";
 const whatsappHref = `https://wa.me/${whatsappPhone}?text=${encodeURIComponent("Hola !\nTe contacto desde la web de VHETRA.")}`;
 
 const CONTACTOS = [

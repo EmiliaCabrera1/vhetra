@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { createPortal } from "react-dom";
 import { useTranslations } from "next-intl";
 import { Proyecto } from "@/app/model/proyecto.type";
@@ -14,11 +14,6 @@ interface ProyectoCardGrandeProps {
 
 const ProyectoCardGrande = ({ proyecto, onClose }: ProyectoCardGrandeProps) => {
   const [isClosing, setIsClosing] = useState(false);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   const handleClose = () => {
     setIsClosing(true);
@@ -111,7 +106,7 @@ const ProyectoCardGrande = ({ proyecto, onClose }: ProyectoCardGrandeProps) => {
               href={webUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="ripple-btn inline-flex justify-center items-center px-3.5 py-[5px] min-w-[8rem] h-10 sm:h-12 bg-zinc-300 rounded-lg text-slate-700/80 text-sm sm:text-base md:text-lg font-normal hover:bg-zinc-200 transition-colors"
+              className="ripple-btn inline-flex h-10 min-w-[7rem] items-center justify-center rounded-lg bg-zinc-300 px-3 py-[5px] text-[clamp(0.85rem,3.6vw,1.05rem)] font-normal text-slate-700/80 transition-colors hover:bg-zinc-200 sm:h-12 sm:min-w-[8rem] sm:px-3.5"
             >
               {ctaLabel}
             </Link>
@@ -121,7 +116,7 @@ const ProyectoCardGrande = ({ proyecto, onClose }: ProyectoCardGrandeProps) => {
     </div>
   );
 
-  if (!mounted || typeof document === "undefined") {
+  if (typeof document === "undefined") {
     return null;
   }
 

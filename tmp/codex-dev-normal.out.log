@@ -1,0 +1,20 @@
+
+> vhetra@0.1.0 dev C:\Users\emi22\Desktop\vhetra
+> next dev --webpack
+
+   ▲ Next.js 16.0.10 (webpack)
+   - Local:         http://localhost:3000
+   - Network:       http://192.168.101.10:3000
+
+ ✓ Starting...
+ ✓ Ready in 2.7s
+ ○ Compiling /[locale] ...
+ GET /es 200 in 2.3s (compile: 1215ms, proxy.ts: 535ms, render: 576ms)
+ GET /es 200 in 14.6s (compile: 13.5s, proxy.ts: 201ms, render: 895ms)
+ GET /es 200 in 83ms (compile: 21ms, proxy.ts: 13ms, render: 49ms)
+ GET /es 200 in 58ms (compile: 17ms, proxy.ts: 7ms, render: 33ms)
+ GET /es 200 in 117ms (compile: 35ms, proxy.ts: 15ms, render: 67ms)
+ GET /es 200 in 527ms (compile: 318ms, proxy.ts: 19ms, render: 189ms)
+ GET /es 200 in 132ms (compile: 26ms, proxy.ts: 20ms, render: 86ms)
+ GET /es 200 in 120ms (compile: 18ms, proxy.ts: 22ms, render: 79ms)
+ GET /es 200 in 221ms (compile: 126ms, proxy.ts: 8ms, render: 88ms)

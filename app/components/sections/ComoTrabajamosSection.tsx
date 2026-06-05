@@ -2,7 +2,7 @@
 
 import { useTranslations } from "next-intl";
 
-const whatsappPhone = process.env.NEXT_PUBLIC_WHATSAPP_PHONE ?? "5492616050615";
+const whatsappPhone = process.env.NEXT_PUBLIC_WHATSAPP_PHONE ?? "5493875038714";
 
 const whatsappHref = `https://wa.me/${whatsappPhone}?text=${encodeURIComponent(
   "Hola! Me gustaría saber más sobre cómo trabajan en Vhetra.",
@@ -20,26 +20,26 @@ export function ComoTrabajamosSection() {
   return (
     <section
       id="filosofia"
-      className="relative overflow-hidden bg-[#171717] px-6 py-24 sm:px-12 lg:px-20 lg:py-32"
+      className="snap-panel section-render-window relative overflow-hidden bg-[#171717] px-6 py-14 sm:px-12 sm:py-16 lg:px-20 lg:py-20"
     >
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(168,40,17,0.18),transparent_35%)]" />
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.05),transparent_38%)]" />
       <div className="pointer-events-none absolute inset-0 bg-black/30" />
 
-      <div className="relative z-10 mx-auto max-w-7xl">
-        <div className="mb-20 max-w-6xl">
-          <div className="mb-8 h-px w-24 bg-[#A82811]" />
+      <div className="section-panel-content relative z-10 mx-auto max-w-7xl">
+        <div className="mb-10 max-w-6xl sm:mb-12 lg:mb-14">
+          <div className="mb-4 h-px w-20 bg-[#A82811] sm:mb-6 sm:w-24" />
 
-          <p className="mb-5 font-manrope text-xs uppercase tracking-[0.18em] text-white/45">
+          <p className="mb-3 font-manrope text-xs uppercase tracking-[0.18em] text-white/45 sm:mb-4">
             Nuestra visión
           </p>
 
-          <h2 className="font-khanda text-6xl font-light uppercase leading-[0.78] tracking-[-0.085em] text-[#F9F9F9] sm:text-7xl lg:text-[7rem]">
+          <h2 className="font-khanda text-5xl font-light uppercase leading-[0.8] tracking-[-0.075em] text-[#F9F9F9] sm:text-6xl lg:text-[5.8rem]">
             {t("title")}
           </h2>
         </div>
 
-        <div className="group/steps grid grid-cols-1 gap-8 md:grid-cols-3 lg:gap-6">
+        <div className="group/steps grid grid-cols-1 gap-5 sm:gap-6 md:grid-cols-3 lg:gap-6">
           {STEPS.map(({ num, titleKey, descKey }) => (
             <article
               key={num}
@@ -55,15 +55,16 @@ export function ComoTrabajamosSection() {
               <span
                 className="
       relative
-      mb-12
+      mb-8
       w-fit
       font-khanda
-      text-8xl
+      text-6xl
       font-light
       leading-none
       tracking-[-0.08em]
       text-[#F9F9F9]
-      sm:text-9xl
+      sm:text-7xl
+      lg:text-8xl
     "
               >
                 {num}
@@ -85,15 +86,16 @@ export function ComoTrabajamosSection() {
 
               <h3
                 className="
-      mb-5
+      mb-3
       font-khanda
-      text-4xl
+      text-3xl
       font-light
       uppercase
       leading-[0.85]
       tracking-[-0.06em]
       text-[#F9F9F9]
-      sm:text-5xl
+      sm:text-4xl
+      lg:text-5xl
     "
               >
                 {t(titleKey)}
@@ -104,7 +106,7 @@ export function ComoTrabajamosSection() {
       max-w-[320px]
       font-manrope
       text-sm
-      leading-7
+      leading-6
       text-[#F9F9F9]/68
     "
               >
@@ -114,15 +116,15 @@ export function ComoTrabajamosSection() {
           ))}
         </div>
 
-        <div className="mt-20 flex justify-start md:justify-end">
+        <div className="mt-16 flex justify-start sm:mt-20 md:justify-end lg:mt-24">
           <a
             href={whatsappHref}
             target="_blank"
             rel="noopener noreferrer"
             className="
               group
+              vhetra-cta
               inline-flex
-              w-full
               items-center
               justify-between
               overflow-hidden
@@ -130,10 +132,7 @@ export function ComoTrabajamosSection() {
               border
               border-[#F9F9F9]
               bg-[#F9F9F9]
-              px-8
-              py-4
               font-khanda
-              text-2xl
               font-light
               tracking-[-0.02em]
               text-[#171717]
@@ -141,15 +140,12 @@ export function ComoTrabajamosSection() {
               duration-500
               hover:border-[#A82811]
               hover:bg-[#A82811]
-              hover:px-10
               hover:text-white
-              md:w-[460px]
-              md:hover:w-[500px]
             "
           >
             <span>{t("cta")}</span>
 
-            <span className="text-5xl font-light leading-none transition-transform duration-300 group-hover:translate-x-2">
+            <span className="vhetra-cta-arrow font-light transition-transform duration-300 group-hover:translate-x-2">
               ⟶
             </span>
           </a>

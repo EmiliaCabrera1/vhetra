@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { createPortal } from "react-dom";
 import { Servicio } from "@/app/model/servicio.type";
 import Image from "next/image";
@@ -13,13 +13,8 @@ export const CardGrande = ({
   onClose: () => void;
 }) => {
   const [isClosing, setIsClosing] = useState(false);
-  const [mounted, setMounted] = useState(false);
   const t = useTranslations("common");
   const tWhatsapp = useTranslations("whatsapp");
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   const handleClose = () => {
     setIsClosing(true);
@@ -27,7 +22,7 @@ export const CardGrande = ({
   };
 
   const handleWhatsApp = () => {
-    const phoneNumber = process.env.NEXT_PUBLIC_WHATSAPP_PHONE ?? "5216242661967";
+    const phoneNumber = process.env.NEXT_PUBLIC_WHATSAPP_PHONE ?? "5493875038714";
     const message = tWhatsapp("message", { service: servicio.displayName });
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
@@ -53,7 +48,7 @@ export const CardGrande = ({
           {servicio.descripcionCompleta}
         </div>
         <button
-          className="ripple-btn ml-auto mt-4 w-40 p-2 bg-tiza rounded-lg shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] text-center text-azulo text-xl font-normal shrink-0"
+          className="ripple-btn ml-auto mt-4 w-32 rounded-lg bg-tiza p-2 text-center text-[clamp(1rem,4vw,1.25rem)] font-normal text-azulo shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] sm:w-40 shrink-0"
           onClick={handleWhatsApp}
         >
           {t("contact")}
@@ -62,7 +57,7 @@ export const CardGrande = ({
     </div>
   );
 
-  if (!mounted || typeof document === "undefined") {
+  if (typeof document === "undefined") {
     return null;
   }
 

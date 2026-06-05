@@ -1,11 +1,48 @@
-@import url("https://fonts.googleapis.com/css2?family=Khand:wght@400;500;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Licorice&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Khand";
+  src: url("/fonts/Khand-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Khand";
+  src: url("/fonts/Khand-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Khand";
+  src: url("/fonts/Khand-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Khand";
+  src: url("/fonts/Khand-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Khand";
+  src: url("/fonts/Khand-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
   --breakpoint-xs: 420px;
-  --font-licorice: "Licorice", cursive;
   --font-manrope: "Manrope", sans-serif;
   --color-blanco: #f7f7f7;
   --color-tiza: #f5f0ea;
@@ -21,12 +58,17 @@ html {
   scroll-behavior: smooth;
 }
 
+html,
+body {
+  height: 100%;
+}
+
 body {
   overflow-x: hidden;
 }
 
 body {
-  font-family: khand, Helvetica, sans-serif;
+  font-family: "Khand", Helvetica, sans-serif;
 }
 
 canvas {
@@ -45,22 +87,145 @@ canvas {
   width: 100dvw;
 }
 
+.snap-page {
+  height: 100vh;
+  height: 100dvh;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  overscroll-behavior-y: contain;
+}
+
+.snap-panel {
+  box-sizing: border-box;
+  height: 100vh;
+  height: 100dvh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  overflow: hidden;
+  overscroll-behavior-y: contain;
+}
+
+.section-panel-content {
+  width: 100%;
+}
+
+.vhetra-cta {
+  width: min(100%, var(--cta-w, 23rem));
+  min-height: clamp(2.65rem, 12vw, 3.75rem);
+  gap: clamp(0.7rem, 3vw, 1.2rem);
+  padding: clamp(0.55rem, 2.5vw, 0.9rem) clamp(0.9rem, 5vw, 1.75rem);
+  font-size: clamp(1rem, 5.2vw, 1.5rem);
+  line-height: 0.95;
+}
+
+.vhetra-cta > span:first-child {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.vhetra-cta-arrow {
+  flex-shrink: 0;
+  font-size: clamp(2rem, 9vw, 3rem);
+  line-height: 0.8;
+}
+
+@media (min-width: 640px) {
+  .vhetra-cta {
+    --cta-w: 24rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .vhetra-cta {
+    --cta-w: 26rem;
+  }
+}
+
+@media (hover: hover) and (min-width: 768px) {
+  .vhetra-cta:hover {
+    width: min(100%, calc(var(--cta-w, 23rem) + 2rem));
+  }
+}
+
+@media (max-width: 520px) {
+  .snap-panel {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .section-panel-content {
+    max-width: 100%;
+  }
+
+  .snap-panel h1,
+  .snap-panel h2 {
+    font-size: clamp(2rem, 12vw, 3.2rem);
+    line-height: 0.85;
+  }
+}
+
+@media (max-height: 720px) {
+  .snap-panel h1,
+  .snap-panel h2 {
+    font-size: clamp(2rem, 10vh, 4.2rem);
+    line-height: 0.86;
+  }
+
+  .snap-panel {
+    padding-top: 3.5rem;
+    padding-bottom: 1.25rem;
+  }
+}
+
+.snap-page,
+.snap-panel {
+  scrollbar-width: none;
+}
+
+.snap-page::-webkit-scrollbar,
+.snap-panel::-webkit-scrollbar {
+  display: none;
+}
+
+@supports (animation-timeline: view()) {
+  .section-panel-content {
+    animation: section-panel-in both;
+    animation-range: entry 0% cover 42%;
+    animation-timeline: view(block);
+    filter: blur(8px);
+    opacity: 0;
+    transform: translateY(44px) scale(0.985);
+  }
+}
+
+@keyframes section-panel-in {
+  to {
+    filter: blur(0);
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .snap-page {
+    scroll-behavior: auto;
+  }
+
+  .section-panel-content {
+    animation: none;
+    filter: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
 .h-hero-dynamic {
   flex: 1;
   min-height: 0;
-}
-
-/* Write-on animation for Licorice font - text reveals as if written by hand */
-.licorice-write-on {
-  clip-path: inset(0 100% 0 0);
-  animation: licorice-write-on var(--licorice-duration, 1.5s) ease-out
-    var(--licorice-delay, 0s) forwards;
-}
-
-@keyframes licorice-write-on {
-  to {
-    clip-path: inset(0 0 0 0);
-  }
 }
 
 /* ========== Hero animations ========== */
@@ -381,4 +546,9 @@ canvas {
 
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
+}
+
+.section-render-window {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 980px;
 }

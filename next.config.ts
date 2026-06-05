@@ -6,7 +6,20 @@ const withNextIntl = createNextIntlPlugin();
 const withBundleAnalyzer = bundleAnalyzer({ enabled: process.env.ANALYZE === "true" });
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  poweredByHeader: false,
+  async headers() {
+    return [
+      {
+        source: "/:path*\\.(webp|jpg|jpeg|png|svg|ico|glb|ttf)",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+    ];
+  },
 };
 
 export default withBundleAnalyzer(withNextIntl(nextConfig));
