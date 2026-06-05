@@ -56,7 +56,7 @@ export function ServiciosSection() {
     descripcionCompleta: t.rich(s.fullKey, {
       br: () => <br />,
       ul: (chunks) => (
-        <ul className="list-disc list-inside my-2 space-y-1">{chunks}</ul>
+        <ul className="my-2 list-inside list-disc space-y-1">{chunks}</ul>
       ),
       li: (chunks) => <li>{chunks}</li>,
     }),
@@ -66,36 +66,49 @@ export function ServiciosSection() {
   return (
     <section
       id="servicios"
-      className="relative bg-black py-24 sm:py-28 lg:py-32 px-6 sm:px-12 lg:px-20 overflow-hidden"
+      className="relative overflow-hidden bg-black px-6 py-24 sm:px-12 sm:py-28 lg:px-20 lg:py-32"
     >
-      {/* detalle visual sutil de fondo */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(168,40,17,0.16),transparent_35%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(168,40,17,0.18),transparent_36%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.04),transparent_42%)]" />
 
-      <div className="relative z-10 max-w-7xl mx-auto">
-        <div className="mb-14 sm:mb-16 lg:mb-20 max-w-5xl">
-          <p className="flex items-center gap-3 text-[10px] sm:text-xs uppercase tracking-[0.28em] text-tiza/70 mb-5">
-            <span className="w-8 h-px bg-accent inline-block" />
-            LO QUE HACEMOS
+      <div className="relative z-10 mx-auto max-w-7xl">
+        <div className="mb-20 max-w-6xl">
+          <div className="mb-8 h-px w-24 bg-[#A82811]" />
+
+          <p className="mb-5 font-manrope text-xs uppercase tracking-[0.18em] text-white/45">
+            Soluciones digitales
           </p>
 
-          <div className="space-y-1">
-            <h2 className="text-[2.5rem] sm:text-5xl lg:text-7xl font-extralight uppercase text-tiza leading-[0.88] tracking-[0.01em]">
-              SOLUCIONES QUE GENERAN
-            </h2>
+          <h2 className="font-khanda text-6xl font-light uppercase leading-[0.78] tracking-[-0.085em] text-white sm:text-7xl lg:text-[7rem]">
+            SOLUCIONES QUE GENERAN
+          </h2>
 
-            <h2 className="text-[2.5rem] sm:text-5xl lg:text-7xl font-extralight uppercase text-accent leading-[0.88] tracking-[0.18em]">
-              RESULTADOS REALES.
-            </h2>
-          </div>
+          <h2 className="mt-1 font-khanda text-6xl font-light uppercase leading-[0.78] tracking-[-0.085em] text-[#A82811] sm:text-7xl lg:text-[7rem]">
+            RESULTADOS REALES.
+          </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-5">
+        <div className="group/cards grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-5">
           {servicios.map((servicio) => (
-            <CardChica
+            <div
               key={servicio.id}
-              servicio={servicio}
-              onClick={() => setSelectedCard(servicio)}
-            />
+              className="
+                transition-all
+                duration-500
+                ease-out
+                group-hover/cards:opacity-60
+                hover:!z-20
+                hover:!-translate-y-3
+                hover:!scale-[1.04]
+                hover:!opacity-100
+                hover:drop-shadow-[0_25px_55px_rgba(0,0,0,0.35)]
+              "
+            >
+              <CardChica
+                servicio={servicio}
+                onClick={() => setSelectedCard(servicio)}
+              />
+            </div>
           ))}
         </div>
       </div>
