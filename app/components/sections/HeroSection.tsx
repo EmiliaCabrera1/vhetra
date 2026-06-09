@@ -3,6 +3,7 @@
 import React from "react";
 import dynamic from "next/dynamic";
 import { useTranslations } from "next-intl";
+import { scrollToSectionStart } from "@/app/utils/scrollToSection";
 
 const BlenderModel = dynamic(() => import("@/app/components/BlenderModel"), {
   ssr: false,
@@ -46,13 +47,13 @@ export function HeroSection() {
 
   const scrollToContact = (e: React.MouseEvent) => {
     e.preventDefault();
-    document.getElementById("contacto")?.scrollIntoView({ behavior: "smooth" });
+    scrollToSectionStart("contacto");
   };
 
   return (
     <section
       id="inicio"
-      className="snap-panel relative flex items-center overflow-hidden bg-cover bg-center bg-no-repeat px-6 pt-20 pb-8 sm:px-12 sm:pb-10 lg:px-20"
+      className="snap-panel relative flex items-center overflow-x-hidden overflow-y-auto bg-cover bg-center bg-no-repeat px-6 pt-20 pb-8 sm:px-12 sm:pb-10 lg:px-20"
       style={{ backgroundImage: "url(/img/bg.webp)" }}
     >
       <div className="pointer-events-none absolute inset-0 bg-[#F9F9F9]/20" />

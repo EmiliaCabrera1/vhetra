@@ -1,9 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, usePathname } from "@/i18n/navigation";
 import { useTranslations, useLocale } from "next-intl";
 import { twMerge } from "tailwind-merge";
+import { scrollToSectionStart } from "@/app/utils/scrollToSection";
 
 const SECTIONS = [
   { key: "home" as const, id: "inicio" },
@@ -19,6 +20,32 @@ export const NavBar = () => {
   const locale = useLocale();
   const [activeSection, setActiveSection] = useState("inicio");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navBarRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const navBar = navBarRef.current;
+    if (!navBar) return;
+
+    const updateNavClearance = () => {
+      const clearance = Math.ceil(navBar.getBoundingClientRect().bottom + 16);
+      document.documentElement.style.setProperty(
+        "--nav-clearance",
+        `${clearance}px`,
+      );
+    };
+
+    updateNavClearance();
+
+    const observer = new ResizeObserver(updateNavClearance);
+    observer.observe(navBar);
+    window.addEventListener("resize", updateNavClearance);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", updateNavClearance);
+      document.documentElement.style.removeProperty("--nav-clearance");
+    };
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -40,12 +67,16 @@ export const NavBar = () => {
 
   const scrollTo = (id: string) => (e: React.MouseEvent) => {
     e.preventDefault();
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    scrollToSectionStart(id);
+    setActiveSection(id);
   };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 mt-4 border-b border-zinc-800 bg-black sm:mt-6 lg:mt-8">
-      <div className="relative flex items-center px-4 py-3 sm:px-8 sm:py-4">
+      <div
+        ref={navBarRef}
+        className="relative flex items-center px-4 py-3 sm:px-8 sm:py-4"
+      >
         {/* Desktop nav */}
         <ul className="absolute left-1/2 hidden -translate-x-1/2 gap-4 md:flex lg:gap-8">
           {SECTIONS.map(({ key, id }) => (

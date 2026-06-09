@@ -75,7 +75,7 @@ export function ServiciosSection() {
   return (
     <section
       id="servicios"
-      className="snap-panel section-render-window relative overflow-hidden bg-black px-6 py-14 sm:px-12 sm:py-16 lg:px-20 lg:py-20"
+      className="snap-panel section-render-window relative overflow-x-hidden overflow-y-auto bg-black px-6 py-14 sm:px-12 sm:py-16 lg:px-20 lg:py-20"
     >
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(168,40,17,0.18),transparent_36%)]" />
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.04),transparent_42%)]" />

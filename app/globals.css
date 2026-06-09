@@ -100,12 +100,15 @@ canvas {
   box-sizing: border-box;
   height: 100vh;
   height: 100dvh;
+  padding-top: max(var(--nav-clearance, 5rem), 3.5rem);
   width: 100%;
   display: flex;
   align-items: center;
+  align-items: safe center;
   scroll-snap-align: start;
   scroll-snap-stop: always;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   overscroll-behavior-y: contain;
 }
 
