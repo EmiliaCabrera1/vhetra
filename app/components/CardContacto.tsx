@@ -3,7 +3,7 @@ import Link from "next/link";
 import { twMerge } from "tailwind-merge";
 import { ReactNode } from "react";
 
-const baseClasses = "w-full sm:w-[420px] h-24 sm:h-[6.5rem] p-3 sm:p-4 gap-2 relative flex flex-row items-center text-tiza bg-card rounded-lg shadow-[5px_5px_5px_0px_rgba(16,17,17,0.55)] overflow-hidden";
+const baseClasses = "w-full min-h-24 sm:min-h-[6.5rem] p-3 sm:p-4 gap-3 sm:gap-5 relative flex flex-row items-center text-tiza bg-card rounded-lg shadow-[5px_5px_5px_0px_rgba(16,17,17,0.55)] overflow-hidden";
 
 const CardContacto = ({ id, img, title, action, href }: { id: number, img: string, title: string, action: ReactNode, href: string }) => {
     return (

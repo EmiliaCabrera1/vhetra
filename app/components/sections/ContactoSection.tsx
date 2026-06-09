@@ -50,8 +50,8 @@ export function ContactoSection() {
     >
       <div className="pointer-events-none absolute inset-0 bg-[#F9F9F9]/20" />
 
-      <div className="section-panel-content relative grid items-end gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
-        <div className="flex flex-col gap-8 sm:gap-10">
+      <div className="section-panel-content relative">
+        <div className="relative z-10 flex w-full max-w-6xl flex-col gap-8 sm:gap-10 xl:max-w-7xl">
           <div>
             <div className="mb-4 h-px w-20 bg-[#A82811] sm:mb-6 sm:w-24" />
 
@@ -69,7 +69,7 @@ export function ContactoSection() {
             </h2>
           </div>
 
-          <div className="flex max-w-2xl flex-col gap-3 sm:gap-4">
+          <div className="flex w-full max-w-4xl flex-col gap-3 sm:gap-4 lg:w-[calc(100%-20rem)] lg:max-w-none xl:w-[calc(100%-28rem)]">
             {contactos.map((contacto) => (
               <div
                 key={contacto.titleKey}
@@ -94,9 +94,9 @@ export function ContactoSection() {
           </div>
         </div>
 
-        <div className="pointer-events-none hidden select-none justify-end lg:flex">
-          <span className="font-khanda text-[13rem] font-light leading-none tracking-[-0.12em] text-black/10 xl:text-[18rem]">
-            VH<span className="text-[#A82811]/70">.</span>
+        <div className="pointer-events-none absolute right-0 bottom-0 hidden select-none justify-end lg:flex">
+          <span className="font-khanda text-[13rem] font-light leading-none tracking-[-0.12em] text-black/70 xl:text-[18rem]">
+            VH<span className="text-[#A82811]">.</span>
           </span>
         </div>
       </div>
