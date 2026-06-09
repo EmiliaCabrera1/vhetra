@@ -104,6 +104,9 @@ export function SectionScrollController({
         },
         onComplete: () => {
           if (transitionId === transitionIdRef.current) {
+            main.scrollTop = panel.offsetTop;
+            panel.style.transform = "translate3d(0, 0, 0)";
+            panel.style.opacity = "1";
             delete main.dataset.sectionTransition;
           }
         },
