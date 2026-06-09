@@ -1,11 +1,14 @@
 "use client";
 
+import { animate } from "framer-motion";
 import React from "react";
 
-const SNAP_COOLDOWN_MS = 650;
-const WHEEL_THRESHOLD = 18;
+const SNAP_COOLDOWN_MS = 1300;
+const WHEEL_THRESHOLD = 1;
 const TOUCH_THRESHOLD = 42;
 const SCROLL_EDGE_TOLERANCE = 2;
+const SECTION_NAVIGATE_EVENT = "vhetra:section-navigate";
+const EDITORIAL_EASE = [0.22, 1, 0.36, 1] as const;
 
 function prefersReducedMotion() {
   return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -26,6 +29,10 @@ export function SectionScrollController({
   const lastSnapRef = React.useRef(0);
   const touchStartYRef = React.useRef<number | null>(null);
   const touchStartXRef = React.useRef<number | null>(null);
+  const scrollAnimationRef = React.useRef<{ stop: () => void } | null>(null);
+  const panelAnimationRef = React.useRef<{ stop: () => void } | null>(null);
+  const animatedPanelRef = React.useRef<HTMLElement | null>(null);
+  const transitionIdRef = React.useRef(0);
 
   React.useEffect(() => {
     const main = mainRef.current;
@@ -68,6 +75,53 @@ export function SectionScrollController({
       return panel.scrollTop > SCROLL_EDGE_TOLERANCE;
     };
 
+    const animateToPanel = (panel: HTMLElement) => {
+      scrollAnimationRef.current?.stop();
+      panelAnimationRef.current?.stop();
+      if (animatedPanelRef.current && animatedPanelRef.current !== panel) {
+        animatedPanelRef.current.style.transform = "translate3d(0, 0, 0)";
+        animatedPanelRef.current.style.opacity = "1";
+      }
+      animatedPanelRef.current = panel;
+
+      if (prefersReducedMotion()) {
+        ++transitionIdRef.current;
+        delete main.dataset.sectionTransition;
+        main.scrollTop = panel.offsetTop;
+        return;
+      }
+
+      const transitionId = ++transitionIdRef.current;
+      main.dataset.sectionTransition = "true";
+      panel.style.transform = "translate3d(0, 80px, 0)";
+      panel.style.opacity = "0.9";
+
+      scrollAnimationRef.current = animate(main.scrollTop, panel.offsetTop, {
+        duration: 1.6,
+        ease: EDITORIAL_EASE,
+        onUpdate: (value) => {
+          main.scrollTop = value;
+        },
+        onComplete: () => {
+          if (transitionId === transitionIdRef.current) {
+            delete main.dataset.sectionTransition;
+          }
+        },
+      });
+
+      panelAnimationRef.current = animate(
+        panel,
+        {
+          transform: "translate3d(0, 0px, 0)",
+          opacity: 1,
+        },
+        {
+          duration: 1.6,
+          ease: EDITORIAL_EASE,
+        },
+      );
+    };
+
     const snapTo = (direction: 1 | -1, activePanel?: HTMLElement | null) => {
       const now = window.performance.now();
       if (now - lastSnapRef.current < SNAP_COOLDOWN_MS) return;
@@ -90,16 +144,28 @@ export function SectionScrollController({
         direction === 1
           ? 0
           : panels[nextIndex].scrollHeight - panels[nextIndex].clientHeight;
-      main.scrollTo({
-        top: panels[nextIndex].offsetTop,
-        behavior: prefersReducedMotion() ? "auto" : "smooth",
-      });
+      animateToPanel(panels[nextIndex]);
+    };
+
+    const handleSectionNavigate = (event: Event) => {
+      const id = (event as CustomEvent<{ id: string }>).detail?.id;
+      const panel = id ? document.getElementById(id) : null;
+      if (!(panel instanceof HTMLElement) || !main.contains(panel)) return;
+
+      event.preventDefault();
+      panel.scrollTop = 0;
+      lastSnapRef.current = window.performance.now();
+      animateToPanel(panel);
     };
 
     const handleWheel = (event: WheelEvent) => {
       if (canUseNativeScroll(event.target)) return;
       if (Math.abs(event.deltaX) > Math.abs(event.deltaY)) return;
       if (Math.abs(event.deltaY) < WHEEL_THRESHOLD) return;
+      if (main.dataset.sectionTransition === "true") {
+        event.preventDefault();
+        return;
+      }
 
       const direction = event.deltaY > 0 ? 1 : -1;
       const activePanel = getActivePanel(event.target);
@@ -178,12 +244,20 @@ export function SectionScrollController({
     window.addEventListener("touchstart", handleTouchStart, { passive: true });
     window.addEventListener("touchmove", handleTouchMove, { passive: false });
     window.addEventListener("keydown", handleKeyDown);
+    main.addEventListener(SECTION_NAVIGATE_EVENT, handleSectionNavigate);
 
     return () => {
+      scrollAnimationRef.current?.stop();
+      panelAnimationRef.current?.stop();
+      if (animatedPanelRef.current) {
+        animatedPanelRef.current.style.transform = "translate3d(0, 0, 0)";
+        animatedPanelRef.current.style.opacity = "1";
+      }
       window.removeEventListener("wheel", handleWheel);
       window.removeEventListener("touchstart", handleTouchStart);
       window.removeEventListener("touchmove", handleTouchMove);
       window.removeEventListener("keydown", handleKeyDown);
+      main.removeEventListener(SECTION_NAVIGATE_EVENT, handleSectionNavigate);
     };
   }, []);
 

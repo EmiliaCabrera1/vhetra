@@ -96,6 +96,11 @@ canvas {
   overscroll-behavior-y: contain;
 }
 
+.snap-page[data-section-transition="true"] {
+  scroll-behavior: auto;
+  scroll-snap-type: none;
+}
+
 .snap-panel {
   box-sizing: border-box;
   height: 100vh;
@@ -110,6 +115,8 @@ canvas {
   overflow-x: hidden;
   overflow-y: auto;
   overscroll-behavior-y: contain;
+  transform: translate3d(0, 0, 0);
+  will-change: transform, opacity;
 }
 
 .section-panel-content {
@@ -194,35 +201,14 @@ canvas {
   display: none;
 }
 
-@supports (animation-timeline: view()) {
-  .section-panel-content {
-    animation: section-panel-in both;
-    animation-range: entry 0% cover 42%;
-    animation-timeline: view(block);
-    filter: blur(8px);
-    opacity: 0;
-    transform: translateY(44px) scale(0.985);
-  }
-}
-
-@keyframes section-panel-in {
-  to {
-    filter: blur(0);
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .snap-page {
     scroll-behavior: auto;
   }
 
-  .section-panel-content {
-    animation: none;
-    filter: none;
-    opacity: 1;
+  .snap-panel {
     transform: none;
+    will-change: auto;
   }
 }
 
