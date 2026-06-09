@@ -54,7 +54,6 @@ export function HeroSection() {
     <section
       id="inicio"
       className="snap-panel relative flex items-center overflow-x-hidden overflow-y-auto bg-cover bg-center bg-no-repeat px-6 pt-20 pb-8 sm:px-12 sm:pb-10 lg:px-20"
-      style={{ backgroundImage: "url(/img/bg.webp)" }}
     >
       <div className="pointer-events-none absolute inset-0 bg-[#F9F9F9]/20" />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(168,40,17,0.14),transparent_34%)]" />

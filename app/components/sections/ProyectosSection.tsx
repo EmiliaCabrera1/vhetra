@@ -179,41 +179,40 @@ export function ProyectosSection() {
     <section
       id="proyectos"
       className="snap-panel section-render-window relative overflow-x-hidden overflow-y-auto bg-cover bg-center bg-no-repeat px-6 py-14 sm:px-12 sm:py-16 lg:px-20 lg:py-20"
-      style={{ backgroundImage: "url(/img/bg.webp)" }}
     >
       <div className="pointer-events-none absolute inset-0 bg-[#F9F9F9]/20" />
 
       <div className="section-panel-content relative">
-      <div className="relative mb-8 max-w-6xl sm:mb-10 lg:mb-12">
-        <div className="mb-4 h-px w-20 origin-left bg-[#A82811] sm:mb-6 sm:w-24" />
+        <div className="relative mb-8 max-w-6xl sm:mb-10 lg:mb-12">
+          <div className="mb-4 h-px w-20 origin-left bg-[#A82811] sm:mb-6 sm:w-24" />
 
-        <p className="mb-3 font-manrope text-xs uppercase tracking-[0.18em] text-black/50 sm:mb-4">
-          Portfolio seleccionado
-        </p>
+          <p className="mb-3 font-manrope text-xs uppercase tracking-[0.18em] text-black/50 sm:mb-4">
+            Portfolio seleccionado
+          </p>
 
-        <h2 className="font-khanda text-5xl font-light uppercase leading-[0.8] tracking-[-0.075em] text-black sm:text-6xl lg:text-[5.8rem]">
-          {t("spaHeading")}
-        </h2>
+          <h2 className="font-khanda text-5xl font-light uppercase leading-[0.8] tracking-[-0.075em] text-black sm:text-6xl lg:text-[5.8rem]">
+            {t("spaHeading")}
+          </h2>
 
-        <h2 className="mt-1 w-fit font-khanda text-5xl font-light uppercase leading-[0.8] tracking-[-0.075em] text-[#A82811] sm:text-6xl lg:text-[5.8rem]">
-          {t("spaAccent")}
-        </h2>
-      </div>
+          <h2 className="mt-1 w-fit font-khanda text-5xl font-light uppercase leading-[0.8] tracking-[-0.075em] text-[#A82811] sm:text-6xl lg:text-[5.8rem]">
+            {t("spaAccent")}
+          </h2>
+        </div>
 
-      <div className="group/carousel relative -mx-6 py-4 sm:-mx-12 sm:py-6 lg:-mx-20 lg:py-8">
-        <div className="pointer-events-none absolute left-0 top-0 z-20 h-full w-14 bg-gradient-to-r from-[#F9F9F9]/95 to-transparent sm:w-20" />
-        <div className="pointer-events-none absolute right-0 top-0 z-20 h-full w-14 bg-gradient-to-l from-[#F9F9F9]/95 to-transparent sm:w-20" />
+        <div className="group/carousel relative -mx-6 py-4 sm:-mx-12 sm:py-6 lg:-mx-20 lg:py-8">
+          <div className="pointer-events-none absolute left-0 top-0 z-20 h-full w-14 bg-gradient-to-r from-[#F9F9F9]/95 to-transparent sm:w-20" />
+          <div className="pointer-events-none absolute right-0 top-0 z-20 h-full w-14 bg-gradient-to-l from-[#F9F9F9]/95 to-transparent sm:w-20" />
 
-        <div
-          ref={carouselRef}
-          className="scrollbar-hide overflow-x-auto scroll-smooth px-16 sm:px-24 lg:px-32"
-        >
-          <div className="flex w-max gap-4 py-16 group-hover/carousel:animate-[projects-marquee_35s_linear_infinite] sm:gap-6 sm:py-20 lg:gap-8">
-            {proyectosLoop.map((proyecto, index) => (
-              <div
-                key={`${proyecto.id}-${index}`}
-                data-project-card
-                className="
+          <div
+            ref={carouselRef}
+            className="scrollbar-hide overflow-x-auto scroll-smooth px-16 sm:px-24 lg:px-32"
+          >
+            <div className="flex w-max gap-4 py-16 group-hover/carousel:animate-[projects-marquee_35s_linear_infinite] sm:gap-6 sm:py-20 lg:gap-8">
+              {proyectosLoop.map((proyecto, index) => (
+                <div
+                  key={`${proyecto.id}-${index}`}
+                  data-project-card
+                  className="
                   w-[240px]
                   shrink-0
                   transition-all
@@ -228,24 +227,24 @@ export function ProyectosSection() {
                   sm:w-[300px]
                   lg:w-[340px]
                 "
-              >
-                <ProyectoCardChica
-                  proyecto={proyecto}
-                  onClick={() => setSelectedProyecto(proyecto)}
-                  imgClassName={proyecto.imgClassName}
-                  priority={index === 0}
-                />
-              </div>
-            ))}
+                >
+                  <ProyectoCardChica
+                    proyecto={proyecto}
+                    onClick={() => setSelectedProyecto(proyecto)}
+                    imgClassName={proyecto.imgClassName}
+                    priority={index === 0}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className="relative mt-1 flex justify-end">
-        <button
-          type="button"
-          onClick={scrollProyecto}
-          className="
+        <div className="relative mt-1 flex justify-end">
+          <button
+            type="button"
+            onClick={scrollProyecto}
+            className="
             group/button
             flex
             items-center
@@ -261,20 +260,20 @@ export function ProyectosSection() {
             hover:gap-6
             hover:font-medium
           "
-        >
-          {t("viewAll")}
-          <span className="text-[clamp(2rem,8vw,2.5rem)] font-light leading-none transition-all duration-300 group-hover/button:translate-x-2 group-hover/button:scale-110 group-hover/button:font-medium">
-            ⟶
-          </span>
-        </button>
-      </div>
+          >
+            {t("viewAll")}
+            <span className="text-[clamp(2rem,8vw,2.5rem)] font-light leading-none transition-all duration-300 group-hover/button:translate-x-2 group-hover/button:scale-110 group-hover/button:font-medium">
+              ⟶
+            </span>
+          </button>
+        </div>
 
-      <div className="relative mt-6 flex justify-center sm:mt-8">
-        <a
-          href={whatsappHref}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="
+        <div className="relative mt-6 flex justify-center sm:mt-8">
+          <a
+            href={whatsappHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="
             group
             vhetra-cta
             inline-flex
@@ -295,14 +294,14 @@ export function ProyectosSection() {
             hover:border-[#A82811]
             hover:bg-[#A82811]
           "
-        >
-          <span>{t("spaCta")}</span>
+          >
+            <span>{t("spaCta")}</span>
 
-          <span className="vhetra-cta-arrow font-light transition-transform duration-300 group-hover:translate-x-2">
-            ⟶
-          </span>
-        </a>
-      </div>
+            <span className="vhetra-cta-arrow font-light transition-transform duration-300 group-hover:translate-x-2">
+              ⟶
+            </span>
+          </a>
+        </div>
       </div>
 
       {selectedProyecto && (
