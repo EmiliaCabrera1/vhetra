@@ -1,9 +1,28 @@
 'use client';
-import { Suspense, useCallback, useEffect, useRef, useState } from 'react';
+import { Component, ReactNode, Suspense, useCallback, useEffect, useRef, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { useAnimations, useGLTF } from '@react-three/drei';
 import { Group } from 'three';
 import { Bloom, EffectComposer } from '@react-three/postprocessing';
+
+class WebGLErrorBoundary extends Component<
+    { children: ReactNode },
+    { hasError: boolean }
+> {
+    state = { hasError: false };
+
+    static getDerivedStateFromError() {
+        return { hasError: true };
+    }
+
+    componentDidCatch(error: Error) {
+        console.warn('WebGL no está disponible; se ocultó el modelo 3D.', error);
+    }
+
+    render() {
+        return this.state.hasError ? null : this.props.children;
+    }
+}
 
 function Model({ path, scale = 1 }: { path: string, scale?: number }) {
     const { scene } = useGLTF(path); // path relative to /public
@@ -124,39 +143,42 @@ export default function BlenderModel({ path, type = 'simple', scale, canInteract
 
     return (
         <div style={{ width: '100%', height: '100%' }}>
-            <Canvas
-                shadows={false}
-                camera={{ position: [0, 0, 5], fov: 50 }}
-                dpr={isMobile ? 1 : [1, 1.15]}
-                linear
-                gl={{
-                    alpha: true,
-                    premultipliedAlpha: false,
-                    powerPreference: isMobile ? 'low-power' : 'default',
-                }}
-                style={{ background: 'transparent' }}
-                onCreated={({ gl }) => {
-                    gl.setClearColor(0x000000, 0)
-                }}
-            >
-                <ambientLight intensity={0.3} />
-                <directionalLight position={[3, 5, 2]} intensity={1.2} castShadow />
-                <directionalLight position={[-2, -3, -1]} intensity={0.4} castShadow />
-                <directionalLight position={[2, 1, 2]} intensity={3} castShadow />
-                <Suspense fallback={null}>
-                    {renderModel()}
-                </Suspense>
-                {!isMobile && (
-                    <EffectComposer enableNormalPass={false}>
-                        <Bloom
-                            intensity={0.4}
-                            luminanceThreshold={0.85}
-                            luminanceSmoothing={0.2}
-                            mipmapBlur={false}
-                        />
-                    </EffectComposer>
-                )}
-            </Canvas>
+            <WebGLErrorBoundary>
+                <Canvas
+                    fallback={null}
+                    shadows={false}
+                    camera={{ position: [0, 0, 5], fov: 50 }}
+                    dpr={isMobile ? 1 : [1, 1.15]}
+                    linear
+                    gl={{
+                        alpha: true,
+                        premultipliedAlpha: false,
+                        powerPreference: isMobile ? 'low-power' : 'default',
+                    }}
+                    style={{ background: 'transparent' }}
+                    onCreated={({ gl }) => {
+                        gl.setClearColor(0x000000, 0)
+                    }}
+                >
+                    <ambientLight intensity={0.3} />
+                    <directionalLight position={[3, 5, 2]} intensity={1.2} castShadow />
+                    <directionalLight position={[-2, -3, -1]} intensity={0.4} castShadow />
+                    <directionalLight position={[2, 1, 2]} intensity={3} castShadow />
+                    <Suspense fallback={null}>
+                        {renderModel()}
+                    </Suspense>
+                    {!isMobile && (
+                        <EffectComposer enableNormalPass={false}>
+                            <Bloom
+                                intensity={0.4}
+                                luminanceThreshold={0.85}
+                                luminanceSmoothing={0.2}
+                                mipmapBlur={false}
+                            />
+                        </EffectComposer>
+                    )}
+                </Canvas>
+            </WebGLErrorBoundary>
         </div>
     );
 }

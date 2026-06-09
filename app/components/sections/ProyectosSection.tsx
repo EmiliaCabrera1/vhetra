@@ -200,15 +200,15 @@ export function ProyectosSection() {
         </h2>
       </div>
 
-      <div className="group/carousel relative -mx-6 overflow-hidden py-4 sm:-mx-12 sm:py-6 lg:-mx-20 lg:py-8">
+      <div className="group/carousel relative -mx-6 py-4 sm:-mx-12 sm:py-6 lg:-mx-20 lg:py-8">
         <div className="pointer-events-none absolute left-0 top-0 z-20 h-full w-14 bg-gradient-to-r from-[#F9F9F9]/95 to-transparent sm:w-20" />
         <div className="pointer-events-none absolute right-0 top-0 z-20 h-full w-14 bg-gradient-to-l from-[#F9F9F9]/95 to-transparent sm:w-20" />
 
         <div
           ref={carouselRef}
-          className="scrollbar-hide overflow-x-auto scroll-smooth px-6 sm:px-12 lg:px-20"
+          className="scrollbar-hide overflow-x-auto scroll-smooth px-16 sm:px-24 lg:px-32"
         >
-          <div className="flex w-max gap-4 py-5 pr-6 group-hover/carousel:animate-[projects-marquee_35s_linear_infinite] sm:gap-6 sm:py-7 lg:gap-8">
+          <div className="flex w-max gap-4 py-16 group-hover/carousel:animate-[projects-marquee_35s_linear_infinite] sm:gap-6 sm:py-20 lg:gap-8">
             {proyectosLoop.map((proyecto, index) => (
               <div
                 key={`${proyecto.id}-${index}`}
