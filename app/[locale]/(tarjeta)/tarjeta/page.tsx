@@ -12,7 +12,7 @@ const whatsappPhone = process.env.NEXT_PUBLIC_WHATSAPP_PHONE ?? "5493875038714";
 const whatsappHref = `https://wa.me/${whatsappPhone}?text=${encodeURIComponent("Hola !\nTe contacto desde la web de VHETRA.")}`;
 
 const CONTACTOS = [
-  { id: 1, img: "/icons/instagramIco.svg", titleKey: "instagramTitle" as const, actionKey: "instagramAction" as const, href: "https://www.instagram.com/somosvhetra/" },
+  { id: 1, img: "/icons/instagramIco.svg", titleKey: "instagramTitle" as const, actionKey: "instagramAction" as const, href: "https://www.instagram.com/hola.vhetra/" },
   { id: 2, img: "/icons/gmailIco.svg", titleKey: "gmailTitle" as const, actionKey: "gmailAction" as const, href: "mailto:hola.vhetra@gmail.com" },
   { id: 3, img: "/icons/whatsappIco.svg", titleKey: "whatsappTitle" as const, actionKey: "whatsappAction" as const, href: whatsappHref },
 ];

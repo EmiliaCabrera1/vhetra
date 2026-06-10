@@ -3,7 +3,11 @@
 import React from "react";
 import dynamic from "next/dynamic";
 import { useTranslations } from "next-intl";
-import { scrollToSectionStart } from "@/app/utils/scrollToSection";
+
+const whatsappPhone = process.env.NEXT_PUBLIC_WHATSAPP_PHONE ?? "5493875038714";
+const whatsappHref = `https://wa.me/${whatsappPhone}?text=${encodeURIComponent(
+  "Hola quiero agendar una reunion",
+)}`;
 
 const BlenderModel = dynamic(() => import("@/app/components/BlenderModel"), {
   ssr: false,
@@ -44,11 +48,6 @@ function DeferredBlenderModel(
 
 export function HeroSection() {
   const t = useTranslations("home");
-
-  const scrollToContact = (e: React.MouseEvent) => {
-    e.preventDefault();
-    scrollToSectionStart("contacto");
-  };
 
   return (
     <section
@@ -118,8 +117,9 @@ export function HeroSection() {
           </p>
 
           <a
-            href="#contacto"
-            onClick={scrollToContact}
+            href={whatsappHref}
+            target="_blank"
+            rel="noopener noreferrer"
             className="
               group
               vhetra-cta
