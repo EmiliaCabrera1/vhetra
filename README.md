@@ -1,36 +1,102 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Vhetra
 
-## Getting Started
+Sitio web del estudio **Vhetra**: diseño web, identidad visual y presencia digital. Es una landing de una sola página con secciones a pantalla completa, animaciones editoriales y soporte bilingüe (español / inglés).
 
-First, run the development server:
+Producción: [vhetra.com.ar](https://vhetra.com.ar)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Características
+
+- **Landing multipanel** con navegación por secciones: inicio, servicios, proyectos, filosofía y contacto
+- **Scroll controlado** (`SectionScrollController`): scroll interno dentro de cada sección y salto animado entre paneles (rueda, touch, teclado y navbar)
+- **Internacionalización** con `next-intl` (`/es`, `/en`)
+- **Modelo 3D** en el hero (React Three Fiber + GLB exportado desde Blender)
+- **Carrusel de proyectos** con loop infinito y modales de detalle
+- **Tarjeta de contacto** en ruta dedicada (`/tarjeta`)
+- **Integración WhatsApp** configurable por variable de entorno
+- **Analytics** (Vercel Analytics + Speed Insights)
+
+## Stack
+
+| Área | Tecnología |
+|------|------------|
+| Framework | Next.js 16 (App Router) |
+| UI | React 19, Tailwind CSS 4 |
+| Animaciones | Framer Motion |
+| 3D | Three.js, React Three Fiber, Drei |
+| i18n | next-intl |
+| Deploy | Vercel |
+
+## Estructura del proyecto
+
+```
+app/
+├── [locale]/
+│   ├── (main)/page.tsx      # Landing principal
+│   └── (tarjeta)/tarjeta/   # Página tarjeta de contacto
+├── components/
+│   ├── SectionScrollController.tsx  # Lógica de scroll entre secciones
+│   ├── sections/                    # Hero, Servicios, Proyectos, etc.
+│   └── ...
+├── utils/scrollToSection.ts         # Helper para navegación programática
+└── globals.css                      # Estilos globales y snap panels
+
+i18n/                    # Routing y navegación localizada
+messages/es.json         # Traducciones español
+messages/en.json         # Traducciones inglés
+public/                  # Imágenes, fuentes, animaciones GLB, íconos
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Requisitos
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Node.js 20+
+- pnpm (recomendado) o npm
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Instalación
 
-## Learn More
+```bash
+pnpm install
+cp .env.example .env.local
+```
 
-To learn more about Next.js, take a look at the following resources:
+Editá `.env.local` y configurá el teléfono de WhatsApp en formato E.164:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```env
+NEXT_PUBLIC_WHATSAPP_PHONE=5493875038714
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Scripts
 
-## Deploy on Vercel
+| Comando | Descripción |
+|---------|-------------|
+| `pnpm dev` | Servidor de desarrollo en [http://localhost:3000](http://localhost:3000) |
+| `pnpm build` | Build de producción |
+| `pnpm start` | Servidor de producción |
+| `pnpm lint` | ESLint |
+| `pnpm build:analyze` | Build con análisis de bundle |
+| `pnpm optimize:projects` | Optimiza imágenes del portfolio |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Navegación entre secciones
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+La navbar y los CTAs usan `scrollToSectionStart()` (`app/utils/scrollToSection.ts`), que dispara el evento `vhetra:section-navigate` en el contenedor `.snap-page`. `SectionScrollController` escucha ese evento y ejecuta la transición animada hacia la sección indicada.
+
+Cada sección usa la clase `snap-panel` y ocupa el alto del viewport (`100dvh`).
+
+## Rutas
+
+| Ruta | Descripción |
+|------|-------------|
+| `/es` | Landing en español (locale por defecto) |
+| `/en` | Landing en inglés |
+| `/es/tarjeta` | Tarjeta de contacto |
+
+## Deploy
+
+El proyecto está pensado para Vercel. El build usa webpack (`next build --webpack`) por compatibilidad con dependencias 3D.
+
+Variables de entorno necesarias en producción:
+
+- `NEXT_PUBLIC_WHATSAPP_PHONE`
+
+## Licencia
+
+Proyecto privado de Vhetra.
