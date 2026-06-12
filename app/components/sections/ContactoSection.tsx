@@ -15,7 +15,7 @@ const CONTACTOS = [
     img: "/icons/instagramIco.svg",
     titleKey: "instagramTitle" as const,
     actionKey: "instagramAction" as const,
-    href: "https://www.instagram.com/hola.vhetra/",
+    href: "https://www.instagram.com/holavhetra/",
   },
   {
     id: 2,

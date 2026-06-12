@@ -73,26 +73,7 @@ export function ProyectosSection() {
         layoutType: "textImage",
         imgClassName: "flex w-40 h-40 self-end -mb-11 -ml-4",
       },
-      {
-        id: 3,
-        name: "FiliSuites",
-        miniTitulo: t("filiSuites.miniTitulo"),
-        titulo: t("filiSuites.titulo"),
-        miniDescripcion: t("filiSuites.miniDescripcion"),
-        descripcionCompleta: (
-          <>
-            {t("filiSuites.descripcionP1")}
-            <br />
-            <br />
-            {t("filiSuites.descripcionP2")}
-          </>
-        ),
-        miniatura: "/projects/fili1.svg",
-        imagen: "/projects/fili2.svg",
-        webUrl: "https://www.instagram.com/filisuites_oax/",
-        ctaLabelKey: "visitInstagram",
-        imgClassName: "flex w-[7.5rem] h-[7.5rem] -mt-3",
-      },
+
       {
         id: 4,
         name: "Laboragro",
