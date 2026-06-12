@@ -17,14 +17,14 @@ Producción: [vhetra.com.ar](https://vhetra.com.ar)
 
 ## Stack
 
-| Área | Tecnología |
-|------|------------|
-| Framework | Next.js 16 (App Router) |
-| UI | React 19, Tailwind CSS 4 |
-| Animaciones | Framer Motion |
-| 3D | Three.js, React Three Fiber, Drei |
-| i18n | next-intl |
-| Deploy | Vercel |
+| Área        | Tecnología                        |
+| ----------- | --------------------------------- |
+| Framework   | Next.js 16 (App Router)           |
+| UI          | React 19, Tailwind CSS 4          |
+| Animaciones | Framer Motion                     |
+| 3D          | Three.js, React Three Fiber, Drei |
+| i18n        | next-intl                         |
+| Deploy      | Vercel                            |
 
 ## Estructura del proyecto
 
@@ -67,7 +67,7 @@ NEXT_PUBLIC_WHATSAPP_PHONE=5493875038714
 ## Scripts
 
 | Comando | Descripción |
-|---------|-------------|
+| --- | --- |
 | `pnpm dev` | Servidor de desarrollo en [http://localhost:3000](http://localhost:3000) |
 | `pnpm build` | Build de producción |
 | `pnpm start` | Servidor de producción |
@@ -83,11 +83,11 @@ Cada sección usa la clase `snap-panel` y ocupa el alto del viewport (`100dvh`).
 
 ## Rutas
 
-| Ruta | Descripción |
-|------|-------------|
-| `/es` | Landing en español (locale por defecto) |
-| `/en` | Landing en inglés |
-| `/es/tarjeta` | Tarjeta de contacto |
+| Ruta          | Descripción                             |
+| ------------- | --------------------------------------- |
+| `/es`         | Landing en español (locale por defecto) |
+| `/en`         | Landing en inglés                       |
+| `/es/tarjeta` | Tarjeta de contacto                     |
 
 ## Deploy
 
