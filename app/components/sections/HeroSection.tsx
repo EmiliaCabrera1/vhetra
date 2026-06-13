@@ -5,9 +5,6 @@ import dynamic from "next/dynamic";
 import { useTranslations } from "next-intl";
 
 const whatsappPhone = process.env.NEXT_PUBLIC_WHATSAPP_PHONE ?? "5493875038714";
-const whatsappHref = `https://wa.me/${whatsappPhone}?text=${encodeURIComponent(
-  "Hola quiero agendar una reunion",
-)}`;
 
 const BlenderModel = dynamic(() => import("@/app/components/BlenderModel"), {
   ssr: false,
@@ -48,6 +45,9 @@ function DeferredBlenderModel(
 
 export function HeroSection() {
   const t = useTranslations("home");
+  const whatsappHref = `https://wa.me/${whatsappPhone}?text=${encodeURIComponent(
+    t("whatsappMessage"),
+  )}`;
 
   return (
     <section
@@ -99,7 +99,7 @@ export function HeroSection() {
             <div className="mb-4 h-px w-20 bg-[#A82811] sm:mb-6 sm:w-24" />
 
             <p className="mb-3 font-manrope text-xs uppercase tracking-[0.18em] text-black/50 sm:mb-4">
-              Estudio digital
+              {t("eyebrow")}
             </p>
 
             <p className="font-khanda text-6xl font-light leading-[0.78] tracking-[-0.085em] text-black sm:text-7xl md:text-8xl lg:text-[7.5rem] xl:text-[8.5rem]">

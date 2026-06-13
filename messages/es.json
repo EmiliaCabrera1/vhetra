@@ -12,14 +12,17 @@
     "goHome": "Ir al inicio"
   },
   "home": {
+    "eyebrow": "Estudio digital",
     "tagline": "Diseño web y presencia digital",
     "heroHeading1": "DISEÑAMOS SOLUCIONES",
     "heroHeading2": "DIGITALES CON",
     "heroHeadingAccent": "IDENTIDAD.",
     "heroDescription": "Diseñamos sitios web, automatizaciones y soluciones digitales pensadas para agilizar procesos, mejorar la experiencia de tus clientes y darle más valor a tu negocio.",
-    "heroCta": "Agendar una reunión"
+    "heroCta": "Agendar una reunión",
+    "whatsappMessage": "Hola quiero agendar una reunion"
   },
   "howWeWork": {
+    "eyebrow": "Nuestra visión",
     "title": "NUESTRA FORMA DE TRABAJAR",
     "step1Title": "Claridad",
     "step1Desc": "Diseñamos experiencias simples, intuitivas y fáciles de entender. Creemos que la tecnología debe ordenar, no complicar.",
@@ -27,7 +30,8 @@
     "step2Desc": "Cada solución está pensada para resolver necesidades reales, agilizar tareas y acompañar el funcionamiento diario de un negocio.",
     "step3Title": "Diseño con intención",
     "step3Desc": "Cuidamos cada detalle visual para crear experiencias modernas, coherentes y alineadas con la identidad de cada proyecto.",
-    "cta": "Escríbinos y te contamos más"
+    "cta": "Escríbinos y te contamos más",
+    "whatsappMessage": "Hola! Me gustaría saber más sobre cómo trabajan en Vhetra."
   },
   "philosophy": {
     "title": "Filosofía de Vhetra | Diseño web, identidad visual y presencia digital",
@@ -85,6 +89,7 @@
     "website": "www.vhetra.com.ar"
   },
   "contact": {
+    "eyebrow": "Contacto directo",
     "spaHeading1": "CONTANOS QUÉ NECESITÁS.",
     "spaHeading2": "NOSOTROS TE AYUDAMOS A",
     "spaHeadingAccent": "HACERLO REALIDAD.",
@@ -95,9 +100,11 @@
     "gmailTitle": "GMAIL",
     "gmailAction": "Cuando tu idea necesita más palabras.<br></br>(Te respondo con detalle.)",
     "whatsappTitle": "WHATSAPP",
-    "whatsappAction": "Conectemos y demos el primer paso."
+    "whatsappAction": "Conectemos y demos el primer paso.",
+    "whatsappMessage": "Hola !\nTe contacto desde la web de VHETRA."
   },
   "projects": {
+    "eyebrow": "Portfolio seleccionado",
     "spaHeading": "CADA PROYECTO TIENE SU PROPIA IDENTIDAD, PERO TODOS COMPARTEN EL MISMO OBJETIVO:",
     "spaAccent": "CREAR EXPERIENCIAS CLARAS, FUNCIONALES Y MEMORABLES.",
     "spaCta": "Escríbinos y empezamos el tuyo",
@@ -107,6 +114,7 @@
     "subtitle": "Aquí compartimos algunos de los proyectos que reflejan ese resultado.",
     "visitWeb": "Visitar la web",
     "visitInstagram": "Visitar instagram",
+    "whatsappMessage": "Hola! Me gustaría empezar mi proyecto con Vhetra.",
     "acrodata": {
       "miniTitulo": "Acrodata web",
       "titulo": "Una experiencia digital pensada para acompañar el movimiento.",

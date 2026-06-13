@@ -4,10 +4,6 @@ import { useTranslations } from "next-intl";
 
 const whatsappPhone = process.env.NEXT_PUBLIC_WHATSAPP_PHONE ?? "5493875038714";
 
-const whatsappHref = `https://wa.me/${whatsappPhone}?text=${encodeURIComponent(
-  "Hola! Me gustaría saber más sobre cómo trabajan en Vhetra.",
-)}`;
-
 const STEPS = [
   { num: "01", titleKey: "step1Title" as const, descKey: "step1Desc" as const },
   { num: "02", titleKey: "step2Title" as const, descKey: "step2Desc" as const },
@@ -16,6 +12,9 @@ const STEPS = [
 
 export function ComoTrabajamosSection() {
   const t = useTranslations("howWeWork");
+  const whatsappHref = `https://wa.me/${whatsappPhone}?text=${encodeURIComponent(
+    t("whatsappMessage"),
+  )}`;
 
   return (
     <section
@@ -31,7 +30,7 @@ export function ComoTrabajamosSection() {
           <div className="mb-4 h-px w-20 bg-[#A82811] sm:mb-6 sm:w-24" />
 
           <p className="mb-3 font-manrope text-xs uppercase tracking-[0.18em] text-white/45 sm:mb-4">
-            Nuestra visión
+            {t("eyebrow")}
           </p>
 
           <h2 className="font-khanda text-5xl font-light uppercase leading-[0.8] tracking-[-0.075em] text-[#F9F9F9] sm:text-6xl lg:text-[5.8rem]">

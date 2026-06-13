@@ -13,12 +13,11 @@ const ProyectoCardGrande = dynamic(
 
 const whatsappPhone = process.env.NEXT_PUBLIC_WHATSAPP_PHONE ?? "5493875038714";
 
-const whatsappHref = `https://wa.me/${whatsappPhone}?text=${encodeURIComponent(
-  "Hola! Me gustaría empezar mi proyecto con Vhetra.",
-)}`;
-
 export function ProyectosSection() {
   const t = useTranslations("projects");
+  const whatsappHref = `https://wa.me/${whatsappPhone}?text=${encodeURIComponent(
+    t("whatsappMessage"),
+  )}`;
 
   const [selectedProyecto, setSelectedProyecto] = useState<Proyecto | null>(
     null,
@@ -168,7 +167,7 @@ export function ProyectosSection() {
           <div className="mb-4 h-px w-20 origin-left bg-[#A82811] sm:mb-6 sm:w-24" />
 
           <p className="mb-3 font-manrope text-xs uppercase tracking-[0.18em] text-black/50 sm:mb-4">
-            Portfolio seleccionado
+            {t("eyebrow")}
           </p>
 
           <h2 className="font-khanda text-5xl font-light uppercase leading-[0.8] tracking-[-0.075em] text-black sm:text-6xl lg:text-[5.8rem]">
