@@ -6,5 +6,6 @@ export type Servicio = {
   displayName: string;
   miniDescripcion: string;
   descripcionCompleta: ReactNode;
+  texture: string;
   destacado: boolean;
-}
+};

@@ -18,6 +18,7 @@ const SERVICE_KEYS = [
     displayKey: "automatizaciones",
     miniKey: "automatizacionesMini",
     fullKey: "automatizacionesFull",
+    texture: "/services/texture-abstract.png",
   },
   {
     id: 2,
@@ -25,6 +26,7 @@ const SERVICE_KEYS = [
     displayKey: "landingPage",
     miniKey: "landingPageMini",
     fullKey: "landingPageFull",
+    texture: "/services/texture-pebbled.png",
   },
   {
     id: 3,
@@ -32,6 +34,7 @@ const SERVICE_KEYS = [
     displayKey: "paginasPersonalizadas",
     miniKey: "paginasPersonalizadasMini",
     fullKey: "paginasPersonalizadasFull",
+    texture: "/services/texture-brushed.png",
   },
   {
     id: 4,
@@ -39,6 +42,7 @@ const SERVICE_KEYS = [
     displayKey: "ecommerce",
     miniKey: "ecommerceMini",
     fullKey: "ecommerceFull",
+    texture: "/services/texture-satin.png",
   },
   {
     id: 5,
@@ -46,6 +50,7 @@ const SERVICE_KEYS = [
     displayKey: "mantenimientoWeb",
     miniKey: "mantenimientoWebMini",
     fullKey: "mantenimientoWebFull",
+    texture: "/services/texture-marble.png",
   },
 ] as const;
 
@@ -67,6 +72,7 @@ export function ServiciosSection() {
           ),
           li: (chunks) => <li>{chunks}</li>,
         }),
+        texture: s.texture,
         destacado: false,
       })),
     [t],

@@ -1,0 +1,12 @@
+
+> vhetra@0.1.0 dev C:\Users\emi22\Desktop\vhetra
+> next dev --webpack
+
+   ▲ Next.js 16.0.10 (webpack)
+   - Local:         http://localhost:3001
+   - Network:       http://192.168.101.10:3001
+
+ ✓ Starting...
+   Suggestion: If you intended to restart next dev, terminate the other process, and then try again.
+[?25h
+ ELIFECYCLE  Command failed with exit code 1.
