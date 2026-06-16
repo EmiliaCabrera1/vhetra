@@ -35,9 +35,13 @@ const CONTACTOS = [
 
 export function ContactoSection() {
   const t = useTranslations("contact");
+  const whatsappHref = `https://wa.me/${whatsappPhone}?text=${encodeURIComponent(
+    t("whatsappMessage"),
+  )}`;
 
   const contactos = CONTACTOS.map((c) => ({
     ...c,
+    href: c.titleKey === "whatsappTitle" ? whatsappHref : c.href,
     title: t(c.titleKey),
     action: t.rich(c.actionKey, { br: () => <br /> }),
   }));
@@ -55,7 +59,7 @@ export function ContactoSection() {
             <div className="mb-4 h-px w-20 bg-[#A82811] sm:mb-6 sm:w-24" />
 
             <p className="mb-3 font-manrope text-xs uppercase tracking-[0.18em] text-black/50 sm:mb-4">
-              Contacto directo
+              {t("eyebrow")}
             </p>
 
             <h2 className="font-khanda text-5xl font-light uppercase leading-[0.8] tracking-[-0.075em] text-black sm:text-6xl lg:text-[5.8rem]">
