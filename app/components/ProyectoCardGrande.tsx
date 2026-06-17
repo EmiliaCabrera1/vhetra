@@ -26,18 +26,19 @@ const ProyectoCardGrande = ({ proyecto, onClose }: ProyectoCardGrandeProps) => {
     imagen,
     descripcionCompleta,
     webUrl,
+    technologies,
     ctaLabelKey,
     layoutType = "default",
   } = proyecto;
   const ctaLabel = ctaLabelKey ? t(ctaLabelKey) : t("visitWeb");
 
   const contentArea = (
-    <div className="font-manrope flex-1 min-h-0 text-zinc-300 text-xs sm:text-sm md:text-base lg:text-lg font-normal">
+    <div className="font-manrope text-zinc-300 text-xs sm:text-sm md:text-base lg:text-lg font-normal leading-relaxed">
       {descripcionCompleta}
     </div>
   );
 
-  const imageArea = (
+  const imageArea = imagen ? (
     <div className="flex justify-center items-center shrink-0">
       <Image
         src={imagen}
@@ -47,7 +48,7 @@ const ProyectoCardGrande = ({ proyecto, onClose }: ProyectoCardGrandeProps) => {
         className="w-full max-w-sm h-auto object-contain"
       />
     </div>
-  );
+  ) : null;
 
   const modalContent = (
     <div
@@ -87,15 +88,35 @@ const ProyectoCardGrande = ({ proyecto, onClose }: ProyectoCardGrandeProps) => {
               <div className="flex flex-1 min-w-0 order-2 xs:order-1">
                 {contentArea}
               </div>
-              <div className="flex-shrink-0 lg:basis-[20%] lg:min-w-0 xs:order-1">
-                {imageArea}
-              </div>
+              {imageArea && (
+                <div className="flex-shrink-0 lg:basis-[20%] lg:min-w-0 xs:order-1">
+                  {imageArea}
+                </div>
+              )}
             </div>
           ) : (
             <>
               {imageArea}
               {contentArea}
             </>
+          )}
+
+          {technologies && technologies.length > 0 && (
+            <div className="shrink-0 border-t border-white/10 pt-4">
+              <p className="font-manrope text-[0.68rem] uppercase tracking-[0.18em] text-zinc-500 sm:text-xs">
+                {t("technologiesLabel")}
+              </p>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {technologies.map((technology) => (
+                  <span
+                    key={technology}
+                    className="rounded-full border border-zinc-700 bg-zinc-800/70 px-3 py-1 font-manrope text-xs text-zinc-300 sm:text-sm"
+                  >
+                    {technology}
+                  </span>
+                ))}
+              </div>
+            </div>
           )}
         </div>
 

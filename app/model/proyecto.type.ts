@@ -7,9 +7,10 @@ export type Proyecto = {
     titulo: string;
     miniDescripcion: string;
     descripcionCompleta: ReactNode;
-    miniatura: string;
-    imagen: string;
+    miniatura?: string;
+    imagen?: string;
     webUrl?: string;
+    technologies?: string[];
     /** Override CTA button label (e.g. "Visitar instagram") */
     ctaLabelKey?: string;
     /** "textImage" = text left, image right on lg; "default" = image top, text below */

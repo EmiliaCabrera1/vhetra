@@ -21,9 +21,18 @@ const CardChica = ({ proyecto, onClick, imgClassName, priority }: CardChicaProps
         )
         }
       >
-        <div className={twMerge(imgClassName, "relative overflow-visible")}>
-          <Image src={miniatura} alt={miniTitulo} fill className="w-full h-full object-contain" loading={priority ? undefined : "lazy"} priority={priority} />
-        </div>
+        {miniatura && (
+          <div className={twMerge(imgClassName, "relative overflow-visible")}>
+            <Image
+              src={miniatura}
+              alt={miniTitulo}
+              fill
+              className="w-full h-full object-contain"
+              loading={priority ? undefined : "lazy"}
+              priority={priority}
+            />
+          </div>
+        )}
         <div className="flex-1 flex flex-col min-w-0">
           <h3 className="text-left text-tiza text-[clamp(0.95rem,4.8vw,1.25rem)] font-normal leading-none">
             {miniTitulo}

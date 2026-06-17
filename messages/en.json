@@ -107,6 +107,7 @@
     "eyebrow": "Selected portfolio",
     "spaHeading": "EVERY PROJECT HAS ITS OWN IDENTITY, BUT THEY ALL SHARE THE SAME GOAL:",
     "spaAccent": "CREATING CLEAR, FUNCTIONAL, AND MEMORABLE EXPERIENCES.",
+    "salesIntro": "We build real websites for real businesses: institutional sites, e-commerce, digital menus, and custom platforms designed to sell, organize information, and turn visits into inquiries.",
     "spaCta": "Write to us and let's start yours",
     "viewAll": "SOME OF OUR PROJECTS",
     "heading1": "Different visions, one shared purpose,",
@@ -114,22 +115,64 @@
     "subtitle": "Here are a few projects that reflect that work.",
     "visitWeb": "Visit website",
     "visitInstagram": "Visit Instagram",
+    "technologiesLabel": "Technologies used",
     "whatsappMessage": "Hi! I'd like to start my project with Vhetra.",
     "acrodata": {
       "miniTitulo": "Acrodata website",
       "titulo": "A digital experience designed to move with the body.",
       "miniDescripcion": "Specialized website",
-      "descripcionP1": "Includes a card gallery for exploring Acroyoga poses and a tool to combine them into custom flows. It also adds a classes section, an informational booklet, and simple direct contact, all within a lightweight interface.",
-      "descripcionP2": "Designed piece by piece, turning structure into aesthetics and functionality into flow.",
+      "descripcionP1": "We developed an interactive platform centered around a digital library of Acroyoga cards and a tool for creating custom sequences.",
+      "descripcionP2": "At the core of the project is a system that lets users explore dozens of poses through difficulty-level filters, opening individual cards with a photo, name, and detailed description of each figure. We also developed a game-like flow that generates random cards so users can select them, rearrange them, and build their own practice sequences intuitively.",
+      "descripcionP3": "The platform also includes informational sections about classes, educational material, and resources for people who want to get started or go deeper into the discipline, all within a clear, fluid browsing experience optimized for mobile devices.",
+      "descripcionP4": "The main challenge was transforming a collection of educational content into an interactive tool capable of combining exploration, learning, and play within a single digital experience.",
       "technologies": "Technologies: React · Tailwind CSS"
     },
     "estacionAlemania": {
       "miniTitulo": "Estacion Alemania",
       "miniDescripcion": "Online menu + informational website",
       "titulo": "A digital experience for discovering the history and flavors of Estacion Alemania.",
-      "descripcionP1": "We developed an online menu that lets visitors easily explore the venue's food and drink offering. The site presents the full menu in Spanish and English, giving both tourists and local visitors clear, simple access to the same information.",
-      "descripcionP2": "Beyond the digital menu, the website includes a brief history of the old railway station and an introduction to the Interpretation Center that operates in the same space, connecting the site's cultural value with its culinary experience. We also added direct access to Instagram, contact options, and location details to make visiting the station easier.",
-      "technologies": "Technology: Next.js, React, and Tailwind"
+      "descripcionP1": "We developed a digital menu designed so visitors can explore the venue's food and drink offering quickly, clearly, and intuitively from any device.",
+      "descripcionP2": "The site's structure was planned to optimize the user experience, making it easy to access the full menu in Spanish and English, a feature especially useful for welcoming both tourists and local visitors. Direct links to social media, contact options, and location details were also included to make interaction and arrival at the venue easier.",
+      "descripcionP3": "As a complement to the digital menu, the platform includes informational content about the history of the former railway station and the Interpretation Center that operates in the same space, organizing the information in a clear and accessible way without disrupting the browsing experience.",
+      "descripcionP4": "The result is a digital tool that is simple to manage, optimized for mobile devices, and designed to improve the experience of everyone who visits the place.",
+      "technologies": "Technology: Next.js, React, and Tailwind CSS."
+    },
+    "laboragro": {
+      "miniTitulo": "Laboragro",
+      "miniDescripcion": "Institutional website",
+      "titulo": "A corporate platform for presenting technical agricultural analysis services.",
+      "descripcionP1": "We developed a corporate web platform designed to present technical agricultural analysis services in a clear, professional, and accessible way for different types of users.",
+      "descripcionP2": "The site's structure was designed to organize a large amount of technical information without compromising the browsing experience. Through a carefully planned content architecture, visitors can quickly access the different analysis services, learn about the laboratory's certifications, and find relevant information about processes, quality, and sampling.",
+      "descripcionP3": "The project prioritized visual clarity and easy access to information, turning complex content into an intuitive and orderly experience. Navigation was also optimized for mobile devices, and multiple contact points were incorporated to make communication with potential clients easier.",
+      "descripcionP4": "The result is a solid institutional platform designed to convey trust, professionalism, and technical credibility, aligned with the laboratory's background and specialization."
+    },
+    "chaUsandivaras": {
+      "miniTitulo": "Cha Usandivaras",
+      "miniDescripcion": "Real estate website",
+      "titulo": "A clear, simple real estate platform aligned with the business identity.",
+      "descripcionP1": "We developed a real estate platform focused on simplicity, clarity, and ease of use, adapting every design decision to the client's visual identity and specific needs.",
+      "descripcionP2": "The project was built with a responsive approach, ensuring a consistent and comfortable experience across desktop, tablet, and mobile devices. The interface prioritizes intuitive navigation, allowing users to explore properties quickly and easily, reducing friction and making the most relevant information easy to access.",
+      "descripcionP3": "The platform includes a filtering system to speed up the property search, helping users find listings according to different criteria efficiently. We also developed a clear and accessible contact section to encourage direct communication between potential clients and the real estate agency.",
+      "descripcionP4": "The result is an elegant and functional digital tool designed to provide a simple, fluid experience aligned with the business's commercial goals."
+    },
+    "flavia": {
+      "miniTitulo": "Flavia",
+      "miniDescripcion": "Digital menu",
+      "titulo": "A modern digital menu built for simplicity and fast access.",
+      "descripcionP1": "We developed a modern digital menu focused on simplicity, quick access, and a clean browsing experience from any device.",
+      "descripcionP2": "The project was designed around a clear client requirement: remove unnecessary elements and prioritize only the essential information. The interface uses a minimalist, intuitive structure that lets users explore the menu naturally, without distractions or visual overload, making it comfortable to read on both mobile devices and desktop computers.",
+      "descripcionP3": "To add identity without compromising the overall simplicity, we incorporated a 3D animation created in Blender and integrated subtly into the experience. This element brings personality to the site while preserving the clean, elegant aesthetic that guided the entire project.",
+      "descripcionP4": "The result is a responsive, fast, and visually balanced platform where design and functionality work together to highlight the food offering clearly and directly."
+    },
+    "lozzaStudio": {
+      "miniTitulo": "Lozza Studio",
+      "miniDescripcion": "E-commerce + web management",
+      "titulo": "An end-to-end web platform for selling, managing content, and administering users.",
+      "descripcionP1": "We developed an end-to-end web platform that brings together e-commerce, content management, and user administration in a single digital solution.",
+      "descripcionP2": "The project was designed with close attention to the user experience, prioritizing clear, intuitive navigation so visitors can find information, book their place in workshops, request custom ceramic pieces, or make purchases quickly and easily. Every section was planned and structured around UX principles to improve conversion and make the site journey feel effortless.",
+      "descripcionP3": "Beyond the public-facing experience, we developed an admin dashboard that allows products, orders, content, and users to be managed without technical knowledge, giving the studio autonomy and flexibility to keep the platform up to date.",
+      "descripcionP4": "The online store is integrated with Mercado Pago to process payments securely, while user authentication and the database support advanced features and efficient management of all site information.",
+      "technologies": "Technology: Next.js, React, Supabase, Supabase Authentication, and Mercado Pago."
     },
     "filiSuites": {
       "miniTitulo": "Fili Suites",

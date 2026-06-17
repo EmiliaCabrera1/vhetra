@@ -107,6 +107,7 @@
     "eyebrow": "Portfolio seleccionado",
     "spaHeading": "CADA PROYECTO TIENE SU PROPIA IDENTIDAD, PERO TODOS COMPARTEN EL MISMO OBJETIVO:",
     "spaAccent": "CREAR EXPERIENCIAS CLARAS, FUNCIONALES Y MEMORABLES.",
+    "salesIntro": "Desarrollamos webs reales para negocios reales: sitios institucionales, e-commerce, menus digitales y plataformas a medida pensadas para vender, ordenar la informacion y convertir visitas en contactos.",
     "spaCta": "Escríbinos y empezamos el tuyo",
     "viewAll": "ALGUNOS DE NUESTROS PROYECTOS",
     "heading1": "Diferentes visiones, un mismo propósito,",
@@ -114,22 +115,64 @@
     "subtitle": "Aquí compartimos algunos de los proyectos que reflejan ese resultado.",
     "visitWeb": "Visitar la web",
     "visitInstagram": "Visitar instagram",
+    "technologiesLabel": "Tecnologias utilizadas",
     "whatsappMessage": "Hola! Me gustaría empezar mi proyecto con Vhetra.",
     "acrodata": {
       "miniTitulo": "Acrodata web",
       "titulo": "Una experiencia digital pensada para acompañar el movimiento.",
       "miniDescripcion": "Web especializada",
-      "descripcionP1": "Incluye una galería de cartas para explorar posturas de Acroyoga y una herramienta para combinarlas en flows propios. Se suma una sección de clases, cartilla informativa y un contacto simple y directo, todo dentro de una interfaz ligera.",
-      "descripcionP2": "Diseñada parte por parte, convirtiendo estructura en estética y funcionalidad en fluidez.",
-      "technologies": "Tecnologías: React · Tailwind CSS"
+      "descripcionP1": "Desarrollamos una plataforma interactiva centrada en una biblioteca digital de cartas de Acroyoga y una herramienta para la creación de secuencias personalizadas.",
+      "descripcionP2": "El núcleo del proyecto es un sistema que permite explorar decenas de posturas mediante filtros por nivel de dificultad, accediendo a fichas individuales con fotografía, nombre y descripción detallada de cada figura. Además, se desarrolló una dinámica de juego que genera cartas aleatorias para que los usuarios puedan seleccionarlas, reorganizarlas y construir sus propios flows de práctica de manera intuitiva.",
+      "descripcionP3": "La plataforma también incorpora secciones informativas sobre clases, material educativo y recursos para quienes desean iniciarse o profundizar en la disciplina, todo dentro de una experiencia de navegación clara, fluida y optimizada para dispositivos móviles.",
+      "descripcionP4": "El desafío principal consistió en transformar una colección de contenido educativo en una herramienta interactiva capaz de combinar exploración, aprendizaje y juego dentro de una misma experiencia digital.",
+      "technologies": ""
     },
     "estacionAlemania": {
       "miniTitulo": "Estación Alemania",
       "miniDescripcion": "Carta online + web informativa",
       "titulo": "Una experiencia digital para descubrir la historia y los sabores de Estación Alemania.",
-      "descripcionP1": "Desarrollamos una carta online pensada para que los visitantes puedan explorar fácilmente la propuesta gastronómica del lugar. El sitio presenta el menú completo en español e inglés, permitiendo que tanto turistas como visitantes locales accedan a la misma información de forma clara y simple.",
-      "descripcionP2": "Además de la carta digital, la web incluye una breve historia de la antigua estación ferroviaria y una introducción al Centro de Interpretación que funciona en el mismo espacio, integrando el valor cultural del lugar con su propuesta gastronómica. También se incorporaron accesos directos a Instagram, opciones de contacto y la ubicación para facilitar la llegada de quienes visitan la estación.",
-      "technologies": "Tecnología: Next.js, React y Tailwind"
+      "descripcionP1": "Desarrollamos un menú digital diseñado para que los visitantes puedan explorar la propuesta gastronómica del lugar de forma rápida, clara e intuitiva desde cualquier dispositivo.",
+      "descripcionP2": "La estructura del sitio fue pensada para optimizar la experiencia de usuario, permitiendo acceder fácilmente al menú completo en español e inglés, una funcionalidad especialmente útil para recibir tanto a turistas como a visitantes locales. Además, se incorporaron accesos directos a redes sociales, opciones de contacto y ubicación para facilitar la interacción y la llegada al establecimiento.",
+      "descripcionP3": "Como complemento al menú digital, la plataforma integra contenido informativo sobre la historia de la antigua estación ferroviaria y el Centro de Interpretación que funciona en el mismo espacio, organizando la información de manera clara y accesible sin afectar la experiencia de navegación.",
+      "descripcionP4": "El resultado es una herramienta digital simple de administrar, optimizada para dispositivos móviles y pensada para mejorar la experiencia de quienes visitan el lugar.",
+      "technologies": ""
+    },
+    "laboragro": {
+      "miniTitulo": "Laboragro",
+      "miniDescripcion": "Web institucional",
+      "titulo": "Una plataforma corporativa para presentar servicios técnicos agropecuarios.",
+      "descripcionP1": "Desarrollamos una plataforma web corporativa orientada a presentar servicios técnicos de análisis agropecuario de manera clara, profesional y accesible para distintos tipos de usuarios.",
+      "descripcionP2": "La estructura del sitio fue diseñada para organizar una gran cantidad de información técnica sin comprometer la experiencia de navegación. A través de una arquitectura de contenido cuidadosamente planificada, los visitantes pueden acceder rápidamente a los distintos servicios de análisis, conocer las certificaciones del laboratorio y consultar información relevante sobre procesos, calidad y muestreo.",
+      "descripcionP3": "El proyecto priorizó la claridad visual y la facilidad de acceso a la información, transformando contenidos complejos en una experiencia intuitiva y ordenada. Además, se optimizó la navegación para dispositivos móviles y se incorporaron múltiples puntos de contacto para facilitar la comunicación con potenciales clientes.",
+      "descripcionP4": "El resultado es una plataforma institucional sólida, diseñada para transmitir confianza, profesionalismo y respaldo técnico, alineada con la trayectoria y especialización del laboratorio."
+    },
+    "chaUsandivaras": {
+      "miniTitulo": "Cha Usandivaras",
+      "miniDescripcion": "Sitio inmobiliario",
+      "titulo": "Una plataforma inmobiliaria simple, clara y alineada con la identidad del negocio.",
+      "descripcionP1": "Desarrollamos una plataforma inmobiliaria enfocada en la simplicidad, la claridad y la facilidad de uso, adaptando cada decisión de diseño a la identidad visual y a las necesidades específicas del cliente.",
+      "descripcionP2": "El proyecto fue concebido bajo un enfoque responsive, garantizando una experiencia consistente y cómoda en computadoras, tablets y dispositivos móviles. La interfaz prioriza una navegación intuitiva que permite a los usuarios explorar propiedades de forma rápida y sencilla, reduciendo fricciones y facilitando el acceso a la información más relevante.",
+      "descripcionP3": "La plataforma incorpora un sistema de filtros para agilizar la búsqueda de inmuebles, permitiendo encontrar propiedades según distintos criterios de manera eficiente. Además, se desarrolló una sección de contacto clara y accesible para favorecer la comunicación directa entre potenciales clientes y la inmobiliaria.",
+      "descripcionP4": "El resultado es una herramienta digital elegante y funcional, diseñada para ofrecer una experiencia simple, fluida y alineada con los objetivos comerciales del negocio."
+    },
+    "flavia": {
+      "miniTitulo": "Flavia",
+      "miniDescripcion": "Menú digital",
+      "titulo": "Un menú digital moderno, simple y rápido de consultar.",
+      "descripcionP1": "Desarrollamos un menú digital moderno enfocado en la simplicidad, la rapidez de acceso y una experiencia de navegación limpia desde cualquier dispositivo.",
+      "descripcionP2": "El proyecto fue diseñado siguiendo una premisa clara del cliente: eliminar elementos innecesarios y priorizar únicamente la información esencial. La interfaz presenta una estructura minimalista e intuitiva que permite explorar la carta de forma natural, sin distracciones ni sobrecarga visual, facilitando una lectura cómoda tanto en dispositivos móviles como en computadoras.",
+      "descripcionP3": "Para aportar identidad sin comprometer la simplicidad del conjunto, se incorporó una animación 3D desarrollada en Blender, integrada de manera sutil dentro de la experiencia. Este recurso aporta personalidad al sitio manteniendo la estética limpia y elegante que guiaba todo el proyecto.",
+      "descripcionP4": "El resultado es una plataforma responsive, rápida y visualmente equilibrada, donde diseño y funcionalidad trabajan juntos para destacar la propuesta gastronómica de forma clara y directa."
+    },
+    "lozzaStudio": {
+      "miniTitulo": "Lozza Studio",
+      "miniDescripcion": "E-commerce + gestión web",
+      "titulo": "Una plataforma web integral para vender, gestionar contenidos y administrar usuarios.",
+      "descripcionP1": "Desarrollamos una plataforma web integral que combina ecommerce, gestión de contenidos y administración de usuarios en una única solución digital.",
+      "descripcionP2": "El proyecto fue diseñado con especial atención en la experiencia de usuario, priorizando una navegación clara e intuitiva que permite a los visitantes encontrar información, reservar su lugar en talleres, solicitar piezas personalizadas o realizar compras de forma rápida y sencilla. Cada sección fue pensada y estructurada a partir de criterios de UX para optimizar la conversión y facilitar el recorrido dentro del sitio.",
+      "descripcionP3": "Además de la experiencia pública, se desarrolló un panel de administración que permite gestionar productos, pedidos, contenidos y usuarios sin necesidad de conocimientos técnicos, brindando autonomía y flexibilidad para mantener la plataforma actualizada.",
+      "descripcionP4": "La tienda online se encuentra integrada con Mercado Pago para procesar pagos de forma segura, mientras que la autenticación de usuarios y la base de datos permiten ofrecer funcionalidades avanzadas y una gestión eficiente de toda la información del sitio.",
+      "technologies": ""
     },
     "filiSuites": {
       "miniTitulo": "Fili Suites",

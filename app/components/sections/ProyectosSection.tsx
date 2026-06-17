@@ -41,13 +41,18 @@ export function ProyectosSection() {
             {t("acrodata.descripcionP2")}
             <br />
             <br />
+            {t("acrodata.descripcionP3")}
+            <br />
+            <br />
+            {t("acrodata.descripcionP4")}
+            <br />
+            <br />
             {t("acrodata.technologies")}
           </>
         ),
-        miniatura: "/projects/acrodata1.svg",
         imagen: "/projects/acrodata2.svg",
         webUrl: "https://www.acrodata.vhetra.com.ar/",
-        imgClassName: "w-28 h-40 self-center -rotate-12",
+        technologies: ["React", "Tailwind CSS", "Responsive UI"],
       },
       {
         id: 2,
@@ -63,54 +68,120 @@ export function ProyectosSection() {
             {t("estacionAlemania.descripcionP2")}
             <br />
             <br />
+            {t("estacionAlemania.descripcionP3")}
+            <br />
+            <br />
+            {t("estacionAlemania.descripcionP4")}
+            <br />
+            <br />
             {t("estacionAlemania.technologies")}
           </>
         ),
-        miniatura: "/projects/estacion1.svg",
         imagen: "/projects/estacion2.svg",
         webUrl: "https://estacionalemania.vhetra.com.ar/",
         layoutType: "textImage",
-        imgClassName: "flex w-40 h-40 self-end -mb-11 -ml-4",
+        technologies: ["Next.js", "React", "Tailwind CSS"],
       },
 
       {
         id: 4,
         name: "Laboragro",
-        miniTitulo: "Laboragro",
-        titulo: "Laboragro",
-        miniDescripcion: "Sistema digital",
+        miniTitulo: t("laboragro.miniTitulo"),
+        titulo: t("laboragro.titulo"),
+        miniDescripcion: t("laboragro.miniDescripcion"),
         descripcionCompleta: (
-          <>Proyecto de muestra para visualizar el carrusel.</>
+          <>
+            {t("laboragro.descripcionP1")}
+            <br />
+            <br />
+            {t("laboragro.descripcionP2")}
+            <br />
+            <br />
+            {t("laboragro.descripcionP3")}
+            <br />
+            <br />
+            {t("laboragro.descripcionP4")}
+          </>
         ),
-        miniatura: "/projects/acrodata1.svg",
-        imagen: "/projects/acrodata2.svg",
-        webUrl: "#",
+        webUrl: "https://www.laboragro.com.ar/",
+        technologies: ["Next.js", "React", "Tailwind CSS", "SEO tecnico"],
       },
       {
         id: 5,
-        name: "Loza Studio",
-        miniTitulo: "Loza Studio",
-        titulo: "Loza Studio",
-        miniDescripcion: "Identidad web",
+        name: "Lozza Studio",
+        miniTitulo: t("lozzaStudio.miniTitulo"),
+        titulo: t("lozzaStudio.titulo"),
+        miniDescripcion: t("lozzaStudio.miniDescripcion"),
         descripcionCompleta: (
-          <>Proyecto de muestra para visualizar el carrusel.</>
+          <>
+            {t("lozzaStudio.descripcionP1")}
+            <br />
+            <br />
+            {t("lozzaStudio.descripcionP2")}
+            <br />
+            <br />
+            {t("lozzaStudio.descripcionP3")}
+            <br />
+            <br />
+            {t("lozzaStudio.descripcionP4")}
+            <br />
+            <br />
+            {t("lozzaStudio.technologies")}
+          </>
         ),
-        miniatura: "/projects/estacion1.svg",
-        imagen: "/projects/estacion2.svg",
-        webUrl: "#",
+        technologies: [
+          "Next.js",
+          "React",
+          "Supabase",
+          "Supabase Authentication",
+          "Mercado Pago",
+        ],
       },
       {
         id: 6,
         name: "Cha Usandivaras Inmobiliaria",
-        miniTitulo: "Cha Usandivaras",
-        titulo: "Cha Usandivaras Inmobiliaria",
-        miniDescripcion: "Sitio inmobiliario",
+        miniTitulo: t("chaUsandivaras.miniTitulo"),
+        titulo: t("chaUsandivaras.titulo"),
+        miniDescripcion: t("chaUsandivaras.miniDescripcion"),
         descripcionCompleta: (
-          <>Proyecto de muestra para visualizar el carrusel.</>
+          <>
+            {t("chaUsandivaras.descripcionP1")}
+            <br />
+            <br />
+            {t("chaUsandivaras.descripcionP2")}
+            <br />
+            <br />
+            {t("chaUsandivaras.descripcionP3")}
+            <br />
+            <br />
+            {t("chaUsandivaras.descripcionP4")}
+          </>
         ),
-        miniatura: "/projects/fili1.svg",
-        imagen: "/projects/fili2.svg",
-        webUrl: "#",
+        webUrl: "https://chausandivaras.vhetra.com.ar/",
+        technologies: ["Next.js", "React", "Tailwind CSS", "Responsive UI"],
+      },
+      {
+        id: 7,
+        name: "Flavia",
+        miniTitulo: t("flavia.miniTitulo"),
+        titulo: t("flavia.titulo"),
+        miniDescripcion: t("flavia.miniDescripcion"),
+        descripcionCompleta: (
+          <>
+            {t("flavia.descripcionP1")}
+            <br />
+            <br />
+            {t("flavia.descripcionP2")}
+            <br />
+            <br />
+            {t("flavia.descripcionP3")}
+            <br />
+            <br />
+            {t("flavia.descripcionP4")}
+          </>
+        ),
+        webUrl: "https://flavia.vhetra.com.ar/",
+        technologies: ["Next.js", "React", "Tailwind CSS", "Blender"],
       },
     ],
     [t],
@@ -177,6 +248,10 @@ export function ProyectosSection() {
           <h2 className="mt-1 w-fit font-khanda text-5xl font-light uppercase leading-[0.8] tracking-[-0.075em] text-[#A82811] sm:text-6xl lg:text-[5.8rem]">
             {t("spaAccent")}
           </h2>
+
+          <p className="mt-6 max-w-3xl font-manrope text-sm leading-relaxed text-black/65 sm:text-base lg:text-lg">
+            {t("salesIntro")}
+          </p>
         </div>
 
         <div className="group/carousel relative -mx-6 py-4 sm:-mx-12 sm:py-6 lg:-mx-20 lg:py-8">
