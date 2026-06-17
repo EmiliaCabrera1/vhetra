@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "title": "VHETRA - We design brand ecosystems",
-    "description": "We design brand ecosystems. Digital experiences you can feel."
+    "title": "VHETRA - Digital Design and Brand Systems",
+    "description": "We design brand systems and digital experiences with clarity, strategy, and identity."
   },
   "nav": {
     "home": "Home",
@@ -17,7 +17,7 @@
     "heroHeading1": "WE DESIGN DIGITAL",
     "heroHeading2": "SOLUTIONS WITH",
     "heroHeadingAccent": "IDENTITY.",
-    "heroDescription": "We design websites, automations, and digital solutions that simplify processes, improve your customer experience, and bring more value to your business.",
+    "heroDescription": "We design websites, automations, and digital solutions that streamline processes, improve your customer experience, and add real value to your business.",
     "heroCta": "Book a meeting",
     "whatsappMessage": "Hi! I'd like to book a meeting."
   },
@@ -25,51 +25,46 @@
     "eyebrow": "Our vision",
     "title": "HOW WE WORK",
     "step1Title": "Clarity",
-    "step1Desc": "We design simple, intuitive experiences that are easy to understand. Technology should bring order, not complexity.",
+    "step1Desc": "We design simple, intuitive experiences that are easy to understand. Technology should create order, not friction.",
     "step2Title": "Functionality",
-    "step2Desc": "Every solution is built around real needs, helping streamline tasks and support the day-to-day rhythm of your business.",
+    "step2Desc": "Every solution is built around real needs, helping streamline tasks and support the daily rhythm of your business.",
     "step3Title": "Intentional Design",
-    "step3Desc": "We shape every visual detail to create modern, cohesive experiences aligned with each project's identity.",
-    "cta": "Write to us and we'll tell you more",
+    "step3Desc": "We shape every visual detail to create modern, cohesive experiences that reflect each project's identity.",
+    "cta": "Get in touch and we'll tell you more",
     "whatsappMessage": "Hi! I'd like to learn more about how Vhetra works."
   },
   "philosophy": {
-    "title": "Our Philosophy | Web Design, Visual Identity & Digital Presence",
+    "title": "Our Philosophy | Web Design, Visual Identity, and Digital Presence",
     "titlePrefix": "At VHETRA, digital",
     "titleSuffix": "breathes",
-
     "intro": "We don't create isolated pieces; we build <strong>brands as cohesive systems</strong>.",
-
-    "body1": "At Vhetra, we bring together <strong>technology, design, and strategy</strong> to turn ideas into living identities. A brand is not defined by one element alone, but by the relationship between all of them: its <strong>digital architecture, visual identity, and online presence</strong>.",
-
+    "body1": "At Vhetra, we bring together <strong>technology, design, and strategy</strong> to turn ideas into living identities. A brand is not defined by a single element, but by the relationship between all of them: its <strong>digital architecture, visual identity, and online presence</strong>.",
     "body2": "We create <strong>web design and digital presence</strong> for brands, projects, and businesses that want to communicate with clarity and consistency. We build <strong>fast, accessible websites that work beautifully on every device</strong>, combining <strong>Next.js, React, and modern technologies</strong> with thoughtful design direction.",
-
-    "body3": "We don't chase short-lived trends; we design <strong>structures with identity</strong>, made to work and made to last.",
-
+    "body3": "We don't chase short-lived trends; we design <strong>structures with identity</strong>, built to work and made to last.",
     "body4": "We are structure and sensitivity at once: <strong>code that breathes brand</strong>."
   },
   "services": {
     "presenciaDigital": "DIGITAL PRESENCE",
-    "presenciaDigitalMini": "A website paired with a visual identity",
-    "presenciaDigitalFull": "A website paired with a clear visual identity, so your brand can communicate professionally across the web and social media. Made for new businesses and projects that need a cohesive look across every digital channel.<br></br>Includes:<br></br><ul><li>Landing page (A simple website to present your business and receive inquiries)</li><li>Adaptation of an existing logo</li><li>Typography selection (The fonts your brand will use)</li><li>Color palette (The colors that will visually represent your brand)</li><li>Basic visual kit (Graphic elements to keep your aesthetic consistent)</li><li>Identity adaptation for social media</li><li>6 initial Instagram posts (Ready-to-publish designed pieces)</li></ul><br></br>Available with monthly maintenance, which can include new posts each month.",
+    "presenciaDigitalMini": "A website paired with a cohesive visual identity",
+    "presenciaDigitalFull": "A website paired with a clear visual identity, so your brand can communicate professionally across the web and social media. Created for businesses and projects that need a consistent presence across every digital channel.<br></br>Includes:<br></br><ul><li>Landing page (A simple website to present your business and receive inquiries)</li><li>Adaptation of an existing logo</li><li>Typography selection (The fonts your brand will use)</li><li>Color palette (The colors that will visually represent your brand)</li><li>Basic visual kit (Graphic elements to keep your aesthetic consistent)</li><li>Social media identity adaptation</li><li>6 initial Instagram posts (Ready-to-publish designed pieces)</li></ul><br></br>Available with monthly maintenance, which may include new posts each month.",
     "marcaDigital": "DIGITAL BRAND",
     "marcaDigitalMini": "A complete visual system",
-    "marcaDigitalFull": "A complete visual system together with a website developed around your business's specific needs. Ideal for brands that need more than a basic informational site.<br></br>Includes:<br></br><ul><li>Custom website development (May include appointments, service catalogs, bookings, or other features)</li><li>Branding (Logo design or redesign and brand visual style)</li><li>Typography and color definition</li><li>Social media adaptation</li><li>6 initial posts</li><li>Graphic pieces for digital communication</li></ul><br></br>Available as a monthly service that may include:<br></br><ul><li>Website maintenance</li><li>Content updates</li><li>Post management</li><li>New monthly graphic pieces</li></ul>",
+    "marcaDigitalFull": "A complete visual system paired with a website developed around your business's specific needs. Ideal for brands that need more than a basic informational site.<br></br>Includes:<br></br><ul><li>Custom website development (May include appointments, service catalogs, bookings, or other features)</li><li>Branding (Logo design or redesign and brand visual style)</li><li>Typography and color definition</li><li>Social media adaptation</li><li>6 initial posts</li><li>Graphic pieces for digital communication</li></ul><br></br>Available as an ongoing monthly service that may include:<br></br><ul><li>Website maintenance</li><li>Content updates</li><li>Post management</li><li>New monthly graphic pieces</li></ul>",
     "presenciaEnRedes": "SOCIAL MEDIA PRESENCE",
     "presenciaEnRedesMini": "A visual and strategic foundation",
-    "presenciaEnRedesFull": "A visual and strategic foundation to help your brand start communicating professionally on social media. Ideal for businesses or projects that want to launch their Instagram presence with a clear identity, cohesive content, and an initial plan that makes it easier to stay active.<br></br>Includes:<br></br><ul><li>30 edited photos (Image optimization for social media, with attention to color, framing, and visual style)</li><li>9 initial feed posts (Designed around the brand's visual identity to create an attractive, cohesive profile from the start)</li><li>One-month content calendar (Ideas and post topics planned to keep communication organized and consistent)</li><li>Existing logo adaptation (If needed, so it works properly on social media)</li></ul>",
+    "presenciaEnRedesFull": "A visual and strategic foundation to help your brand communicate professionally on social media. Ideal for businesses or projects launching their Instagram presence with a clear identity, cohesive content, and an initial plan that makes it easier to stay active.<br></br>Includes:<br></br><ul><li>30 edited photos (Optimized for social media, with attention to color, framing, and visual style)</li><li>9 initial feed posts (Designed around the brand's visual identity to create an attractive, cohesive profile from the start)</li><li>One-month content calendar (Post ideas and topics planned to keep communication organized and consistent)</li><li>Existing logo adaptation (If needed, so it works properly on social media)</li></ul>",
     "landingPage": "INFORMATIONAL WEBSITE",
     "landingPageMini": "A simple one-page website",
-    "landingPageFull": "A simple one-page website that presents your business, services or products, and contact options.",
+    "landingPageFull": "A simple one-page website that presents your business, services, products, and contact options.",
     "ecommerce": "ONLINE STORE",
     "ecommerceMini": "An online store to sell your products",
-    "ecommerceFull": "Development of an online store where customers can browse products, add them to their cart, and complete purchases.<br></br>Includes:<br></br><ul><li>Product catalog</li><li>Shopping cart</li><li>Payment integration (for example, Mercado Pago)</li><li>Management panel for prices and stock</li></ul>",
+    "ecommerceFull": "Development of an online store where customers can browse products, add items to their cart, and complete purchases.<br></br>Includes:<br></br><ul><li>Product catalog</li><li>Shopping cart</li><li>Payment integration (for example, Mercado Pago)</li><li>Management panel for prices and stock</li></ul>",
     "paginasPersonalizadas": "CUSTOM WEBSITES",
     "paginasPersonalizadasMini": "Websites with tailored features",
     "paginasPersonalizadasFull": "Website development with specific features for your activity or business model.<br></br>May include:<br></br><ul><li>Appointment system</li><li>Calendars</li><li>Service catalog</li><li>Online bookings</li><li>Admin panel</li></ul>",
     "manejoRedes": "SOCIAL MEDIA MANAGEMENT",
     "manejoRedesMini": "Content management for social media",
-    "manejoRedesFull": "Social media content management, including post design and visual brand adaptation.<br></br>Available as:<br></br><ul><li>Initial identity package: Includes typography definition, colors, and design of 6 posts</li><li>Monthly service: Includes design of 6 posts per month. A previously defined visual identity is required.</li></ul>",
+    "manejoRedesFull": "Social media content management, including post design and visual brand adaptation.<br></br>Available as:<br></br><ul><li>Initial identity package: Includes typography, color definition, and design of 6 posts</li><li>Monthly service: Includes design of 6 posts per month. A previously defined visual identity is required.</li></ul>",
     "brandingLogotipo": "BRANDING AND LOGO",
     "brandingLogotipoMini": "Logo design and visual style",
     "brandingLogotipoFull": "Logo design and visual styling for your brand, helping keep a consistent presence across your website, social media, and printed materials.<br></br>Includes:<br></br><ul><li>Logo design</li><li>Typography</li><li>Brand colors</li><li>Visual guidelines</li></ul>",
@@ -78,14 +73,14 @@
     "mantenimientoWebFull": "A monthly service that includes technical updates, content changes, and general website support. (Scope varies depending on website complexity)",
     "hostingDominio": "HOSTING AND DOMAIN",
     "hostingDominioMini": "Services that keep your site online",
-    "hostingDominioFull": "The essential services your website needs to be available online.<br></br><ul><li>Domains are registered through NIC Argentina, starting at approximately $8,000 per year</li><li>Hosting prices vary depending on the provider</li><li>Both are required for any website to work.</li></ul>",
+    "hostingDominioFull": "The essential services your website needs to be available online.<br></br><ul><li>Domains are registered through NIC Argentina, starting at approximately $8,000 per year</li><li>Hosting prices vary depending on the provider</li><li>Both are required for any website to function properly.</li></ul>",
     "automatizaciones": "AUTOMATIONS",
     "automatizacionesMini": "Forms, appointments, and external integrations",
     "automatizacionesFull": "Integration of forms, appointment systems, automated replies, or connections with external platforms. (Scope varies depending on the complexity of the requested feature)"
   },
   "tarjeta": {
     "tagline": "Design with direction.",
-    "description": "We design brands and their digital presence. (Web, social media, and identity)",
+    "description": "We design brands and their digital presence. (Websites, social media, and identity)",
     "website": "www.vhetra.com.ar"
   },
   "contact": {
@@ -93,12 +88,12 @@
     "spaHeading1": "TELL US WHAT YOU NEED.",
     "spaHeading2": "WE'LL HELP YOU",
     "spaHeadingAccent": "MAKE IT HAPPEN.",
-    "title": "Every identity begins with a conversation",
+    "title": "Every identity starts with a conversation",
     "letsTalk": "let's talk",
     "instagramTitle": "INSTAGRAM",
     "instagramAction": "Follow us and send us a DM.",
     "gmailTitle": "GMAIL",
-    "gmailAction": "When your idea needs more room.<br></br>(I'll reply in detail.)",
+    "gmailAction": "When your idea needs a little more room.<br></br>(I'll reply in detail.)",
     "whatsappTitle": "WHATSAPP",
     "whatsappAction": "Let's connect and take the first step.",
     "whatsappMessage": "Hi!\nI'm reaching out from the VHETRA website."
@@ -106,9 +101,9 @@
   "projects": {
     "eyebrow": "Selected portfolio",
     "spaHeading": "EVERY PROJECT HAS ITS OWN IDENTITY, BUT THEY ALL SHARE THE SAME GOAL:",
-    "spaAccent": "CREATING CLEAR, FUNCTIONAL, AND MEMORABLE EXPERIENCES.",
-    "salesIntro": "We build real websites for real businesses: institutional sites, e-commerce, digital menus, and custom platforms designed to sell, organize information, and turn visits into inquiries.",
-    "spaCta": "Write to us and let's start yours",
+    "spaAccent": "TO CREATE CLEAR, FUNCTIONAL, AND MEMORABLE EXPERIENCES.",
+    "salesIntro": "We build real websites for real businesses: institutional sites, e-commerce platforms, digital menus, and custom tools designed to sell, organize information, and turn visits into inquiries.",
+    "spaCta": "Get in touch and let's start yours",
     "viewAll": "SOME OF OUR PROJECTS",
     "heading1": "Different visions, one shared purpose,",
     "heading2": "turning choices into identity.",
@@ -118,65 +113,65 @@
     "technologiesLabel": "Technologies used",
     "whatsappMessage": "Hi! I'd like to start my project with Vhetra.",
     "acrodata": {
-      "miniTitulo": "Acrodata website",
+      "miniTitulo": "Acrodata Website",
       "titulo": "A digital experience designed to move with the body.",
       "miniDescripcion": "Specialized website",
       "descripcionP1": "We developed an interactive platform centered around a digital library of Acroyoga cards and a tool for creating custom sequences.",
-      "descripcionP2": "At the core of the project is a system that lets users explore dozens of poses through difficulty-level filters, opening individual cards with a photo, name, and detailed description of each figure. We also developed a game-like flow that generates random cards so users can select them, rearrange them, and build their own practice sequences intuitively.",
-      "descripcionP3": "The platform also includes informational sections about classes, educational material, and resources for people who want to get started or go deeper into the discipline, all within a clear, fluid browsing experience optimized for mobile devices.",
-      "descripcionP4": "The main challenge was transforming a collection of educational content into an interactive tool capable of combining exploration, learning, and play within a single digital experience.",
-      "technologies": "Technologies: React · Tailwind CSS"
+      "descripcionP2": "At the core of the project is a system that lets users explore dozens of poses through difficulty filters, opening individual cards with a photo, name, and detailed description of each figure. We also developed a game-like feature that generates random cards so users can select them, rearrange them, and intuitively build their own practice flows.",
+      "descripcionP3": "The platform also includes informational sections about classes, educational material, and resources for people who want to get started or deepen their practice, all within a clear, fluid browsing experience optimized for mobile devices.",
+      "descripcionP4": "The main challenge was transforming a collection of educational content into an interactive tool that combines exploration, learning, and play within a single digital experience.",
+      "technologies": ""
     },
     "estacionAlemania": {
-      "miniTitulo": "Estacion Alemania",
+      "miniTitulo": "Estación Alemania",
       "miniDescripcion": "Online menu + informational website",
-      "titulo": "A digital experience for discovering the history and flavors of Estacion Alemania.",
-      "descripcionP1": "We developed a digital menu designed so visitors can explore the venue's food and drink offering quickly, clearly, and intuitively from any device.",
-      "descripcionP2": "The site's structure was planned to optimize the user experience, making it easy to access the full menu in Spanish and English, a feature especially useful for welcoming both tourists and local visitors. Direct links to social media, contact options, and location details were also included to make interaction and arrival at the venue easier.",
-      "descripcionP3": "As a complement to the digital menu, the platform includes informational content about the history of the former railway station and the Interpretation Center that operates in the same space, organizing the information in a clear and accessible way without disrupting the browsing experience.",
-      "descripcionP4": "The result is a digital tool that is simple to manage, optimized for mobile devices, and designed to improve the experience of everyone who visits the place.",
-      "technologies": "Technology: Next.js, React, and Tailwind CSS."
+      "titulo": "A digital experience for discovering the history and flavors of Estación Alemania.",
+      "descripcionP1": "We developed a digital menu that allows visitors to explore the venue's food and drink offering quickly, clearly, and intuitively from any device.",
+      "descripcionP2": "The site's structure was planned to optimize the user experience, making the full menu easy to access in both Spanish and English, a particularly useful feature for welcoming tourists and local visitors alike. Direct links to social media, contact options, and location details were also included to make interaction and arrival at the venue easier.",
+      "descripcionP3": "As a complement to the digital menu, the platform includes informational content about the history of the former railway station and the Interpretation Center that operates in the same space, organizing the information clearly and accessibly without disrupting the browsing experience.",
+      "descripcionP4": "The result is a digital tool that is easy to manage, optimized for mobile devices, and designed to improve the experience of everyone who visits the venue.",
+      "technologies": ""
     },
     "laboragro": {
       "miniTitulo": "Laboragro",
       "miniDescripcion": "Institutional website",
-      "titulo": "A corporate platform for presenting technical agricultural analysis services.",
-      "descripcionP1": "We developed a corporate web platform designed to present technical agricultural analysis services in a clear, professional, and accessible way for different types of users.",
-      "descripcionP2": "The site's structure was designed to organize a large amount of technical information without compromising the browsing experience. Through a carefully planned content architecture, visitors can quickly access the different analysis services, learn about the laboratory's certifications, and find relevant information about processes, quality, and sampling.",
-      "descripcionP3": "The project prioritized visual clarity and easy access to information, turning complex content into an intuitive and orderly experience. Navigation was also optimized for mobile devices, and multiple contact points were incorporated to make communication with potential clients easier.",
-      "descripcionP4": "The result is a solid institutional platform designed to convey trust, professionalism, and technical credibility, aligned with the laboratory's background and specialization."
+      "titulo": "A corporate platform for technical agricultural analysis services.",
+      "descripcionP1": "We developed a corporate web platform designed to present technical agricultural analysis services clearly, professionally, and accessibly for different types of users.",
+      "descripcionP2": "The site's structure was designed to organize a large amount of technical information without compromising the browsing experience. Through a carefully planned content architecture, visitors can quickly access the different analysis services, learn about the laboratory's certifications, and find relevant information about processes, quality standards, and sampling.",
+      "descripcionP3": "The project prioritized visual clarity and easy access to information, turning complex content into an intuitive, well-organized experience. Navigation was also optimized for mobile devices, and multiple contact points were incorporated to make communication with potential clients easier.",
+      "descripcionP4": "The result is a solid institutional platform designed to convey trust, professionalism, and technical credibility, aligned with the laboratory's track record and specialization."
     },
     "chaUsandivaras": {
       "miniTitulo": "Cha Usandivaras",
       "miniDescripcion": "Real estate website",
-      "titulo": "A clear, simple real estate platform aligned with the business identity.",
+      "titulo": "A clear, simple real estate platform aligned with the brand's identity.",
       "descripcionP1": "We developed a real estate platform focused on simplicity, clarity, and ease of use, adapting every design decision to the client's visual identity and specific needs.",
-      "descripcionP2": "The project was built with a responsive approach, ensuring a consistent and comfortable experience across desktop, tablet, and mobile devices. The interface prioritizes intuitive navigation, allowing users to explore properties quickly and easily, reducing friction and making the most relevant information easy to access.",
+      "descripcionP2": "The project was built with a responsive approach, ensuring a consistent and comfortable experience across desktop, tablet, and mobile devices. The interface prioritizes intuitive navigation, allowing users to explore properties quickly and easily while reducing friction and making the most relevant information easy to access.",
       "descripcionP3": "The platform includes a filtering system to speed up the property search, helping users find listings according to different criteria efficiently. We also developed a clear and accessible contact section to encourage direct communication between potential clients and the real estate agency.",
-      "descripcionP4": "The result is an elegant and functional digital tool designed to provide a simple, fluid experience aligned with the business's commercial goals."
+      "descripcionP4": "The result is an elegant, functional digital tool designed to provide a simple, fluid experience aligned with the business's commercial goals."
     },
     "flavia": {
       "miniTitulo": "Flavia",
       "miniDescripcion": "Digital menu",
-      "titulo": "A modern digital menu built for simplicity and fast access.",
+      "titulo": "A modern digital menu built for simplicity and quick access.",
       "descripcionP1": "We developed a modern digital menu focused on simplicity, quick access, and a clean browsing experience from any device.",
-      "descripcionP2": "The project was designed around a clear client requirement: remove unnecessary elements and prioritize only the essential information. The interface uses a minimalist, intuitive structure that lets users explore the menu naturally, without distractions or visual overload, making it comfortable to read on both mobile devices and desktop computers.",
-      "descripcionP3": "To add identity without compromising the overall simplicity, we incorporated a 3D animation created in Blender and integrated subtly into the experience. This element brings personality to the site while preserving the clean, elegant aesthetic that guided the entire project.",
+      "descripcionP2": "The project was designed around a clear client requirement: remove unnecessary elements and prioritize only the essential information. The interface uses a minimalist, intuitive structure that lets users explore the menu naturally, without distractions or visual overload, making it comfortable to read on both mobile and desktop devices.",
+      "descripcionP3": "To add identity without compromising the overall simplicity, we incorporated a 3D animation created in Blender and integrated it subtly into the experience. This element brings personality to the site while preserving the clean, elegant aesthetic that guided the entire project.",
       "descripcionP4": "The result is a responsive, fast, and visually balanced platform where design and functionality work together to highlight the food offering clearly and directly."
     },
     "lozzaStudio": {
       "miniTitulo": "Lozza Studio",
       "miniDescripcion": "E-commerce + web management",
-      "titulo": "An end-to-end web platform for selling, managing content, and administering users.",
-      "descripcionP1": "We developed an end-to-end web platform that brings together e-commerce, content management, and user administration in a single digital solution.",
-      "descripcionP2": "The project was designed with close attention to the user experience, prioritizing clear, intuitive navigation so visitors can find information, book their place in workshops, request custom ceramic pieces, or make purchases quickly and easily. Every section was planned and structured around UX principles to improve conversion and make the site journey feel effortless.",
+      "titulo": "An end-to-end web platform for selling, content management, and user administration.",
+      "descripcionP1": "We developed an end-to-end web platform that brings e-commerce, content management, and user administration together in a single digital solution.",
+      "descripcionP2": "The project was designed with close attention to the user experience, prioritizing clear, intuitive navigation so visitors can find information, reserve a spot in workshops, request custom ceramic pieces, or make purchases quickly and easily. Every section was planned and structured around UX principles to improve conversion and make the site journey feel effortless.",
       "descripcionP3": "Beyond the public-facing experience, we developed an admin dashboard that allows products, orders, content, and users to be managed without technical knowledge, giving the studio autonomy and flexibility to keep the platform up to date.",
       "descripcionP4": "The online store is integrated with Mercado Pago to process payments securely, while user authentication and the database support advanced features and efficient management of all site information.",
-      "technologies": "Technology: Next.js, React, Supabase, Supabase Authentication, and Mercado Pago."
+      "technologies": ""
     },
     "filiSuites": {
       "miniTitulo": "Fili Suites",
-      "miniDescripcion": "Social media + Branding",
+      "miniDescripcion": "Social media + branding",
       "titulo": "A visual identity designed to live in the digital space",
       "descripcionP1": "For Fili Suites, we worked on the visual identity for social media and the Instagram content strategy, creating a cohesive aesthetic inspired by the colors, textures, and atmosphere of the space.",
       "descripcionP2": "The communication is designed to reflect the calm and warmth of the accommodation, building a clear, professional online presence aligned with the guest experience."
