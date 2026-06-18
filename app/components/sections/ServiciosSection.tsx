@@ -18,7 +18,7 @@ const SERVICE_KEYS = [
     displayKey: "automatizaciones",
     miniKey: "automatizacionesMini",
     fullKey: "automatizacionesFull",
-    texture: "/services/texture-abstract.png",
+    texture: "/services/texture-abstract.webp",
   },
   {
     id: 2,
@@ -26,7 +26,7 @@ const SERVICE_KEYS = [
     displayKey: "landingPage",
     miniKey: "landingPageMini",
     fullKey: "landingPageFull",
-    texture: "/services/texture-pebbled.png",
+    texture: "/services/texture-pebbled.webp",
   },
   {
     id: 3,
@@ -34,7 +34,7 @@ const SERVICE_KEYS = [
     displayKey: "paginasPersonalizadas",
     miniKey: "paginasPersonalizadasMini",
     fullKey: "paginasPersonalizadasFull",
-    texture: "/services/texture-brushed.png",
+    texture: "/services/texture-brushed.webp",
   },
   {
     id: 4,
@@ -42,7 +42,7 @@ const SERVICE_KEYS = [
     displayKey: "ecommerce",
     miniKey: "ecommerceMini",
     fullKey: "ecommerceFull",
-    texture: "/services/texture-satin.png",
+    texture: "/services/texture-satin.webp",
   },
   {
     id: 5,
@@ -50,7 +50,7 @@ const SERVICE_KEYS = [
     displayKey: "mantenimientoWeb",
     miniKey: "mantenimientoWebMini",
     fullKey: "mantenimientoWebFull",
-    texture: "/services/texture-marble.png",
+    texture: "/services/texture-marble.webp",
   },
 ] as const;
 

@@ -1,9 +1,27 @@
 'use client';
-import { Component, ReactNode, Suspense, useCallback, useEffect, useRef, useState } from 'react';
+import { Component, lazy, ReactNode, Suspense, useCallback, useEffect, useRef, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { useAnimations, useGLTF } from '@react-three/drei';
 import { Group } from 'three';
-import { Bloom, EffectComposer } from '@react-three/postprocessing';
+
+const DesktopEffects = lazy(async () => {
+    const { Bloom, EffectComposer } = await import('@react-three/postprocessing');
+
+    return {
+        default: function DesktopEffects() {
+            return (
+                <EffectComposer enableNormalPass={false}>
+                    <Bloom
+                        intensity={0.4}
+                        luminanceThreshold={0.85}
+                        luminanceSmoothing={0.2}
+                        mipmapBlur={false}
+                    />
+                </EffectComposer>
+            );
+        },
+    };
+});
 
 class WebGLErrorBoundary extends Component<
     { children: ReactNode },
@@ -150,6 +168,7 @@ export default function BlenderModel({ path, type = 'simple', scale, canInteract
                     camera={{ position: [0, 0, 5], fov: 50 }}
                     dpr={isMobile ? 1 : [1, 1.15]}
                     linear
+                    resize={{ scroll: false, debounce: { scroll: 50, resize: 0 } }}
                     gl={{
                         alpha: true,
                         premultipliedAlpha: false,
@@ -168,14 +187,9 @@ export default function BlenderModel({ path, type = 'simple', scale, canInteract
                         {renderModel()}
                     </Suspense>
                     {!isMobile && (
-                        <EffectComposer enableNormalPass={false}>
-                            <Bloom
-                                intensity={0.4}
-                                luminanceThreshold={0.85}
-                                luminanceSmoothing={0.2}
-                                mipmapBlur={false}
-                            />
-                        </EffectComposer>
+                        <Suspense fallback={null}>
+                            <DesktopEffects />
+                        </Suspense>
                     )}
                 </Canvas>
             </WebGLErrorBoundary>

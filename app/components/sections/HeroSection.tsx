@@ -45,16 +45,50 @@ function DeferredBlenderModel(
 
 export function HeroSection() {
   const t = useTranslations("home");
+  const videoRef = React.useRef<HTMLVideoElement>(null);
   const whatsappHref = `https://wa.me/${whatsappPhone}?text=${encodeURIComponent(
     t("whatsappMessage"),
   )}`;
 
+  React.useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          void video.play();
+        } else {
+          video.pause();
+        }
+      },
+      { threshold: 0.1 },
+    );
+
+    observer.observe(video);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section
       id="inicio"
-      className="snap-panel relative flex items-center overflow-x-hidden overflow-y-auto bg-cover bg-center bg-no-repeat px-6 pt-20 pb-8 sm:px-12 sm:pb-10 lg:px-20"
+      className="snap-panel relative flex items-center overflow-x-hidden overflow-y-auto bg-[#F9F9F9] px-6 pt-20 pb-8 sm:px-12 sm:pb-10 lg:px-20"
     >
-      <div className="pointer-events-none absolute inset-0 bg-[#F9F9F9]/20" />
+      <video
+        ref={videoRef}
+        className="pointer-events-none absolute inset-0 h-full w-full object-cover"
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="metadata"
+        aria-hidden="true"
+      >
+        <source src="/videos/hero-bg.mp4" type="video/mp4" />
+      </video>
+
+      <div className="pointer-events-none absolute inset-0 bg-[#F9F9F9]/55" />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(168,40,17,0.14),transparent_34%)]" />
 
       <div
