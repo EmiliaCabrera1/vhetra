@@ -86,24 +86,24 @@ export function ServiciosSection() {
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(168,40,17,0.18),transparent_36%)]" />
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.04),transparent_42%)]" />
 
-      <div className="section-panel-content relative z-10 mx-auto max-w-[1040px] min-[1400px]:max-w-[1400px]">
-        <div className="mb-10 max-w-6xl sm:mb-12 lg:mb-14">
-          <div className="mb-4 h-px w-20 bg-[#A82811] sm:mb-6 sm:w-24" />
+      <div className="section-panel-content relative z-10 mx-auto max-w-[1040px] min-[1400px]:max-w-[1400px] min-[1800px]:!max-w-[1680px]">
+        <div className="mb-10 max-w-6xl sm:mb-12 lg:mb-14 min-[1800px]:!mb-20 min-[1800px]:!max-w-[1500px]">
+          <div className="mb-4 h-px w-20 bg-[#A82811] sm:mb-6 sm:w-24 min-[1800px]:!mb-8 min-[1800px]:!w-32" />
 
-          <p className="mb-3 font-manrope text-xs uppercase tracking-[0.18em] text-white/45 sm:mb-4">
+          <p className="mb-3 font-manrope text-xs uppercase tracking-[0.18em] text-white/45 sm:mb-4 min-[1800px]:!text-sm">
             Soluciones digitales
           </p>
 
-          <h2 className="font-khanda text-5xl font-light uppercase leading-[0.8] tracking-[-0.075em] text-white sm:text-6xl lg:text-[5.8rem]">
+          <h2 className="font-khanda text-5xl font-light uppercase leading-[0.8] tracking-[-0.075em] text-white sm:text-6xl lg:text-[5.8rem] min-[1800px]:!text-[7.2rem]">
             SOLUCIONES QUE GENERAN
           </h2>
 
-          <h2 className="mt-1 font-khanda text-5xl font-light uppercase leading-[0.8] tracking-[-0.075em] text-[#A82811] sm:text-6xl lg:text-[5.8rem]">
+          <h2 className="mt-1 font-khanda text-5xl font-light uppercase leading-[0.8] tracking-[-0.075em] text-[#A82811] sm:text-6xl lg:text-[5.8rem] min-[1800px]:!text-[7.2rem]">
             RESULTADOS REALES.
           </h2>
         </div>
 
-        <div className="group/cards grid grid-cols-1 gap-3 min-[340px]:grid-cols-2 min-[650px]:grid-cols-3 min-[650px]:gap-4 min-[1400px]:grid-cols-5 min-[1400px]:gap-5">
+        <div className="group/cards grid grid-cols-1 gap-3 min-[340px]:grid-cols-2 min-[650px]:grid-cols-3 min-[650px]:gap-4 min-[1400px]:grid-cols-5 min-[1400px]:gap-5 min-[1800px]:!gap-7">
           {servicios.map((servicio) => (
             <div
               key={servicio.id}

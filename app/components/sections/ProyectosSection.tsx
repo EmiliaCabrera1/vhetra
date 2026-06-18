@@ -233,36 +233,37 @@ export function ProyectosSection() {
     >
       <div className="pointer-events-none absolute inset-0 bg-[#F9F9F9]/20" />
 
-      <div className="section-panel-content relative">
-        <div className="relative mb-8 max-w-6xl sm:mb-10 lg:mb-12">
-          <div className="mb-4 h-px w-20 origin-left bg-[#A82811] sm:mb-6 sm:w-24" />
+      <div className="section-panel-content relative min-[1800px]:!mx-auto min-[1800px]:!max-w-[1900px]">
+        <div className="relative max-w-6xl sm:mb-10 lg:mb-12 min-[1800px]:!mb-16 min-[1800px]:!max-w-[1500px]">
+          <div className="mb-4 h-px w-20 origin-left bg-[#A82811] sm:mb-6 sm:w-24 min-[1800px]:!mb-8 min-[1800px]:!w-32" />
 
-          <p className="mb-3 font-manrope text-xs uppercase tracking-[0.18em] text-black/50 sm:mb-4">
+          <p className="mb-3 font-manrope text-xs uppercase tracking-[0.18em] text-black/50 sm:mb-4 min-[1800px]:!text-sm">
             {t("eyebrow")}
           </p>
 
-          <h2 className="font-khanda text-5xl font-light uppercase leading-[0.8] tracking-[-0.075em] text-black sm:text-6xl lg:text-[5.8rem]">
+          <h2 className="font-khanda text-5xl font-light uppercase leading-[0.8] tracking-[-0.075em] text-black sm:text-6xl lg:text-[5.8rem] min-[1800px]:!text-[7.2rem]">
             {t("spaHeading")}
           </h2>
 
-          <h2 className="mt-1 w-fit font-khanda text-5xl font-light uppercase leading-[0.8] tracking-[-0.075em] text-[#A82811] sm:text-6xl lg:text-[5.8rem]">
+          <h2 className="mt-1 w-fit font-khanda text-5xl font-light uppercase leading-[0.8] tracking-[-0.075em] text-[#A82811] sm:text-6xl lg:text-[5.8rem] min-[1800px]:!text-[7.2rem]">
             {t("spaAccent")}
           </h2>
 
-          <p className="mt-6 max-w-3xl font-manrope text-sm leading-relaxed text-black/65 sm:text-base lg:text-lg">
+          <p className="mt-6 max-w-3xl font-manrope text-sm leading-relaxed text-black/65 sm:text-base lg:text-lg min-[1800px]:!mt-8 min-[1800px]:!max-w-5xl min-[1800px]:!text-xl min-[1800px]:!leading-8">
             {t("salesIntro")}
           </p>
         </div>
 
-        <div className="group/carousel relative -mx-6 py-4 sm:-mx-12 sm:py-6 lg:-mx-20 lg:py-8">
-          <div className="pointer-events-none absolute left-0 top-0 z-20 h-full w-14 bg-gradient-to-r from-[#F9F9F9]/95 to-transparent sm:w-20" />
-          <div className="pointer-events-none absolute right-0 top-0 z-20 h-full w-14 bg-gradient-to-l from-[#F9F9F9]/95 to-transparent sm:w-20" />
+        <div className="group/carousel relative -mx-6 overflow-visible sm:-mx-12 lg:-mx-20 min-[1800px]:!-mx-28">
+          <div className="pointer-events-none absolute left-0 top-0 z-20 h-full w-14 bg-gradient-to-r from-[#F9F9F9]/95 to-transparent sm:w-20 min-[1800px]:!w-28" />
+          <div className="pointer-events-none absolute right-0 top-0 z-20 h-full w-14 bg-gradient-to-l from-[#F9F9F9]/95 to-transparent sm:w-20 min-[1800px]:!w-28" />
 
           <div
             ref={carouselRef}
-            className="scrollbar-hide overflow-x-auto scroll-smooth px-16 sm:px-24 lg:px-32"
+            data-project-carousel-viewport
+            className="scrollbar-hide pointer-events-none relative z-10 -my-10 overflow-x-auto overflow-y-hidden scroll-smooth px-16 py-10 sm:px-24 lg:px-32 min-[1800px]:!px-44"
           >
-            <div className="flex w-max gap-4 py-16 group-hover/carousel:animate-[projects-marquee_35s_linear_infinite] sm:gap-6 sm:py-20 lg:gap-8">
+            <div className="pointer-events-auto flex w-max gap-4 py-4 group-hover/carousel:animate-[projects-marquee_35s_linear_infinite] sm:gap-6 lg:gap-8 min-[1800px]:!gap-10">
               {proyectosLoop.map((proyecto, index) => (
                 <div
                   key={`${proyecto.id}-${index}`}
@@ -281,6 +282,7 @@ export function ProyectosSection() {
                   hover:drop-shadow-[0_28px_55px_rgba(0,0,0,0.22)]
                   sm:w-[300px]
                   lg:w-[340px]
+                  min-[1800px]:!w-[430px]
                 "
                 >
                   <ProyectoCardChica
