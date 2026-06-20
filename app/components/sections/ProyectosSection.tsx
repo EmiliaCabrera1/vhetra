@@ -275,12 +275,10 @@ export function ProyectosSection() {
                   transition-all
                   duration-500
                   ease-out
-                  group-hover/carousel:opacity-55
                   hover:!z-30
                   hover:!-translate-y-6
                   hover:!scale-[1.08]
                   hover:!opacity-100
-                  hover:drop-shadow-[0_28px_55px_rgba(0,0,0,0.22)]
                   sm:w-[300px]
                   lg:w-[340px]
                   min-[1800px]:!w-[430px]
