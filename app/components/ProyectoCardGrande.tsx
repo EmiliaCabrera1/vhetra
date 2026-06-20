@@ -82,7 +82,7 @@ const ProyectoCardGrande = ({ proyecto, onClose }: ProyectoCardGrandeProps) => {
         </h2>
 
         {/* Content: flexbox layout */}
-        <div className="flex-1 min-h-0 overflow-y-auto flex flex-col gap-6 min-[1800px]:!gap-8">
+        <div className="detail-scrollbar flex-1 min-h-0 overflow-y-auto flex flex-col gap-6 min-[1800px]:!gap-8">
           {layoutType === "textImage" ? (
             <div className="flex flex-col xs:flex-row gap-6 lg:gap-8 min-[1800px]:!gap-10">
               <div className="flex flex-1 min-w-0 order-2 xs:order-1">
