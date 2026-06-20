@@ -151,6 +151,30 @@ canvas {
   }
 }
 
+@media (min-width: 1800px) {
+  .snap-panel {
+    padding-left: 7rem;
+    padding-right: 7rem;
+  }
+
+  .vhetra-cta {
+    --cta-w: 31rem;
+    min-height: 4.4rem;
+    gap: 1.4rem;
+    padding: 0.95rem 2.2rem;
+    font-size: 1.9rem;
+  }
+
+  .vhetra-cta-arrow {
+    font-size: 3.7rem;
+  }
+
+  .hero-model-size {
+    max-width: 420px;
+    max-height: 420px;
+  }
+}
+
 @media (hover: hover) and (min-width: 768px) {
   .vhetra-cta:hover {
     width: min(100%, calc(var(--cta-w, 23rem) + 2rem));

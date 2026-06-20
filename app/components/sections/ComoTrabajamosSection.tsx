@@ -25,20 +25,20 @@ export function ComoTrabajamosSection() {
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.05),transparent_38%)]" />
       <div className="pointer-events-none absolute inset-0 bg-black/30" />
 
-      <div className="section-panel-content relative z-10 mx-auto max-w-7xl">
-        <div className="mb-10 max-w-6xl sm:mb-12 lg:mb-14">
-          <div className="mb-4 h-px w-20 bg-[#A82811] sm:mb-6 sm:w-24" />
+      <div className="section-panel-content relative z-10 mx-auto max-w-7xl min-[1800px]:!max-w-[1680px]">
+        <div className="mb-10 max-w-6xl sm:mb-12 lg:mb-14 min-[1800px]:!mb-20 min-[1800px]:!max-w-[1500px]">
+          <div className="mb-4 h-px w-20 bg-[#A82811] sm:mb-6 sm:w-24 min-[1800px]:!mb-8 min-[1800px]:!w-32" />
 
-          <p className="mb-3 font-manrope text-xs uppercase tracking-[0.18em] text-white/45 sm:mb-4">
+          <p className="mb-3 font-manrope text-xs uppercase tracking-[0.18em] text-white/45 sm:mb-4 min-[1800px]:!text-sm">
             {t("eyebrow")}
           </p>
 
-          <h2 className="font-khanda text-5xl font-light uppercase leading-[0.8] tracking-[-0.075em] text-[#F9F9F9] sm:text-6xl lg:text-[5.8rem]">
+          <h2 className="font-khanda text-5xl font-light uppercase leading-[0.8] tracking-[-0.075em] text-[#F9F9F9] sm:text-6xl lg:text-[5.8rem] min-[1800px]:!text-[7.2rem]">
             {t("title")}
           </h2>
         </div>
 
-        <div className="group/steps grid grid-cols-1 gap-5 sm:gap-6 md:grid-cols-3 lg:gap-6">
+        <div className="group/steps grid grid-cols-1 gap-5 sm:gap-6 md:grid-cols-3 lg:gap-6 min-[1800px]:!gap-12">
           {STEPS.map(({ num, titleKey, descKey }) => (
             <article
               key={num}
@@ -64,6 +64,7 @@ export function ComoTrabajamosSection() {
       text-[#F9F9F9]
       sm:text-7xl
       lg:text-8xl
+      min-[1800px]:!text-[8.5rem]
     "
               >
                 {num}
@@ -95,6 +96,7 @@ export function ComoTrabajamosSection() {
       text-[#F9F9F9]
       sm:text-4xl
       lg:text-5xl
+      min-[1800px]:!text-[4.3rem]
     "
               >
                 {t(titleKey)}
@@ -107,6 +109,9 @@ export function ComoTrabajamosSection() {
       text-sm
       leading-6
       text-[#F9F9F9]/68
+      min-[1800px]:!max-w-[400px]
+      min-[1800px]:!text-lg
+      min-[1800px]:!leading-8
     "
               >
                 {t(descKey)}
