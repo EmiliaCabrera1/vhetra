@@ -104,7 +104,7 @@ export function ProyectosSection() {
           </>
         ),
         webUrl: "https://www.laboragro.com.ar/",
-        technologies: ["Next.js", "React", "Tailwind CSS", "SEO tecnico"],
+        technologies: ["Next.js", "React", "Tailwind CSS", "Technical SEO"],
       },
       {
         id: 5,
@@ -129,6 +129,7 @@ export function ProyectosSection() {
             {t("lozzaStudio.technologies")}
           </>
         ),
+        webUrl: "https://loza.vhetra.com.ar/",
         technologies: [
           "Next.js",
           "React",
@@ -157,7 +158,7 @@ export function ProyectosSection() {
             {t("chaUsandivaras.descripcionP4")}
           </>
         ),
-        webUrl: "https://chausandivaras.vhetra.com.ar/",
+        webUrl: "https://chausandivaraspropiedades.vhetra.com.ar/",
         technologies: ["Next.js", "React", "Tailwind CSS", "Responsive UI"],
       },
       {

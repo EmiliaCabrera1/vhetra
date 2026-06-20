@@ -19,16 +19,28 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     description: meta.description,
     applicationName: "Vhetra",
-    keywords: [
-      "Vhetra",
-      "diseño web",
-      "desarrollo web",
-      "identidad visual",
-      "presencia digital",
-      "agencia digital",
-      "estudio creativo",
-      "Argentina",
-    ],
+    keywords:
+      locale === "en"
+        ? [
+            "Vhetra",
+            "web design",
+            "web development",
+            "visual identity",
+            "digital presence",
+            "digital agency",
+            "creative studio",
+            "Argentina",
+          ]
+        : [
+            "Vhetra",
+            "diseño web",
+            "desarrollo web",
+            "identidad visual",
+            "presencia digital",
+            "agencia digital",
+            "estudio creativo",
+            "Argentina",
+          ],
     authors: [{ name: "Vhetra" }],
     creator: "Vhetra",
     publisher: "Vhetra",

@@ -101,7 +101,7 @@ export const NavBar = () => {
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           className="md:hidden flex flex-col gap-[6px] z-50"
-          aria-label="Abrir menú"
+          aria-label={t("openMenu")}
         >
           <span
             className={twMerge(

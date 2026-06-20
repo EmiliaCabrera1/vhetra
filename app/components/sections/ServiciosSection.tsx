@@ -91,15 +91,15 @@ export function ServiciosSection() {
           <div className="mb-4 h-px w-20 bg-[#A82811] sm:mb-6 sm:w-24" />
 
           <p className="mb-3 font-manrope text-xs uppercase tracking-[0.18em] text-white/45 sm:mb-4">
-            Soluciones digitales
+            {t("eyebrow")}
           </p>
 
           <h2 className="font-khanda text-5xl font-light uppercase leading-[0.8] tracking-[-0.075em] text-white sm:text-6xl lg:text-[5.8rem]">
-            SOLUCIONES QUE GENERAN
+            {t("heading")}
           </h2>
 
           <h2 className="mt-1 font-khanda text-5xl font-light uppercase leading-[0.8] tracking-[-0.075em] text-[#A82811] sm:text-6xl lg:text-[5.8rem]">
-            RESULTADOS REALES.
+            {t("headingAccent")}
           </h2>
         </div>
 

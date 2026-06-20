@@ -9,7 +9,8 @@
     "projects": "Proyectos",
     "philosophy": "Filosofía",
     "contact": "Contacto",
-    "goHome": "Ir al inicio"
+    "goHome": "Ir al inicio",
+    "openMenu": "Abrir menú"
   },
   "home": {
     "eyebrow": "Estudio digital",
@@ -49,6 +50,9 @@
     "body4": "Somos estructura y sensibilidad al mismo tiempo: <strong>código que respira marca</strong>."
   },
   "services": {
+    "eyebrow": "Soluciones digitales",
+    "heading": "SOLUCIONES QUE GENERAN",
+    "headingAccent": "RESULTADOS REALES.",
     "presenciaDigital": "PRESENCIA DIGITAL",
     "presenciaDigitalMini": "Una página web acompañada por una identidad visual",
     "presenciaDigitalFull": "Una página web acompañada por una identidad visual clara para comenzar a comunicar tu marca de forma profesional tanto en web como en redes sociales. Pensado para emprendimientos que necesitan una estética coherente en todos sus canales digitales.<br></br>Incluye:<br></br><ul><li>Landing Page (Página web simple para mostrar tu negocio y recibir consultas)</li><li>Adaptación de logotipo existente</li><li>Definición de tipografías (Tipos de letra que utilizará tu marca)</li><li>Paleta de colores (Colores que representarán visualmente tu marca)</li><li>Kit visual básico (Elementos gráficos para mantener coherencia estética)</li><li>Adaptación de tu identidad para redes sociales</li><li>6 publicaciones iniciales para Instagram (Diseño de piezas listas para publicar)</li></ul><br></br>Disponible con mantenimiento mensual que puede incluir nuevas publicaciones cada mes.",

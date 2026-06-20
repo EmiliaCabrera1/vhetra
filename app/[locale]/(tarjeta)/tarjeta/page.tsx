@@ -9,8 +9,6 @@ type Props = {
 };
 
 const whatsappPhone = process.env.NEXT_PUBLIC_WHATSAPP_PHONE ?? "5493875038714";
-const whatsappHref = `https://wa.me/${whatsappPhone}?text=${encodeURIComponent("Hola !\nTe contacto desde la web de VHETRA.")}`;
-
 const CONTACTOS = [
   {
     id: 1,
@@ -31,7 +29,7 @@ const CONTACTOS = [
     img: "/icons/whatsappIco.svg",
     titleKey: "whatsappTitle" as const,
     actionKey: "whatsappAction" as const,
-    href: whatsappHref,
+    href: "",
   },
 ];
 
@@ -41,8 +39,12 @@ export default async function TarjetaPage({ params }: Props) {
   const t = await getTranslations("tarjeta");
   const tContact = await getTranslations("contact");
 
+  const whatsappHref = `https://wa.me/${whatsappPhone}?text=${encodeURIComponent(
+    tContact("whatsappMessage"),
+  )}`;
   const contactos = CONTACTOS.map((c) => ({
     ...c,
+    href: c.titleKey === "whatsappTitle" ? whatsappHref : c.href,
     title: tContact(c.titleKey),
     action: tContact.rich(c.actionKey, { br: () => <br /> }),
   }));

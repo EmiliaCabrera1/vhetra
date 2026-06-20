@@ -5,10 +5,6 @@ import CardContacto from "@/app/components/CardContacto";
 
 const whatsappPhone = process.env.NEXT_PUBLIC_WHATSAPP_PHONE ?? "5493875038714";
 
-const whatsappHref = `https://wa.me/${whatsappPhone}?text=${encodeURIComponent(
-  "Hola !\nTe contacto desde la web de VHETRA.",
-)}`;
-
 const CONTACTOS = [
   {
     id: 1,
@@ -29,7 +25,7 @@ const CONTACTOS = [
     img: "/icons/whatsappIco.svg",
     titleKey: "whatsappTitle" as const,
     actionKey: "whatsappAction" as const,
-    href: whatsappHref,
+    href: "",
   },
 ];
 
