@@ -197,13 +197,17 @@ export function SectionScrollController({
       const deltaX = touchStartXRef.current - touch.clientX;
 
       if (Math.abs(deltaX) > Math.abs(deltaY)) return;
-      if (Math.abs(deltaY) < TOUCH_THRESHOLD) return;
 
       const direction = deltaY > 0 ? 1 : -1;
       const activePanel = getActivePanel(event.target);
       if (activePanel && canPanelScroll(activePanel, direction)) return;
 
+      // Safari starts its rubber-band effect before a swipe reaches the snap
+      // threshold. Cancel the gesture as soon as it reaches a panel edge, then
+      // wait for the threshold before changing sections.
       event.preventDefault();
+      if (Math.abs(deltaY) < TOUCH_THRESHOLD) return;
+
       snapTo(direction, activePanel);
       touchStartYRef.current = null;
       touchStartXRef.current = null;
