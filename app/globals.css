@@ -548,6 +548,31 @@ canvas {
   }
 }
 
+/* Safari/iOS can keep a touch hover state active while repainting transformed
+   box-shadows inside the carousel, leaving a thin artifact below the card.
+   Limit the decorative hover effects to devices with an actual hover pointer. */
+@media (hover: hover) and (pointer: fine) {
+  .project-carousel:hover .project-carousel-track {
+    animation: projects-marquee 35s linear infinite;
+  }
+
+  .project-card:hover {
+    z-index: 30;
+    transform: translateY(-1.5rem) scale(1.08);
+    opacity: 1;
+  }
+
+  .project-card-surface:hover {
+    z-index: 30;
+    transform: translateY(-0.25rem) scale(1.05);
+    box-shadow: 10px 10px 20px rgba(16, 17, 17, 0.4);
+  }
+
+  .project-card-surface:hover .project-card-plus {
+    transform: scale(1.25);
+  }
+}
+
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;

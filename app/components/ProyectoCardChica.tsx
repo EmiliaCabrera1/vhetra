@@ -16,8 +16,8 @@ const CardChica = ({ proyecto, onClick, imgClassName, priority }: CardChicaProps
     <button onClick={onClick} className="z-20 w-full text-left">
       <div
         id={`card-${name}`}
-        className={twMerge(`w-full h-28 sm:h-32 lg:h-36 min-[1800px]:!h-44 p-3 sm:p-4 min-[1800px]:!p-6 flex flex-row items-start relative bg-card rounded-lg shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] overflow-visible gap-4 sm:gap-5 lg:gap-6 min-[1800px]:!gap-8
-          transform hover:scale-105 hover:-translate-y-1 hover:shadow-[10px_10px_20px_rgba(16,17,17,0.4)] hover:z-30 transition-all duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] group`,
+        className={twMerge(`project-card-surface w-full h-28 sm:h-32 lg:h-36 min-[1800px]:!h-44 p-3 sm:p-4 min-[1800px]:!p-6 flex flex-row items-start relative bg-card rounded-lg shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] overflow-visible gap-4 sm:gap-5 lg:gap-6 min-[1800px]:!gap-8
+          transition-all duration-500 ease-[cubic-bezier(0.19,1,0.22,1)]`,
         )
         }
       >
@@ -41,7 +41,7 @@ const CardChica = ({ proyecto, onClick, imgClassName, priority }: CardChicaProps
             {miniDescripcion}
           </p>
         </div>
-        <span className="absolute -bottom-1 right-3 text-tiza text-4xl min-[1800px]:!text-5xl font-light opacity-80 transition-transform duration-300 group-hover:scale-125">+</span>
+        <span className="project-card-plus absolute -bottom-1 right-3 text-tiza text-4xl min-[1800px]:!text-5xl font-light opacity-80 transition-transform duration-300">+</span>
       </div>
     </button >
   );

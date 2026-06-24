@@ -255,7 +255,7 @@ export function ProyectosSection() {
           </p>
         </div>
 
-        <div className="group/carousel relative -mx-6 overflow-visible sm:-mx-12 lg:-mx-20 min-[1800px]:!-mx-28">
+        <div className="project-carousel relative -mx-6 overflow-visible sm:-mx-12 lg:-mx-20 min-[1800px]:!-mx-28">
           <div className="pointer-events-none absolute left-0 top-0 z-20 h-full w-14 bg-gradient-to-r from-[#F9F9F9]/95 to-transparent sm:w-20 min-[1800px]:!w-28" />
           <div className="pointer-events-none absolute right-0 top-0 z-20 h-full w-14 bg-gradient-to-l from-[#F9F9F9]/95 to-transparent sm:w-20 min-[1800px]:!w-28" />
 
@@ -264,7 +264,7 @@ export function ProyectosSection() {
             data-project-carousel-viewport
             className="scrollbar-hide pointer-events-none relative z-10 -my-10 overflow-x-auto overflow-y-hidden scroll-smooth px-16 py-10 sm:px-24 lg:px-32 min-[1800px]:!px-44"
           >
-            <div className="pointer-events-auto flex w-max gap-4 py-4 group-hover/carousel:animate-[projects-marquee_35s_linear_infinite] sm:gap-6 lg:gap-8 min-[1800px]:!gap-10">
+            <div className="project-carousel-track pointer-events-auto flex w-max gap-4 py-4 sm:gap-6 lg:gap-8 min-[1800px]:!gap-10">
               {proyectosLoop.map((proyecto, index) => (
                 <div
                   key={`${proyecto.id}-${index}`}
@@ -272,13 +272,10 @@ export function ProyectosSection() {
                   className="
                   w-[240px]
                   shrink-0
+                  project-card
                   transition-all
                   duration-500
                   ease-out
-                  hover:!z-30
-                  hover:!-translate-y-6
-                  hover:!scale-[1.08]
-                  hover:!opacity-100
                   sm:w-[300px]
                   lg:w-[340px]
                   min-[1800px]:!w-[430px]

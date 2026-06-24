@@ -73,11 +73,11 @@ export function HeroSection() {
   return (
     <section
       id="inicio"
-      className="snap-panel relative flex items-center overflow-x-hidden overflow-y-auto bg-[#F9F9F9] px-6 pt-20 pb-8 sm:px-12 sm:pb-10 lg:px-20"
+      className="snap-panel isolate relative flex items-center overflow-x-hidden overflow-y-auto bg-[#F9F9F9] px-6 pt-20 pb-8 sm:px-12 sm:pb-10 lg:px-20"
     >
       <video
         ref={videoRef}
-        className="pointer-events-none absolute inset-0 h-full w-full object-cover"
+        className="pointer-events-none absolute inset-0 z-0 h-full w-full object-cover"
         autoPlay
         loop
         muted
@@ -88,8 +88,8 @@ export function HeroSection() {
         <source src="/videos/hero-bg.mp4" type="video/mp4" />
       </video>
 
-      <div className="pointer-events-none absolute inset-0 bg-[#F9F9F9]/55" />
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(168,40,17,0.14),transparent_34%)]" />
+      <div className="pointer-events-none absolute inset-0 z-[1] bg-[#F9F9F9]/55" />
+      <div className="pointer-events-none absolute inset-0 z-[1] bg-[radial-gradient(circle_at_top_right,rgba(168,40,17,0.14),transparent_34%)]" />
 
       <div className="section-panel-content relative z-10 mx-auto w-full max-w-[1600px] py-8 sm:py-10 lg:py-12 min-[1800px]:!max-w-[1900px] min-[1800px]:!py-16">
         <div className="flex max-w-[94%] flex-col gap-4 sm:max-w-[80%] sm:gap-5 md:max-w-[70%] lg:max-w-[62%] lg:gap-6 xl:max-w-[58%] min-[1800px]:!max-w-[54%] min-[1800px]:!gap-8">
