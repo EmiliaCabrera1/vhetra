@@ -1,6 +1,6 @@
 # Vhetra
 
-Sitio web del estudio **Vhetra**: diseño web, identidad visual y presencia digital. Es una landing de una sola página con secciones a pantalla completa, animaciones editoriales y soporte bilingüe (español / inglés).
+Sitio web del estudio **Vhetra**: diseño web, identidad visual y presencia digital. Es una landing de una sola página con secciones a pantalla completa, animaciones editoriales y soporte bilingüe (español / inglés). 
 
 Producción: [vhetra.com.ar](https://vhetra.com.ar)
 
