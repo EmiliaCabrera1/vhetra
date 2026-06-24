@@ -44,7 +44,7 @@ export const CardGrande = ({
         <h2 className="text-center text-tiza text-xl sm:text-2xl min-[1800px]:!text-[2.4rem] sm:mb-4 min-[1800px]:!mb-6 font-normal shrink-0">
           {servicio.displayName}
         </h2>
-        <div className="font-manrope flex-1 min-h-0 overflow-y-auto mt-2 text-tiza text-sm sm:text-lg min-[1800px]:!text-xl min-[1800px]:!leading-8 pr-2">
+        <div className="detail-scrollbar font-manrope flex-1 min-h-0 overflow-y-auto mt-2 text-tiza text-sm sm:text-lg min-[1800px]:!text-xl min-[1800px]:!leading-8 pr-2">
           {servicio.descripcionCompleta}
         </div>
         <button

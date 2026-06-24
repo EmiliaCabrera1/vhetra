@@ -91,45 +91,6 @@ export function HeroSection() {
       <div className="pointer-events-none absolute inset-0 bg-[#F9F9F9]/55" />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(168,40,17,0.14),transparent_34%)]" />
 
-      <div
-        className="
-          pointer-events-auto
-          absolute
-          top-[54%]
-          right-[-230px]
-          z-0
-          h-[280px]
-          w-[280px]
-          -translate-y-1/2
-          opacity-80
-          sm:right-[-260px]
-          sm:h-[360px]
-          sm:w-[360px]
-          md:right-[-300px]
-          md:h-[460px]
-          md:w-[460px]
-          lg:right-[-340px]
-          lg:h-[620px]
-          lg:w-[620px]
-          xl:right-[-390px]
-          xl:h-[720px]
-          xl:w-[720px]
-          2xl:right-[-430px]
-          2xl:h-[800px]
-          2xl:w-[800px]
-          min-[1800px]:!right-[-500px]
-          min-[1800px]:!h-[960px]
-          min-[1800px]:!w-[960px]
-        "
-      >
-        <DeferredBlenderModel
-          path="/animations/vhetra-logo.glb"
-          type="animated"
-          scale={2.5}
-          canInteract={true}
-        />
-      </div>
-
       <div className="section-panel-content relative z-10 mx-auto w-full max-w-[1600px] py-8 sm:py-10 lg:py-12 min-[1800px]:!max-w-[1900px] min-[1800px]:!py-16">
         <div className="flex max-w-[94%] flex-col gap-4 sm:max-w-[80%] sm:gap-5 md:max-w-[70%] lg:max-w-[62%] lg:gap-6 xl:max-w-[58%] min-[1800px]:!max-w-[54%] min-[1800px]:!gap-8">
           <div>
@@ -186,6 +147,52 @@ export function HeroSection() {
               ⟶
             </span>
           </a>
+
+          <div
+            className="
+              pointer-events-auto
+              order-first
+              relative
+              z-0
+              mx-auto
+              mb-1
+              h-[220px]
+              w-[220px]
+              opacity-80
+              sm:order-none
+              sm:absolute
+              sm:top-[54%]
+              sm:right-[-260px]
+              sm:mx-0
+              sm:mb-0
+              sm:mt-0
+              sm:h-[360px]
+              sm:w-[360px]
+              sm:-translate-y-1/2
+              md:right-[-300px]
+              md:h-[460px]
+              md:w-[460px]
+              lg:right-[-340px]
+              lg:h-[620px]
+              lg:w-[620px]
+              xl:right-[-390px]
+              xl:h-[720px]
+              xl:w-[720px]
+              2xl:right-[-430px]
+              2xl:h-[800px]
+              2xl:w-[800px]
+              min-[1800px]:!right-[-500px]
+              min-[1800px]:!h-[960px]
+              min-[1800px]:!w-[960px]
+            "
+          >
+            <DeferredBlenderModel
+              path="/animations/vhetra-logo.glb"
+              type="animated"
+              scale={2.5}
+              canInteract={true}
+            />
+          </div>
         </div>
       </div>
     </section>
