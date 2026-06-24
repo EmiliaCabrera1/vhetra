@@ -108,25 +108,25 @@ export function ProyectosSection() {
       },
       {
         id: 5,
-        name: "Lozza Studio",
-        miniTitulo: t("lozzaStudio.miniTitulo"),
-        titulo: t("lozzaStudio.titulo"),
-        miniDescripcion: t("lozzaStudio.miniDescripcion"),
+        name: "Loza Studio",
+        miniTitulo: t("lozaStudio.miniTitulo"),
+        titulo: t("lozaStudio.titulo"),
+        miniDescripcion: t("lozaStudio.miniDescripcion"),
         descripcionCompleta: (
           <>
-            {t("lozzaStudio.descripcionP1")}
+            {t("lozaStudio.descripcionP1")}
             <br />
             <br />
-            {t("lozzaStudio.descripcionP2")}
+            {t("lozaStudio.descripcionP2")}
             <br />
             <br />
-            {t("lozzaStudio.descripcionP3")}
+            {t("lozaStudio.descripcionP3")}
             <br />
             <br />
-            {t("lozzaStudio.descripcionP4")}
+            {t("lozaStudio.descripcionP4")}
             <br />
             <br />
-            {t("lozzaStudio.technologies")}
+            {t("lozaStudio.technologies")}
           </>
         ),
         webUrl: "https://loza.vhetra.com.ar/",
