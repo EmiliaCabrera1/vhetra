@@ -145,7 +145,7 @@ function useIsMobile() {
     return isMobile;
 }
 
-export default function BlenderModel({ path, type = 'simple', scale, canInteract = false }: { path: string, type: 'autoRotate' | 'simple' | 'animated', scale?: number, canInteract?: boolean }) {
+export default function BlenderModel({ path, type = 'simple', scale, canInteract = false, active }: { path: string, type: 'autoRotate' | 'simple' | 'animated', scale?: number, canInteract?: boolean, active: boolean }) {
     const isMobile = useIsMobile();
 
     const renderModel = () => {
@@ -164,6 +164,7 @@ export default function BlenderModel({ path, type = 'simple', scale, canInteract
             <WebGLErrorBoundary>
                 <Canvas
                     fallback={null}
+                    frameloop={active ? 'always' : 'never'}
                     shadows={false}
                     camera={{ position: [0, 0, 5], fov: 50 }}
                     dpr={isMobile ? 1 : [1, 1.15]}

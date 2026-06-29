@@ -45,53 +45,122 @@ function DeferredBlenderModel(
 
 export function HeroSection() {
   const t = useTranslations("home");
+  const sectionRef = React.useRef<HTMLElement>(null);
   const videoRef = React.useRef<HTMLVideoElement>(null);
+  const [isVisible, setIsVisible] = React.useState(false);
+  const [isPageVisible, setIsPageVisible] = React.useState(true);
+  const [shouldLoadVideo, setShouldLoadVideo] = React.useState(false);
+  const [videoFailed, setVideoFailed] = React.useState(false);
   const whatsappHref = `https://wa.me/${whatsappPhone}?text=${encodeURIComponent(
     t("whatsappMessage"),
   )}`;
 
   React.useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
+    const section = sectionRef.current;
+    if (!section) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          void video.play();
-        } else {
-          video.pause();
-        }
+        setIsVisible(entry.isIntersecting);
       },
       { threshold: 0.1 },
     );
 
-    observer.observe(video);
+    observer.observe(section);
 
     return () => observer.disconnect();
   }, []);
 
+  React.useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const desktopQuery = window.matchMedia("(min-width: 769px)");
+    const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const connection = (
+      navigator as Navigator & {
+        connection?: { saveData?: boolean };
+      }
+    ).connection;
+
+    const canLoadVideo = () =>
+      desktopQuery.matches && !motionQuery.matches && !connection?.saveData;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && canLoadVideo()) {
+          setShouldLoadVideo(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "200px" },
+    );
+
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
+
+  React.useEffect(() => {
+    const handleVisibilityChange = () => {
+      setIsPageVisible(document.visibilityState === "visible");
+    };
+
+    handleVisibilityChange();
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    return () =>
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+  }, []);
+
+  React.useEffect(() => {
+    const video = videoRef.current;
+    if (!video || videoFailed) return;
+
+    if (!isVisible || !isPageVisible) {
+      video.pause();
+      return;
+    }
+
+    void video.play().catch(() => {
+      setVideoFailed(true);
+    });
+  }, [isPageVisible, isVisible, shouldLoadVideo, videoFailed]);
+
   return (
     <section
+      ref={sectionRef}
       id="inicio"
       className="snap-panel isolate relative flex items-center overflow-x-hidden overflow-y-auto bg-[#F9F9F9] px-6 pt-20 pb-8 sm:px-12 sm:pb-10 lg:px-20"
     >
-      <video
-        ref={videoRef}
-        className="pointer-events-none absolute inset-0 z-0 h-full w-full object-cover"
-        autoPlay
-        loop
-        muted
-        playsInline
-        preload="metadata"
+      <div
+        className="pointer-events-none absolute inset-0 z-0 overflow-hidden bg-[url('/videos/hero-poster.webp')] bg-cover bg-center"
         aria-hidden="true"
       >
-        <source src="/videos/hero-bg.mp4" type="video/mp4" />
-      </video>
+        {shouldLoadVideo && !videoFailed && (
+          <video
+            ref={videoRef}
+            className="absolute inset-0 h-full w-full object-cover"
+            loop
+            muted
+            playsInline
+            preload="metadata"
+            poster="/videos/hero-poster.webp"
+            onError={() => setVideoFailed(true)}
+          >
+            <source src="/videos/hero-bg.mp4" type="video/mp4" />
+          </video>
+        )}
+      </div>
 
-      <div className="pointer-events-none absolute inset-0 z-[1] bg-[#F9F9F9]/55" />
-      <div className="pointer-events-none absolute inset-0 z-[1] bg-[radial-gradient(circle_at_top_right,rgba(168,40,17,0.14),transparent_34%)]" />
+      <div
+        className="pointer-events-none absolute inset-0 z-[1] bg-[#F9F9F9]/55"
+        aria-hidden="true"
+      />
+      <div
+        className="pointer-events-none absolute inset-0 z-[2] bg-[radial-gradient(circle_at_top_right,rgba(168,40,17,0.14),transparent_34%)]"
+        aria-hidden="true"
+      />
 
-      <div className="section-panel-content relative z-10 mx-auto w-full max-w-[1600px] py-8 sm:py-10 lg:py-12 min-[1800px]:!max-w-[1900px] min-[1800px]:!py-16">
+      <div className="section-panel-content relative z-20 mx-auto w-full max-w-[1600px] py-8 sm:py-10 lg:py-12 min-[1800px]:!max-w-[1900px] min-[1800px]:!py-16">
         <div className="flex max-w-[94%] flex-col gap-4 sm:max-w-[80%] sm:gap-5 md:max-w-[70%] lg:max-w-[62%] lg:gap-6 xl:max-w-[58%] min-[1800px]:!max-w-[54%] min-[1800px]:!gap-8">
           <div>
             <div className="mb-4 h-px w-20 bg-[#A82811] sm:mb-6 sm:w-24 min-[1800px]:!mb-8 min-[1800px]:!w-32" />
@@ -191,6 +260,7 @@ export function HeroSection() {
               type="animated"
               scale={2.5}
               canInteract={true}
+              active={isVisible && isPageVisible}
             />
           </div>
         </div>
