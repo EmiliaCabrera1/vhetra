@@ -1,5 +1,4 @@
-import { setRequestLocale } from "next-intl/server";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import Image from "next/image";
 import Link from "next/link";
 import { twMerge } from "tailwind-merge";
@@ -50,53 +49,66 @@ export default async function TarjetaPage({ params }: Props) {
   }));
 
   return (
-    <div className="flex flex-1 justify-center items-center px-4 py-8 sm:py-12">
-      <div className="w-full max-w-[320px] bg-[#EEEFF0] backdrop-blur-sm rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.12)] p-6 sm:p-8 flex flex-col gap-6 card-stagger overflow-visible">
-        <header className="text-center space-y-2">
-          <h1 className="text-6xl sm:text-8xl tracking-tight text-azulo">
-            VHETRA
+    <main className="relative min-h-screen overflow-hidden bg-[#F7F7F7] px-4 py-8 sm:px-6 sm:py-10 lg:px-8 lg:py-12">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(168,40,17,0.1),transparent_42%)]" />
+
+      <div className="relative mx-auto flex min-h-[calc(100vh-4rem)] w-full max-w-5xl flex-col justify-center gap-8 rounded-4xl border border-black/5 bg-white/70 p-6 shadow-[0_30px_80px_rgba(0,0,0,0.08)] backdrop-blur sm:p-8 lg:flex-row lg:items-center lg:gap-12 lg:p-12">
+        <div className="max-w-2xl flex-1">
+          <p className="mb-4 font-manrope text-xs uppercase tracking-[0.2em] text-black/50 sm:mb-5">
+            {tContact("eyebrow")}
+          </p>
+
+          <h1 className="font-khanda text-5xl font-light uppercase leading-[0.82] tracking-[-0.075em] text-black sm:text-6xl lg:text-[5.4rem]">
+            VH<span className="text-[#A82811]">ETRA</span>
           </h1>
-          <p className="text-lg sm:text-xl font-medium text-azulo">
+
+          <p className="mt-4 max-w-xl font-khanda text-2xl font-light uppercase leading-[0.95] tracking-[-0.04em] text-black sm:text-3xl">
             {t("tagline")}
           </p>
-          <p className="text-sm sm:text-base text-azulo/90">
+
+          <p className="mt-3 max-w-xl font-manrope text-sm leading-7 text-black/70 sm:text-base">
             {t("description")}
           </p>
+
           <Link
             href="https://www.vhetra.com.ar"
-            className="inline-block text-accent font-medium hover:underline"
+            className="mt-6 inline-flex items-center rounded-full border border-[#A82811]/20 bg-[#A82811]/10 px-4 py-2 font-manrope text-sm font-semibold uppercase tracking-[0.18em] text-[#A82811] transition-colors duration-300 hover:bg-[#A82811]/20"
           >
             {t("website")}
           </Link>
-        </header>
+        </div>
 
-        <div className="flex flex-col gap-4 sm:w-[110%]">
-          {contactos.map((contacto, index) => (
-            <Link
-              key={contacto.titleKey}
-              href={contacto.href}
-              className={twMerge(
-                "w-full sm:w-[110%] p-4 gap-3 flex flex-row items-center text-tiza bg-card rounded-xl shadow-[5px_5px_5px_0px_rgba(16,17,17,0.55)] ripple-btn transition-transform",
-                index % 2 === 0 ? "sm:-ml-12" : "sm:ml-0",
-              )}
-            >
-              <Image
-                src={contacto.img}
-                alt={contacto.title}
-                width={48}
-                height={48}
-                className="h-12 w-12 shrink-0"
-              />
-              <div className="flex flex-col min-w-0">
-                <span className="text-base font-semibold uppercase text-tiza">
-                  {contacto.title}
-                </span>
-                <span className="text-sm text-tiza/80">{contacto.action}</span>
-              </div>
-            </Link>
-          ))}
+        <div className="w-full max-w-xl">
+          <div className="flex flex-col gap-3 sm:gap-4">
+            {contactos.map((contacto, index) => (
+              <Link
+                key={contacto.titleKey}
+                href={contacto.href}
+                className={twMerge(
+                  "group flex w-full items-center gap-3 rounded-2xl border border-black/10 bg-[#111111] p-4 text-[#F5F0EA] shadow-[4px_4px_16px_rgba(0,0,0,0.16)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[10px_10px_24px_rgba(0,0,0,0.2)] sm:p-5",
+                  index % 2 === 0 ? "sm:translate-x-3" : "sm:-translate-x-3",
+                )}
+              >
+                <Image
+                  src={contacto.img}
+                  alt={contacto.title}
+                  width={48}
+                  height={48}
+                  className="h-12 w-12 shrink-0 sm:h-14 sm:w-14"
+                />
+                <div className="flex min-w-0 flex-col">
+                  <span className="text-base font-semibold uppercase leading-tight text-[#F5F0EA] sm:text-lg">
+                    {contacto.title}
+                  </span>
+                  <span className="mt-1 text-sm leading-5 text-[#F5F0EA]/80 sm:text-[0.95rem]">
+                    {contacto.action}
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 }

@@ -3,9 +3,5 @@ export default function TarjetaLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <div className="h-full min-h-0 overflow-y-auto flex flex-col">
-      {children}
-    </div>
-  );
+  return <div className="min-h-screen bg-[#F7F7F7]">{children}</div>;
 }
