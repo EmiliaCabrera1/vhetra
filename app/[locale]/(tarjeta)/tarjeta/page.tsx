@@ -59,7 +59,7 @@ export default async function TarjetaPage({ params }: Props) {
           </p>
 
           <h1 className="font-khanda text-5xl font-light uppercase leading-[0.82] tracking-[-0.075em] text-black sm:text-6xl lg:text-[5.4rem]">
-            VH<span className="text-[#A82811]">ETRA</span>
+            VHETRA<span className="text-[#A82811]">.</span>
           </h1>
 
           <p className="mt-4 max-w-xl font-khanda text-2xl font-light uppercase leading-[0.95] tracking-[-0.04em] text-black sm:text-3xl">
