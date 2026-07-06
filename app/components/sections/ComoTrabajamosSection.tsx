@@ -1,6 +1,4 @@
-"use client";
-
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 
 const whatsappPhone = process.env.NEXT_PUBLIC_WHATSAPP_PHONE ?? "5493875038714";
 
@@ -10,8 +8,8 @@ const STEPS = [
   { num: "03", titleKey: "step3Title" as const, descKey: "step3Desc" as const },
 ];
 
-export function ComoTrabajamosSection() {
-  const t = useTranslations("howWeWork");
+export async function ComoTrabajamosSection() {
+  const t = await getTranslations("howWeWork");
   const whatsappHref = `https://wa.me/${whatsappPhone}?text=${encodeURIComponent(
     t("whatsappMessage"),
   )}`;

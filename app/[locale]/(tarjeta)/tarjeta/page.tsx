@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import Image from "next/image";
 import Link from "next/link";
@@ -31,6 +32,24 @@ const CONTACTOS = [
     href: "",
   },
 ];
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const baseUrl = "https://vhetra.com.ar";
+
+  return {
+    alternates: {
+      canonical: `${baseUrl}/${locale}/tarjeta`,
+      languages: {
+        es: `${baseUrl}/es/tarjeta`,
+        en: `${baseUrl}/en/tarjeta`,
+      },
+    },
+    openGraph: {
+      url: `${baseUrl}/${locale}/tarjeta`,
+    },
+  };
+}
 
 export default async function TarjetaPage({ params }: Props) {
   const { locale } = await params;

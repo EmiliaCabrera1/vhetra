@@ -1,155 +1,20 @@
-"use client";
-
-import React from "react";
-import dynamic from "next/dynamic";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
+import { HeroMedia } from "./HeroMedia";
 
 const whatsappPhone = process.env.NEXT_PUBLIC_WHATSAPP_PHONE ?? "5493875038714";
 
-const BlenderModel = dynamic(() => import("@/app/components/BlenderModel"), {
-  ssr: false,
-  loading: () => <div className="h-full w-full bg-transparent" aria-hidden />,
-});
-
-function scheduleIdle(cb: () => void, options?: IdleRequestOptions): number {
-  if (typeof requestIdleCallback !== "undefined") {
-    return requestIdleCallback(cb, options);
-  }
-
-  return window.setTimeout(cb, Math.min(options?.timeout ?? 500, 500));
-}
-
-function cancelScheduledIdle(id: number): void {
-  if (typeof cancelIdleCallback !== "undefined") {
-    cancelIdleCallback(id);
-  } else {
-    window.clearTimeout(id);
-  }
-}
-
-function DeferredBlenderModel(
-  props: React.ComponentProps<typeof BlenderModel>,
-) {
-  const [mounted, setMounted] = React.useState(false);
-
-  React.useEffect(() => {
-    const id = scheduleIdle(() => setMounted(true), { timeout: 500 });
-
-    return () => cancelScheduledIdle(id);
-  }, []);
-
-  if (!mounted) return <div className="h-full w-full" aria-hidden />;
-
-  return <BlenderModel {...props} />;
-}
-
-export function HeroSection() {
-  const t = useTranslations("home");
-  const sectionRef = React.useRef<HTMLElement>(null);
-  const videoRef = React.useRef<HTMLVideoElement>(null);
-  const [isVisible, setIsVisible] = React.useState(false);
-  const [isPageVisible, setIsPageVisible] = React.useState(true);
-  const [shouldLoadVideo, setShouldLoadVideo] = React.useState(false);
-  const [videoFailed, setVideoFailed] = React.useState(false);
+export async function HeroSection() {
+  const t = await getTranslations("home");
   const whatsappHref = `https://wa.me/${whatsappPhone}?text=${encodeURIComponent(
     t("whatsappMessage"),
   )}`;
 
-  React.useEffect(() => {
-    const section = sectionRef.current;
-    if (!section) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsVisible(entry.isIntersecting);
-      },
-      { threshold: 0.1 },
-    );
-
-    observer.observe(section);
-
-    return () => observer.disconnect();
-  }, []);
-
-  React.useEffect(() => {
-    const section = sectionRef.current;
-    if (!section) return;
-
-    const desktopQuery = window.matchMedia("(min-width: 769px)");
-    const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const connection = (
-      navigator as Navigator & {
-        connection?: { saveData?: boolean };
-      }
-    ).connection;
-
-    const canLoadVideo = () =>
-      desktopQuery.matches && !motionQuery.matches && !connection?.saveData;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && canLoadVideo()) {
-          setShouldLoadVideo(true);
-          observer.disconnect();
-        }
-      },
-      { rootMargin: "200px" },
-    );
-
-    observer.observe(section);
-    return () => observer.disconnect();
-  }, []);
-
-  React.useEffect(() => {
-    const handleVisibilityChange = () => {
-      setIsPageVisible(document.visibilityState === "visible");
-    };
-
-    handleVisibilityChange();
-    document.addEventListener("visibilitychange", handleVisibilityChange);
-    return () =>
-      document.removeEventListener("visibilitychange", handleVisibilityChange);
-  }, []);
-
-  React.useEffect(() => {
-    const video = videoRef.current;
-    if (!video || videoFailed) return;
-
-    if (!isVisible || !isPageVisible) {
-      video.pause();
-      return;
-    }
-
-    void video.play().catch(() => {
-      setVideoFailed(true);
-    });
-  }, [isPageVisible, isVisible, shouldLoadVideo, videoFailed]);
-
   return (
     <section
-      ref={sectionRef}
       id="inicio"
       className="snap-panel isolate relative flex items-center overflow-x-hidden overflow-y-auto bg-[#F9F9F9] px-6 pt-20 pb-8 sm:px-12 sm:pb-10 lg:px-20"
     >
-      <div
-        className="pointer-events-none absolute inset-0 z-0 overflow-hidden bg-[url('/videos/hero-poster.webp')] bg-cover bg-center"
-        aria-hidden="true"
-      >
-        {shouldLoadVideo && !videoFailed && (
-          <video
-            ref={videoRef}
-            className="absolute inset-0 h-full w-full object-cover"
-            loop
-            muted
-            playsInline
-            preload="metadata"
-            poster="/videos/hero-poster.webp"
-            onError={() => setVideoFailed(true)}
-          >
-            <source src="/videos/hero-bg.mp4" type="video/mp4" />
-          </video>
-        )}
-      </div>
+      <HeroMedia variant="background" />
 
       <div
         className="pointer-events-none absolute inset-0 z-[1] bg-[#F9F9F9]/55"
@@ -217,52 +82,7 @@ export function HeroSection() {
             </span>
           </a>
 
-          <div
-            className="
-              pointer-events-auto
-              order-first
-              relative
-              z-0
-              mx-auto
-              mb-1
-              h-[220px]
-              w-[220px]
-              opacity-80
-              sm:order-none
-              sm:absolute
-              sm:top-[54%]
-              sm:right-[-260px]
-              sm:mx-0
-              sm:mb-0
-              sm:mt-0
-              sm:h-[360px]
-              sm:w-[360px]
-              sm:-translate-y-1/2
-              md:right-[-300px]
-              md:h-[460px]
-              md:w-[460px]
-              lg:right-[-340px]
-              lg:h-[620px]
-              lg:w-[620px]
-              xl:right-[-390px]
-              xl:h-[720px]
-              xl:w-[720px]
-              2xl:right-[-430px]
-              2xl:h-[800px]
-              2xl:w-[800px]
-              min-[1800px]:!right-[-500px]
-              min-[1800px]:!h-[960px]
-              min-[1800px]:!w-[960px]
-            "
-          >
-            <DeferredBlenderModel
-              path="/animations/vhetra-logo.glb"
-              type="animated"
-              scale={2.5}
-              canInteract={true}
-              active={isVisible && isPageVisible}
-            />
-          </div>
+          <HeroMedia variant="model" />
         </div>
       </div>
     </section>

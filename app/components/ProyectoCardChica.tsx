@@ -6,10 +6,9 @@ interface CardChicaProps {
   proyecto: Proyecto;
   onClick?: () => void;
   imgClassName?: string;
-  priority?: boolean;
 }
 
-const CardChica = ({ proyecto, onClick, imgClassName, priority }: CardChicaProps) => {
+const CardChica = ({ proyecto, onClick, imgClassName }: CardChicaProps) => {
   const { name, miniTitulo, miniDescripcion, miniatura } = proyecto;
 
   return (
@@ -28,8 +27,7 @@ const CardChica = ({ proyecto, onClick, imgClassName, priority }: CardChicaProps
               alt={miniTitulo}
               fill
               className="w-full h-full object-contain"
-              loading={priority ? undefined : "lazy"}
-              priority={priority}
+              loading="lazy"
             />
           </div>
         )}

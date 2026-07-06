@@ -5,8 +5,16 @@ import { ProyectosSection } from "@/app/components/sections/ProyectosSection";
 import { ComoTrabajamosSection } from "@/app/components/sections/ComoTrabajamosSection";
 import { ContactoSection } from "@/app/components/sections/ContactoSection";
 import { SectionScrollController } from "@/app/components/SectionScrollController";
+import { setRequestLocale } from "next-intl/server";
 
-export default function Home() {
+type Props = {
+  params: Promise<{ locale: string }>;
+};
+
+export default async function Home({ params }: Props) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
   return (
     <>
       <NavBar />

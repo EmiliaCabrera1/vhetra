@@ -1,6 +1,4 @@
-"use client";
-
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import CardContacto from "@/app/components/CardContacto";
 
 const whatsappPhone = process.env.NEXT_PUBLIC_WHATSAPP_PHONE ?? "5493875038714";
@@ -29,8 +27,8 @@ const CONTACTOS = [
   },
 ];
 
-export function ContactoSection() {
-  const t = useTranslations("contact");
+export async function ContactoSection() {
+  const t = await getTranslations("contact");
   const whatsappHref = `https://wa.me/${whatsappPhone}?text=${encodeURIComponent(
     t("whatsappMessage"),
   )}`;

@@ -285,7 +285,6 @@ export function ProyectosSection() {
                     proyecto={proyecto}
                     onClick={() => setSelectedProyecto(proyecto)}
                     imgClassName={proyecto.imgClassName}
-                    priority={index === 0}
                   />
                 </div>
               ))}
