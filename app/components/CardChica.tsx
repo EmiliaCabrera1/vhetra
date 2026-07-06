@@ -27,7 +27,7 @@ const CardChica = ({ servicio, onClick }: CardChicaProps) => {
         </h3>
         <p
           className="
-    absolute z-10 right-3 bottom-[-8px]
+    absolute z-10 right-3 bottom-[0px] sm:bottom-[-8px]
     text-tiza text-[4rem] sm:text-[5rem] lg:text-[6rem] xl:text-[7rem] min-[1800px]:!text-[8.5rem]
     font-black leading-none select-none opacity-90
     translate-y-8 group-hover:translate-y-0
