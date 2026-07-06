@@ -78,6 +78,14 @@ canvas {
   width: 100%;
 }
 
+.philosophy-section-background {
+  background-color: #171717;
+  background-image:
+    radial-gradient(circle at top right, rgba(168, 40, 17, 0.18), transparent 35%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.05), transparent 38%),
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+}
+
 .vhetra-cta {
   width: min(100%, var(--cta-w, 23rem));
   min-height: clamp(2.65rem, 12vw, 3.75rem);

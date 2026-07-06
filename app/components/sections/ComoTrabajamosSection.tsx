@@ -17,12 +17,8 @@ export async function ComoTrabajamosSection() {
   return (
     <section
       id="filosofia"
-      className="snap-panel section-render-window relative overflow-x-hidden overflow-y-auto bg-[#171717] px-6 py-14 sm:px-12 sm:py-16 lg:px-20 lg:py-20"
+      className="snap-panel section-render-window philosophy-section-background relative overflow-x-hidden overflow-y-auto px-6 py-14 sm:px-12 sm:py-16 lg:px-20 lg:py-20"
     >
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(168,40,17,0.18),transparent_35%)]" />
-      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.05),transparent_38%)]" />
-      <div className="pointer-events-none absolute inset-0 bg-black/30" />
-
       <div className="section-panel-content relative z-10 mx-auto max-w-7xl min-[1800px]:!max-w-[1680px]">
         <div className="mb-10 max-w-6xl sm:mb-12 lg:mb-14 min-[1800px]:!mb-20 min-[1800px]:!max-w-[1500px]">
           <div className="mb-4 h-px w-20 bg-[#A82811] sm:mb-6 sm:w-24 min-[1800px]:!mb-8 min-[1800px]:!w-32" />
