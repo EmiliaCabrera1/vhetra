@@ -50,7 +50,7 @@ export function ProyectosSection() {
             {t("acrodata.technologies")}
           </>
         ),
-        imagen: "/projects/acrodata2.svg",
+        imagen: "/projects/acrodata.webp",
         webUrl: "https://www.acrodata.vhetra.com.ar/",
         technologies: ["React", "Tailwind CSS", "Responsive UI"],
       },
@@ -77,7 +77,7 @@ export function ProyectosSection() {
             {t("estacionAlemania.technologies")}
           </>
         ),
-        imagen: "/projects/estacion2.svg",
+        imagen: "/projects/estacion.webp",
         webUrl: "https://estacionalemania.vhetra.com.ar/",
         layoutType: "textImage",
         technologies: ["Next.js", "React", "Tailwind CSS"],
@@ -103,32 +103,34 @@ export function ProyectosSection() {
             {t("laboragro.descripcionP4")}
           </>
         ),
+        imagen: "/projects/labor.webp",
         webUrl: "https://www.laboragro.com.ar/",
         technologies: ["Next.js", "React", "Tailwind CSS", "Technical SEO"],
       },
       {
         id: 5,
-        name: "Loza Studio",
-        miniTitulo: t("lozaStudio.miniTitulo"),
-        titulo: t("lozaStudio.titulo"),
-        miniDescripcion: t("lozaStudio.miniDescripcion"),
+        name: "Loza",
+        miniTitulo: t("loza.miniTitulo"),
+        titulo: t("loza.titulo"),
+        miniDescripcion: t("loza.miniDescripcion"),
         descripcionCompleta: (
           <>
-            {t("lozaStudio.descripcionP1")}
+            {t("loza.descripcionP1")}
             <br />
             <br />
-            {t("lozaStudio.descripcionP2")}
+            {t("loza.descripcionP2")}
             <br />
             <br />
-            {t("lozaStudio.descripcionP3")}
+            {t("loza.descripcionP3")}
             <br />
             <br />
-            {t("lozaStudio.descripcionP4")}
+            {t("loza.descripcionP4")}
             <br />
             <br />
-            {t("lozaStudio.technologies")}
+            {t("loza.technologies")}
           </>
         ),
+        imagen: "/projects/loza.webp",
         webUrl: "https://loza.vhetra.com.ar/",
         technologies: [
           "Next.js",
@@ -158,6 +160,7 @@ export function ProyectosSection() {
             {t("chaUsandivaras.descripcionP4")}
           </>
         ),
+        imagen: "/projects/cha.webp",
         webUrl: "https://chausandivaraspropiedades.vhetra.com.ar/",
         technologies: ["Next.js", "React", "Tailwind CSS", "Responsive UI"],
       },
@@ -181,6 +184,7 @@ export function ProyectosSection() {
             {t("flavia.descripcionP4")}
           </>
         ),
+        imagen: "/projects/flavia.webp",
         webUrl: "https://flavia.vhetra.com.ar/",
         technologies: ["Next.js", "React", "Tailwind CSS", "Blender"],
       },

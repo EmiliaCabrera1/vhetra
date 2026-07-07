@@ -163,8 +163,8 @@
       "descripcionP3": "To add identity without compromising the overall simplicity, we incorporated a 3D animation created in Blender and integrated it subtly into the experience. This element brings personality to the site while preserving the clean, elegant aesthetic that guided the entire project.",
       "descripcionP4": "The result is a responsive, fast, and visually balanced platform where design and functionality work together to highlight the food offering clearly and directly."
     },
-    "lozaStudio": {
-      "miniTitulo": "Loza Studio",
+    "loza": {
+      "miniTitulo": "Loza",
       "miniDescripcion": "E-commerce and studio management",
       "titulo": "An end-to-end website for selling, content management, and user administration.",
       "descripcionP1": "We developed an end-to-end website that brings e-commerce, content management, and user administration together in one seamless digital solution.",

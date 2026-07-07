@@ -38,15 +38,10 @@
     "title": "Filosofía de Vhetra | Diseño web, identidad visual y presencia digital",
     "titlePrefix": "En VHETRA lo digital",
     "titleSuffix": "respira",
-
     "intro": "No creamos piezas aisladas; construimos <strong>marcas como sistemas coherentes</strong>.",
-
     "body1": "En Vhetra integramos <strong>tecnología, diseño y estrategia</strong> para transformar ideas en identidades vivas. Entendemos que una marca no se define por un solo elemento, sino por la relación entre todos: su <strong>arquitectura digital, identidad visual y presencia en el entorno online</strong>.",
-
     "body2": "Desarrollamos <strong>diseño web y presencia digital</strong> para marcas, proyectos y emprendimientos que buscan comunicar con claridad y coherencia. Creamos <strong>sitios web rápidos, accesibles y adaptados a todos los dispositivos</strong>, combinando desarrollo con <strong>Next.js, React y tecnologías modernas</strong> junto a una dirección de diseño cuidada.",
-
     "body3": "No seguimos tendencias pasajeras; diseñamos <strong>estructuras con identidad</strong>, pensadas para funcionar y perdurar.",
-
     "body4": "Somos estructura y sensibilidad al mismo tiempo: <strong>código que respira marca</strong>."
   },
   "services": {
@@ -168,8 +163,8 @@
       "descripcionP3": "Para aportar identidad sin comprometer la simplicidad del conjunto, se incorporó una animación 3D desarrollada en Blender, integrada de manera sutil dentro de la experiencia. Este recurso aporta personalidad al sitio manteniendo la estética limpia y elegante que guiaba todo el proyecto.",
       "descripcionP4": "El resultado es una plataforma responsive, rápida y visualmente equilibrada, donde diseño y funcionalidad trabajan juntos para destacar la propuesta gastronómica de forma clara y directa."
     },
-    "lozaStudio": {
-      "miniTitulo": "Loza Studio",
+    "loza": {
+      "miniTitulo": "Loza",
       "miniDescripcion": "E-commerce + gestión web",
       "titulo": "Una plataforma web integral para vender, gestionar contenidos y administrar usuarios.",
       "descripcionP1": "Desarrollamos una plataforma web integral que combina ecommerce, gestión de contenidos y administración de usuarios en una única solución digital.",
