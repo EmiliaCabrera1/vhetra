@@ -14,7 +14,7 @@ export async function HeroSection() {
       id="inicio"
       className="snap-panel isolate relative flex items-center overflow-x-hidden overflow-y-auto bg-[#F9F9F9] px-6 pt-20 pb-8 sm:px-12 sm:pb-10 lg:px-20"
     >
-      <HeroMedia variant="background" />
+      <HeroMedia />
 
       <div
         className="pointer-events-none absolute inset-0 z-[1] bg-[#F9F9F9]/55"
@@ -81,8 +81,6 @@ export async function HeroSection() {
               ⟶
             </span>
           </a>
-
-          <HeroMedia variant="model" />
         </div>
       </div>
     </section>

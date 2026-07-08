@@ -324,7 +324,7 @@ export function ProyectosSection() {
           </button>
         </div>
 
-        <div className="relative mt-6 flex justify-center sm:mt-8">
+        <div className="relative mt-6 mb-24 flex justify-center sm:mt-8 sm:mb-0">
           <a
             href={whatsappHref}
             target="_blank"
